@@ -13,138 +13,6 @@ servers:
 security:
 - ApiKeyAuth: []
 paths:
-  /v1/user/theme/{subdomain}:
-    get:
-      description: Retrieve public theme configuration details by store subdomain.
-      operationId: users:get_theme_by_subdomain
-      parameters:
-      - description: The subdomain of the store
-        explode: false
-        in: path
-        name: subdomain
-        required: true
-        schema:
-          example: acme
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserTheme'
-          description: Theme configurations retrieved successfully.
-      security:
-      - ApiKeyAuth: []
-      summary: Get Theme by Subdomain
-      tags:
-      - User Profile & Themes
-      x-accepts:
-      - application/json
-  /v1/user/my-theme:
-    get:
-      description: Retrieve theme configurations for the active business context.
-      operationId: users:get_my_theme
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserTheme'
-          description: Active theme settings details.
-      security:
-      - ApiKeyAuth: []
-      summary: Get My Theme
-      tags:
-      - User Profile & Themes
-      x-accepts:
-      - application/json
-  /v1/user/my-page:
-    get:
-      description: Retrieve page settings and custom content configured for the store.
-      operationId: users:get_my_page
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserPage'
-          description: Store page configuration data.
-      security:
-      - ApiKeyAuth: []
-      summary: Get My Page details
-      tags:
-      - User Profile & Themes
-      x-accepts:
-      - application/json
-  /v1/user/dashboard-stats:
-    get:
-      description: "Retrieve general analytics stats (revenue, order counts, etc.)\
-        \ for dashboard graphs."
-      operationId: users:get_stats
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserStats'
-          description: Dashboard analytics statistics data.
-      security:
-      - ApiKeyAuth: []
-      summary: Get Dashboard Statistics
-      tags:
-      - User Profile & Themes
-      x-accepts:
-      - application/json
-  /v1/user/settings:
-    get:
-      description: Retrieve profile settings and notification preferences for the
-        user.
-      operationId: users:get_settings
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserSettings'
-          description: User settings profile details retrieved.
-      security:
-      - ApiKeyAuth: []
-      summary: Retrieve User Settings
-      tags:
-      - User Profile & Themes
-      x-accepts:
-      - application/json
-    patch:
-      description: "Update profile parameters, SEO, Google analytics, and email notification\
-        \ properties."
-      operationId: merchants:update_settings
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserSettingsUpdate'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserSettings'
-          description: User settings successfully updated.
-      security:
-      - ApiKeyAuth: []
-      summary: Update Merchant Settings
-      tags:
-      - Businesses
-      x-content-type: application/json
-      x-accepts:
-      - application/json
   /v1/products:
     get:
       description: "List and query products belonging to your active business with\
@@ -7675,595 +7543,6 @@ paths:
       x-content-type: multipart/form-data
       x-accepts:
       - application/json
-  /v1/user/brand:
-    post:
-      description: Add a new brand identity under the current active business.
-      operationId: brands:create
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BrandCreate'
-        required: true
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Brand'
-          description: Brand successfully created.
-      security:
-      - ApiKeyAuth: []
-      summary: Create Brand
-      tags:
-      - Brands
-      x-codeSamples:
-      - lang: typescript
-        label: TypeScript SDK
-        source: |-
-          import { Solifyn } from 'solifyn';
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // Create a new brand identity
-          const brand = await solifyn.brands.create({
-            name: 'Acme Software',
-            websiteUrl: 'https://software.acme.com',
-            supportEmail: 'billing@acme.com',
-            description: 'Premium developer tool suite.',
-            statementDescriptor: 'ACME SOFT'
-          });
-          console.log('Brand Created:', brand);
-      - lang: javascript
-        label: JavaScript SDK
-        source: |-
-          const { Solifyn } = require('solifyn');
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // Create a new brand identity
-          const brand = await solifyn.brands.create({
-            name: 'Acme Software',
-            websiteUrl: 'https://software.acme.com',
-            supportEmail: 'billing@acme.com',
-            description: 'Premium developer tool suite.',
-            statementDescriptor: 'ACME SOFT'
-          });
-          console.log('Brand Created:', brand);
-      - lang: python
-        label: Python SDK
-        source: |-
-          from solifyn import Solifyn
-
-          solifyn = Solifyn(api_key="your_private_api_key_here")
-
-          # Create a new brand identity
-          brand = solifyn.brands.create(
-              name="Acme Software",
-              website_url="https://software.acme.com",
-              support_email="billing@acme.com",
-              description="Premium developer tool suite.",
-              statement_descriptor="ACME SOFT"
-          )
-          print("Brand Created:", brand)
-      - lang: php
-        label: PHP SDK
-        source: |-
-          $solifyn = new \Solifyn\SolifynClient([
-              'apiKey' => 'your_private_api_key_here'
-          ]);
-
-          // Create a new brand identity
-          $brand = $solifyn->brands->create([
-              'name' => 'Acme Software',
-              'websiteUrl' => 'https://software.acme.com',
-              'supportEmail' => 'billing@acme.com',
-              'description' => 'Premium developer tool suite.',
-              'statementDescriptor' => 'ACME SOFT'
-          ]);
-          print_r($brand);
-      - lang: go
-        label: Go SDK
-        source: |-
-          import (
-              "context"
-              "fmt"
-              "github.com/solifyn/solifyn-go"
-          )
-
-          client := solifyn.NewClient("your_private_api_key_here")
-
-          // Create a new brand identity
-          brand, err := client.Brands.Create(context.Background(), &solifyn.BrandCreateParams{
-              Name:                "Acme Software",
-              WebsiteUrl:          "https://software.acme.com",
-              SupportEmail:        "billing@acme.com",
-              Description:         "Premium developer tool suite.",
-              StatementDescriptor: "ACME SOFT",
-          })
-          if err != nil {
-              panic(err)
-          }
-
-          fmt.Println("Brand Created:", brand)
-      - lang: java
-        label: Java SDK
-        source: |-
-          import com.solifyn.SolifynClient;
-          import com.solifyn.models.Brand;
-          import com.solifyn.models.BrandCreateParams;
-
-          SolifynClient client = new SolifynClient("your_private_api_key_here");
-
-          // Create a new brand identity
-          Brand brand = client.brands().create(
-              BrandCreateParams.builder()
-                  .name("Acme Software")
-                  .websiteUrl("https://software.acme.com")
-                  .supportEmail("billing@acme.com")
-                  .description("Premium developer tool suite.")
-                  .statementDescriptor("ACME SOFT")
-                  .build()
-          );
-          System.out.println("Brand Created: " + brand);
-      - lang: ruby
-        label: Ruby SDK
-        source: |-
-          require 'solifyn'
-
-          solifyn = Solifyn::Client.new(api_key: 'your_private_api_key_here')
-
-          # Create a new brand identity
-          brand = solifyn.brands.create(
-            name: 'Acme Software',
-            website_url: 'https://software.acme.com',
-            support_email: 'billing@acme.com',
-            description: 'Premium developer tool suite.',
-            statement_descriptor: 'ACME SOFT'
-          )
-          puts brand
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/user/brands:
-    get:
-      description: Retrieve all brands associated with the current business context.
-      operationId: brands:list
-      parameters: []
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                items:
-                  $ref: '#/components/schemas/Brand'
-                type: array
-          description: List of brands successfully retrieved.
-      security:
-      - ApiKeyAuth: []
-      summary: List Brands
-      tags:
-      - Brands
-      x-codeSamples:
-      - lang: typescript
-        label: TypeScript SDK
-        source: |-
-          import { Solifyn } from 'solifyn';
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // List brands under the current business
-          const brands = await solifyn.brands.list();
-          console.log('Brands List:', brands);
-      - lang: javascript
-        label: JavaScript SDK
-        source: |-
-          const { Solifyn } = require('solifyn');
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // List brands under the current business
-          const brands = await solifyn.brands.list();
-          console.log('Brands List:', brands);
-      - lang: python
-        label: Python SDK
-        source: |-
-          from solifyn import Solifyn
-
-          solifyn = Solifyn(api_key="your_private_api_key_here")
-
-          # List brands under the current business
-          brands = solifyn.brands.list()
-          print("Brands List:", brands)
-      - lang: php
-        label: PHP SDK
-        source: |-
-          $solifyn = new \Solifyn\SolifynClient([
-              'apiKey' => 'your_private_api_key_here'
-          ]);
-
-          // List brands under the current business
-          $brands = $solifyn->brands->list();
-          print_r($brands);
-      - lang: go
-        label: Go SDK
-        source: |-
-          import (
-              "context"
-              "fmt"
-              "github.com/solifyn/solifyn-go"
-          )
-
-          client := solifyn.NewClient("your_private_api_key_here")
-
-          // List brands under the current business
-          brands, err := client.Brands.List(context.Background())
-          if err != nil {
-              panic(err)
-          }
-
-          fmt.Println("Brands List:", brands)
-      - lang: java
-        label: Java SDK
-        source: |-
-          import com.solifyn.SolifynClient;
-          import com.solifyn.models.BrandList;
-
-          SolifynClient client = new SolifynClient("your_private_api_key_here");
-
-          // List brands under the current business
-          BrandList brands = client.brands().list();
-          System.out.println("Brands List: " + brands);
-      - lang: ruby
-        label: Ruby SDK
-        source: |-
-          require 'solifyn'
-
-          solifyn = Solifyn::Client.new(api_key: 'your_private_api_key_here')
-
-          # List brands under the current business
-          brands = solifyn.brands.list
-          puts brands
-      x-accepts:
-      - application/json
-  /v1/user/brand/{id}:
-    get:
-      description: Retrieve details of a brand identity by ID.
-      operationId: brands:get
-      parameters:
-      - description: The brand ID to retrieve
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          example: brd_123
-          type: string
-        style: simple
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Brand'
-          description: Brand details retrieved successfully.
-      security:
-      - ApiKeyAuth: []
-      summary: Retrieve Brand
-      tags:
-      - Brands
-      x-codeSamples:
-      - lang: typescript
-        label: TypeScript SDK
-        source: |-
-          import { Solifyn } from 'solifyn';
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // Retrieve a specific brand by ID
-          const brand = await solifyn.brands.get('brd_019e56a1...');
-          console.log('Brand Details:', brand);
-      - lang: javascript
-        label: JavaScript SDK
-        source: |-
-          const { Solifyn } = require('solifyn');
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // Retrieve a specific brand by ID
-          const brand = await solifyn.brands.get('brd_019e56a1...');
-          console.log('Brand Details:', brand);
-      - lang: python
-        label: Python SDK
-        source: |-
-          from solifyn import Solifyn
-
-          solifyn = Solifyn(api_key="your_private_api_key_here")
-
-          # Retrieve a specific brand by ID
-          brand = solifyn.brands.get("brd_019e56a1...")
-          print("Brand Details:", brand)
-      - lang: php
-        label: PHP SDK
-        source: |-
-          $solifyn = new \Solifyn\SolifynClient([
-              'apiKey' => 'your_private_api_key_here'
-          ]);
-
-          // Retrieve a specific brand by ID
-          $brand = $solifyn->brands->get('brd_019e56a1...');
-          print_r($brand);
-      - lang: go
-        label: Go SDK
-        source: |-
-          import (
-              "context"
-              "fmt"
-              "github.com/solifyn/solifyn-go"
-          )
-
-          client := solifyn.NewClient("your_private_api_key_here")
-
-          // Retrieve a specific brand by ID
-          brand, err := client.Brands.Get(context.Background(), "brd_019e56a1...")
-          if err != nil {
-              panic(err)
-          }
-
-          fmt.Println("Brand Details:", brand)
-      - lang: java
-        label: Java SDK
-        source: |-
-          import com.solifyn.SolifynClient;
-          import com.solifyn.models.Brand;
-
-          SolifynClient client = new SolifynClient("your_private_api_key_here");
-
-          // Retrieve a specific brand by ID
-          Brand brand = client.brands().get("brd_019e56a1...");
-          System.out.println("Brand Details: " + brand);
-      - lang: ruby
-        label: Ruby SDK
-        source: |-
-          require 'solifyn'
-
-          solifyn = Solifyn::Client.new(api_key: 'your_private_api_key_here')
-
-          # Retrieve a specific brand by ID
-          brand = solifyn.brands.get('brd_019e56a1...')
-          puts brand
-      x-accepts:
-      - application/json
-    patch:
-      description: "Update website, logo, description, or statement descriptors of\
-        \ a brand."
-      operationId: brands:update
-      parameters:
-      - description: The brand ID to update
-        explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          example: brd_123
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/BrandUpdate'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/Brand'
-          description: Brand settings updated successfully.
-      security:
-      - ApiKeyAuth: []
-      summary: Update Brand
-      tags:
-      - Brands
-      x-codeSamples:
-      - lang: typescript
-        label: TypeScript SDK
-        source: |-
-          import { Solifyn } from 'solifyn';
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // Update brand settings
-          const brand = await solifyn.brands.update('brd_019e56a1...', {
-            websiteUrl: 'https://newsite.acme.com',
-            statementDescriptor: 'ACME NEW'
-          });
-          console.log('Brand Updated:', brand);
-      - lang: javascript
-        label: JavaScript SDK
-        source: |-
-          const { Solifyn } = require('solifyn');
-
-          const solifyn = new Solifyn({ apiKey: 'your_private_api_key_here' });
-
-          // Update brand settings
-          const brand = await solifyn.brands.update('brd_019e56a1...', {
-            websiteUrl: 'https://newsite.acme.com',
-            statementDescriptor: 'ACME NEW'
-          });
-          console.log('Brand Updated:', brand);
-      - lang: python
-        label: Python SDK
-        source: |-
-          from solifyn import Solifyn
-
-          solifyn = Solifyn(api_key="your_private_api_key_here")
-
-          # Update brand settings
-          brand = solifyn.brands.update(
-              brand_id="brd_019e56a1...",
-              website_url="https://newsite.acme.com",
-              statement_descriptor="ACME NEW"
-          )
-          print("Brand Updated:", brand)
-      - lang: php
-        label: PHP SDK
-        source: |-
-          $solifyn = new \Solifyn\SolifynClient([
-              'apiKey' => 'your_private_api_key_here'
-          ]);
-
-          // Update brand settings
-          $brand = $solifyn->brands->update('brd_019e56a1...', [
-              'websiteUrl' => 'https://newsite.acme.com',
-              'statementDescriptor' => 'ACME NEW'
-          ]);
-          print_r($brand);
-      - lang: go
-        label: Go SDK
-        source: |-
-          import (
-              "context"
-              "fmt"
-              "github.com/solifyn/solifyn-go"
-          )
-
-          client := solifyn.NewClient("your_private_api_key_here")
-
-          // Update brand settings
-          brand, err := client.Brands.Update(context.Background(), "brd_019e56a1...", &solifyn.BrandUpdateParams{
-              WebsiteUrl:          "https://newsite.acme.com",
-              StatementDescriptor: "ACME NEW",
-          })
-          if err != nil {
-              panic(err)
-          }
-
-          fmt.Println("Brand Updated:", brand)
-      - lang: java
-        label: Java SDK
-        source: |-
-          import com.solifyn.SolifynClient;
-          import com.solifyn.models.Brand;
-          import com.solifyn.models.BrandUpdateParams;
-
-          SolifynClient client = new SolifynClient("your_private_api_key_here");
-
-          // Update brand settings
-          Brand brand = client.brands().update(
-              "brd_019e56a1...",
-              BrandUpdateParams.builder()
-                  .websiteUrl("https://newsite.acme.com")
-                  .statementDescriptor("ACME NEW")
-                  .build()
-          );
-          System.out.println("Brand Updated: " + brand);
-      - lang: ruby
-        label: Ruby SDK
-        source: |-
-          require 'solifyn'
-
-          solifyn = Solifyn::Client.new(api_key: 'your_private_api_key_here')
-
-          # Update brand settings
-          brand = solifyn.brands.update('brd_019e56a1...', {
-            website_url: 'https://newsite.acme.com',
-            statement_descriptor: 'ACME NEW'
-          })
-          puts brand
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/user/theme:
-    patch:
-      description: "Update colors, fonts, avatar, or banner settings for the store."
-      operationId: merchants:update_theme
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserThemeUpdate'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserTheme'
-          description: Theme settings successfully updated.
-      security:
-      - ApiKeyAuth: []
-      summary: Update Theme
-      tags:
-      - Businesses
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/user/page:
-    patch:
-      description: "Modify store page content configs, banner images, or avatar details."
-      operationId: merchants:update_page
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UserThemeUpdate'
-        required: true
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/UserPage'
-          description: Store page settings updated successfully.
-      security:
-      - ApiKeyAuth: []
-      summary: Update Page configuration
-      tags:
-      - Businesses
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/user/billing/history:
-    get:
-      description: Retrieve history of SaaS subscription payments paid by this business
-        to the platform.
-      operationId: businesses:billing_history
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security:
-      - ApiKeyAuth: []
-      summary: Get Platform Billing History
-      tags:
-      - Businesses
-      x-accepts:
-      - application/json
-  /v1/user/whop-api-keys:
-    post:
-      description: Generate and sync a new Whop Child Company API key (restricted
-        to business owners).
-      operationId: merchants:generate_api_keys
-      parameters: []
-      responses:
-        "201":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/WhopApiKeysRotation'
-          description: Whop child API credentials successfully rotated.
-      security:
-      - ApiKeyAuth: []
-      summary: Rotate Whop API Keys
-      tags:
-      - Businesses
-      x-accepts:
-      - application/json
   /v1/balances:
     get:
       operationId: BalanceController_findAll
@@ -10519,142 +9798,6 @@ paths:
       x-content-type: application/json
       x-accepts:
       - application/json
-  /v1/community/posts:
-    get:
-      operationId: CommunityController_getPosts
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-    post:
-      operationId: CommunityController_createPost
-      parameters: []
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-  /v1/community/posts/{id}:
-    delete:
-      operationId: CommunityController_deletePost
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-    patch:
-      operationId: CommunityController_updatePost
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-  /v1/community/posts/{id}/like:
-    patch:
-      operationId: CommunityController_likePost
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-  /v1/community/posts/{id}/unlike:
-    patch:
-      operationId: CommunityController_unlikePost
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-  /v1/community/posts/{id}/share:
-    patch:
-      operationId: CommunityController_sharePost
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
-  /v1/community/posts/{id}/report:
-    post:
-      operationId: CommunityController_reportPost
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Community
-      x-accepts:
-      - application/json
   /v1/developer/api-keys:
     get:
       operationId: DeveloperController_getApiKeys
@@ -11503,225 +10646,6 @@ paths:
       - Developer
       x-accepts:
       - application/json
-  /v1/partner/stats:
-    get:
-      operationId: PartnerController_getPartnerStats
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Partner
-      x-accepts:
-      - application/json
-  /v1/partner/commissions:
-    get:
-      operationId: PartnerController_getPartnerCommissions
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Partner
-      x-accepts:
-      - application/json
-  /v1/affiliate/marketplace:
-    get:
-      operationId: AffiliateController_getMarketplace
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/marketplace/join:
-    post:
-      operationId: AffiliateController_joinProgram
-      parameters: []
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/settings:
-    get:
-      operationId: AffiliateController_getProgramSettings
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-    post:
-      operationId: AffiliateController_saveProgramSettings
-      parameters: []
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/override:
-    post:
-      operationId: AffiliateController_saveOverride
-      parameters: []
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/override/{id}:
-    delete:
-      operationId: AffiliateController_deleteOverride
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/connections:
-    get:
-      operationId: AffiliateController_getProgramConnections
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/connections/{id}/approve:
-    post:
-      operationId: AffiliateController_approveConnection
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/connections/{id}/reject:
-    post:
-      operationId: AffiliateController_rejectConnection
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/connections/{id}/archive:
-    post:
-      operationId: AffiliateController_archiveConnection
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/program/ledger:
-    get:
-      operationId: AffiliateController_getProgramLedger
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/earnings/stats:
-    get:
-      operationId: AffiliateController_getEarningsStats
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/earnings/connections:
-    get:
-      operationId: AffiliateController_getEarningsConnections
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
-  /v1/affiliate/earnings/ledger:
-    get:
-      operationId: AffiliateController_getEarningsLedger
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Affiliate
-      x-accepts:
-      - application/json
   /v1/products/all-addons/list:
     get:
       description: Retrieve all configured add-on configurations for the active business.
@@ -12460,176 +11384,6 @@ paths:
           })
           puts updated_addon
       x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/tickets:
-    get:
-      operationId: TicketController_getTickets
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Ticket
-      x-accepts:
-      - application/json
-    post:
-      operationId: TicketController_createTicket
-      parameters: []
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/CreateTicketDto'
-        required: true
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Ticket
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/tickets/{id}:
-    get:
-      operationId: TicketController_getTicketDetails
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Ticket
-      x-accepts:
-      - application/json
-    patch:
-      operationId: TicketController_updateTicket
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/UpdateTicketDto'
-        required: true
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Ticket
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/tickets/{id}/replies:
-    post:
-      operationId: TicketController_replyTicket
-      parameters:
-      - explode: false
-        in: path
-        name: id
-        required: true
-        schema:
-          type: string
-        style: simple
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/ReplyTicketDto'
-        required: true
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Ticket
-      x-content-type: application/json
-      x-accepts:
-      - application/json
-  /v1/billing/plans:
-    get:
-      description: Returns all available platform subscription plans with fees and
-        features.
-      operationId: billing:get_plans
-      parameters: []
-      responses:
-        "200":
-          description: List of available platform plans.
-      security: []
-      summary: Get Platform Plans
-      tags:
-      - Billing
-      x-accepts:
-      - application/json
-  /v1/chat/customer/message:
-    post:
-      operationId: ChatController_sendCustomerMessage
-      parameters: []
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Chat
-      x-accepts:
-      - application/json
-  /v1/chat/merchant/sessions:
-    get:
-      operationId: ChatController_getMerchantSessions
-      parameters: []
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Chat
-      x-accepts:
-      - application/json
-  /v1/chat/merchant/messages/{customerId}:
-    get:
-      operationId: ChatController_getMerchantMessages
-      parameters:
-      - explode: false
-        in: path
-        name: customerId
-        required: true
-        schema:
-          type: string
-        style: simple
-      responses:
-        "200":
-          description: ""
-      security: []
-      tags:
-      - Chat
-      x-accepts:
-      - application/json
-  /v1/chat/merchant/message:
-    post:
-      operationId: ChatController_sendMerchantMessage
-      parameters: []
-      responses:
-        "201":
-          description: ""
-      security: []
-      tags:
-      - Chat
       x-accepts:
       - application/json
 components:
@@ -13724,11 +12478,12 @@ components:
           type: object
           nullable: true
         filters:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
+          type: object
           nullable: true
         archived:
           description: Whether the meter is archived.
@@ -13782,11 +12537,12 @@ components:
           example: 1
           type: number
         metadata:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional event metadata.
           example:
             plan: enterprise
             region: asia-southeast-1
+          type: object
           nullable: true
         timestamp:
           description: Timestamp when the usage event occurred.
@@ -13969,11 +12725,12 @@ components:
           example: requests
           type: string
         filters:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
+          type: object
         enableFiltering:
           default: false
           description: Enable filtering on usage event ingestion.
@@ -14026,11 +12783,12 @@ components:
           example: requests
           type: string
         filters:
-          additionalProperties: {}
+          additionalProperties: true
           description: Optional filter definition for advanced matching.
           example:
             event_type: premium
             region: asia
+          type: object
         enableFiltering:
           description: Enable filtering on usage event ingestion.
           example: false
@@ -14182,11 +12940,12 @@ components:
           example: 1
           type: number
         metadata:
-          additionalProperties: {}
+          additionalProperties: true
           description: Metadata attached to the usage event.
           example:
             plan: enterprise
             region: asia-southeast-1
+          type: object
         timestamp:
           description: Timestamp of the event in ISO 8601 format.
           example: 2026-05-23T10:00:00.000Z
@@ -14667,7 +13426,6 @@ components:
       required:
       - businessId
       - createdAt
-      - created_at
       - email
       - id
       - updatedAt
@@ -15345,7 +14103,6 @@ components:
           example: false
           type: boolean
         activationLimit:
-          default: null
           description: Maximum concurrent activated instances allowed per license
             key.
           type: integer
@@ -15759,19 +14516,14 @@ components:
       - businessId
       - code
       - createdAt
-      - created_at
       - discount_id
       - expiresAt
-      - expires_at
       - id
       - status
       - timesUsed
-      - times_used
       - type
       - updatedAt
-      - updated_at
       - usageLimit
-      - usage_limit
     DiscountCreate:
       example:
         amount: 0.8008281904610115
@@ -17374,19 +16126,6 @@ components:
       - expires_at
       - url
     Brand:
-      example:
-        createdAt: 2025-01-01T12:00:00Z
-        supportEmail: support@acme.com
-        websiteUrl: https://acme.com
-        merchantId: mer_123
-        isPrimary: true
-        statementDescriptor: ACME CORP INC
-        name: Acme Corp
-        businessId: biz_123
-        description: A leading provider of ACME tools.
-        id: brd_123
-        logoUrl: https://acme.com/logo.png
-        updatedAt: 2025-01-01T12:00:00Z
       properties:
         id:
           description: The unique brand ID
@@ -17452,13 +16191,6 @@ components:
       - name
       - updatedAt
     BrandCreate:
-      example:
-        supportEmail: support@acme.com
-        websiteUrl: https://acme.com
-        statementDescriptor: ACME CORP INC
-        name: Acme Corp
-        description: A leading provider of ACME tools.
-        logoUrl: https://acme.com/logo.png
       properties:
         name:
           description: Name of the brand
@@ -17494,13 +16226,6 @@ components:
       required:
       - name
     BrandUpdate:
-      example:
-        supportEmail: support@acme.com
-        websiteUrl: https://acme.com
-        statementDescriptor: ACME CORP INC
-        name: Acme Corp
-        description: A leading provider of ACME tools.
-        logoUrl: https://acme.com/logo.png
       properties:
         name:
           description: Name of the brand
@@ -17688,15 +16413,6 @@ components:
       - businessId
       - success
     UserTheme:
-      example:
-        avatarUrl: https://acme.com/avatar.png
-        bannerUrl: https://acme.com/banner.png
-        businessId: biz_123
-        id: theme_123
-        config:
-          theme:
-            primaryColor: '#0f172a'
-            fontFamily: Inter
       properties:
         id:
           description: Theme configuration ID
@@ -17728,14 +16444,6 @@ components:
       - config
       - id
     UserPage:
-      example:
-        businessId: biz_123
-        subdomain: acme
-        storeName: Acme Shop
-        id: page_123
-        config:
-          theme:
-            primaryColor: '#0f172a'
       properties:
         id:
           description: Store page record ID
@@ -17766,12 +16474,6 @@ components:
       - storeName
       - subdomain
     UserStats:
-      example:
-        summary: ""
-        chartData:
-        - date: 2025-01-01
-          revenue: 12000
-          orders: 3
       properties:
         summary:
           allOf:
@@ -17790,16 +16492,6 @@ components:
       - chartData
       - summary
     UserSettings:
-      example:
-        sendLicenseKeyEmail: true
-        firstName: John
-        lastName: Doe
-        avatarUrl: https://acme.com/avatar.png
-        payoutThreshold: 5000
-        id: usr_123
-        notifyOnSuccess: true
-        sendDigitalFileEmail: true
-        email: contact@acme.com
       properties:
         id:
           description: User ID
@@ -17848,8 +16540,6 @@ components:
       - sendDigitalFileEmail
       - sendLicenseKeyEmail
     WhopApiKeysRotation:
-      example:
-        success: true
       properties:
         success:
           description: Indicates success status
@@ -17858,13 +16548,6 @@ components:
       required:
       - success
     UserThemeUpdate:
-      example:
-        avatarUrl: https://acme.com/avatar.png
-        bannerUrl: https://acme.com/banner.png
-        config:
-          theme:
-            primaryColor: '#0f172a'
-            fontFamily: Inter
       properties:
         config:
           description: "JSON object specifying styling parameters (colors, fonts,\
@@ -17883,37 +16566,6 @@ components:
           example: https://acme.com/banner.png
           type: string
     UserSettingsUpdate:
-      example:
-        sendLicenseKeyEmail: true
-        lastName: Doe
-        socialLinks: "{}"
-        pageTitle: Acme - Shop
-        statementDescriptor: ACME SHOP
-        notifyOnSubscriptionRenewalFailed: true
-        notifyOnSuccess: true
-        notifyOnRefundSuccessful: true
-        googleTagManagerId: GTM-XXXXXX
-        faviconUrl: https://acme.com/favicon.ico
-        googleAnalyticsId: G-XXXXXX
-        notifyOnSubscriptionCancelled: true
-        businessTitle: Acme Inc
-        defaultCurrency: USD
-        storeName: Acme Store
-        email: contact@acme.com
-        seoImage: https://acme.com/seo.png
-        notifyOnSubscriptionPlanChanged: true
-        avatarUrl: https://acme.com/profile.png
-        seoDescription: Buy Acme products here
-        notifyOnSubscriptionTrialEnding: true
-        notifyOnSubscriptionPaused: true
-        notifyOnSubscriptionSetToCancel: true
-        metaPixelId: "1234567890"
-        sendDigitalFileEmail: true
-        logoUrl: https://acme.com/logo.png
-        firstName: John
-        payoutThreshold: 5000
-        subdomain: acme
-        notifyOnPaymentFailed: true
       properties:
         subdomain:
           description: The custom store subdomain

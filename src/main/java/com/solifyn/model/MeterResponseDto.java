@@ -51,7 +51,7 @@ import com.solifyn.JSON;
 /**
  * Represents a usage meter configured for event-based billing, including the tracked event name, aggregation strategy, optional filters, and archive status.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-30T08:38:29.068339100+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-30T16:30:35.667118600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class MeterResponseDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

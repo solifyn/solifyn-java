@@ -2,7 +2,7 @@
 
 Solifyn API
 - API version: 1.0.0
-  - Build date: 2026-05-30T08:38:29.068339100+07:00[Asia/Saigon]
+  - Build date: 2026-05-30T16:30:35.667118600+07:00[Asia/Saigon]
   - Generator version: 7.10.0
 
 Welcome to the Solifyn API Reference. Leverage our secure endpoints to manage products and issue, validate, and manage software license keys programmatically.
@@ -85,19 +85,18 @@ import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
 import com.solifyn.model.*;
-import com.solifyn.api.AffiliateApi;
+import com.solifyn.api.BalanceApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
     defaultClient.setBasePath("http://localhost:8000");
 
-    AffiliateApi apiInstance = new AffiliateApi(defaultClient);
-    String id = "id_example"; // String | 
+    BalanceApi apiInstance = new BalanceApi(defaultClient);
     try {
-      apiInstance.affiliateControllerApproveConnection(id);
+      apiInstance.balanceControllerFindAll();
     } catch (ApiException e) {
-      System.err.println("Exception when calling AffiliateApi#affiliateControllerApproveConnection");
+      System.err.println("Exception when calling BalanceApi#balanceControllerFindAll");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -114,37 +113,9 @@ All URIs are relative to *http://localhost:8000*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AffiliateApi* | [**affiliateControllerApproveConnection**](docs/AffiliateApi.md#affiliateControllerApproveConnection) | **POST** /v1/affiliate/program/connections/{id}/approve | 
-*AffiliateApi* | [**affiliateControllerArchiveConnection**](docs/AffiliateApi.md#affiliateControllerArchiveConnection) | **POST** /v1/affiliate/program/connections/{id}/archive | 
-*AffiliateApi* | [**affiliateControllerDeleteOverride**](docs/AffiliateApi.md#affiliateControllerDeleteOverride) | **DELETE** /v1/affiliate/program/override/{id} | 
-*AffiliateApi* | [**affiliateControllerGetEarningsConnections**](docs/AffiliateApi.md#affiliateControllerGetEarningsConnections) | **GET** /v1/affiliate/earnings/connections | 
-*AffiliateApi* | [**affiliateControllerGetEarningsLedger**](docs/AffiliateApi.md#affiliateControllerGetEarningsLedger) | **GET** /v1/affiliate/earnings/ledger | 
-*AffiliateApi* | [**affiliateControllerGetEarningsStats**](docs/AffiliateApi.md#affiliateControllerGetEarningsStats) | **GET** /v1/affiliate/earnings/stats | 
-*AffiliateApi* | [**affiliateControllerGetMarketplace**](docs/AffiliateApi.md#affiliateControllerGetMarketplace) | **GET** /v1/affiliate/marketplace | 
-*AffiliateApi* | [**affiliateControllerGetProgramConnections**](docs/AffiliateApi.md#affiliateControllerGetProgramConnections) | **GET** /v1/affiliate/program/connections | 
-*AffiliateApi* | [**affiliateControllerGetProgramLedger**](docs/AffiliateApi.md#affiliateControllerGetProgramLedger) | **GET** /v1/affiliate/program/ledger | 
-*AffiliateApi* | [**affiliateControllerGetProgramSettings**](docs/AffiliateApi.md#affiliateControllerGetProgramSettings) | **GET** /v1/affiliate/program/settings | 
-*AffiliateApi* | [**affiliateControllerJoinProgram**](docs/AffiliateApi.md#affiliateControllerJoinProgram) | **POST** /v1/affiliate/marketplace/join | 
-*AffiliateApi* | [**affiliateControllerRejectConnection**](docs/AffiliateApi.md#affiliateControllerRejectConnection) | **POST** /v1/affiliate/program/connections/{id}/reject | 
-*AffiliateApi* | [**affiliateControllerSaveOverride**](docs/AffiliateApi.md#affiliateControllerSaveOverride) | **POST** /v1/affiliate/program/override | 
-*AffiliateApi* | [**affiliateControllerSaveProgramSettings**](docs/AffiliateApi.md#affiliateControllerSaveProgramSettings) | **POST** /v1/affiliate/program/settings | 
 *BalanceApi* | [**balanceControllerFindAll**](docs/BalanceApi.md#balanceControllerFindAll) | **GET** /v1/balances | 
 *BalanceApi* | [**balanceControllerGenerateReport**](docs/BalanceApi.md#balanceControllerGenerateReport) | **GET** /v1/balances/report | 
 *BalanceApi* | [**balanceControllerGetSummary**](docs/BalanceApi.md#balanceControllerGetSummary) | **GET** /v1/balances/summary | 
-*BillingApi* | [**billingGetPlans**](docs/BillingApi.md#billingGetPlans) | **GET** /v1/billing/plans | Get Platform Plans
-*BrandsApi* | [**brandsCreate**](docs/BrandsApi.md#brandsCreate) | **POST** /v1/user/brand | Create Brand
-*BrandsApi* | [**brandsGet**](docs/BrandsApi.md#brandsGet) | **GET** /v1/user/brand/{id} | Retrieve Brand
-*BrandsApi* | [**brandsList**](docs/BrandsApi.md#brandsList) | **GET** /v1/user/brands | List Brands
-*BrandsApi* | [**brandsUpdate**](docs/BrandsApi.md#brandsUpdate) | **PATCH** /v1/user/brand/{id} | Update Brand
-*BusinessesApi* | [**businessesBillingHistory**](docs/BusinessesApi.md#businessesBillingHistory) | **GET** /v1/user/billing/history | Get Platform Billing History
-*BusinessesApi* | [**merchantsGenerateApiKeys**](docs/BusinessesApi.md#merchantsGenerateApiKeys) | **POST** /v1/user/whop-api-keys | Rotate Whop API Keys
-*BusinessesApi* | [**merchantsUpdatePage**](docs/BusinessesApi.md#merchantsUpdatePage) | **PATCH** /v1/user/page | Update Page configuration
-*BusinessesApi* | [**merchantsUpdateSettings**](docs/BusinessesApi.md#merchantsUpdateSettings) | **PATCH** /v1/user/settings | Update Merchant Settings
-*BusinessesApi* | [**merchantsUpdateTheme**](docs/BusinessesApi.md#merchantsUpdateTheme) | **PATCH** /v1/user/theme | Update Theme
-*ChatApi* | [**chatControllerGetMerchantMessages**](docs/ChatApi.md#chatControllerGetMerchantMessages) | **GET** /v1/chat/merchant/messages/{customerId} | 
-*ChatApi* | [**chatControllerGetMerchantSessions**](docs/ChatApi.md#chatControllerGetMerchantSessions) | **GET** /v1/chat/merchant/sessions | 
-*ChatApi* | [**chatControllerSendCustomerMessage**](docs/ChatApi.md#chatControllerSendCustomerMessage) | **POST** /v1/chat/customer/message | 
-*ChatApi* | [**chatControllerSendMerchantMessage**](docs/ChatApi.md#chatControllerSendMerchantMessage) | **POST** /v1/chat/merchant/message | 
 *CheckoutApi* | [**checkoutCreate**](docs/CheckoutApi.md#checkoutCreate) | **POST** /v1/checkout/create | Create Checkout Session
 *CheckoutApi* | [**checkoutCreateCollection**](docs/CheckoutApi.md#checkoutCreateCollection) | **POST** /v1/checkout/collection/create | Create Collection Checkout Session
 *CheckoutApi* | [**checkoutGetSession**](docs/CheckoutApi.md#checkoutGetSession) | **GET** /v1/checkout/session/{id} | Get Checkout Session Details
@@ -165,14 +136,6 @@ Class | Method | HTTP request | Description
 *CollectionsApi* | [**collectionsUnarchive**](docs/CollectionsApi.md#collectionsUnarchive) | **POST** /v1/collections/{id}/unarchive | Unarchive Collection
 *CollectionsApi* | [**collectionsUpdate**](docs/CollectionsApi.md#collectionsUpdate) | **PATCH** /v1/collections/{id} | Update Collection
 *CollectionsApi* | [**collectionsUpdateProduct**](docs/CollectionsApi.md#collectionsUpdateProduct) | **PATCH** /v1/collections/{id}/products/{productId} | Update Collection Product
-*CommunityApi* | [**communityControllerCreatePost**](docs/CommunityApi.md#communityControllerCreatePost) | **POST** /v1/community/posts | 
-*CommunityApi* | [**communityControllerDeletePost**](docs/CommunityApi.md#communityControllerDeletePost) | **DELETE** /v1/community/posts/{id} | 
-*CommunityApi* | [**communityControllerGetPosts**](docs/CommunityApi.md#communityControllerGetPosts) | **GET** /v1/community/posts | 
-*CommunityApi* | [**communityControllerLikePost**](docs/CommunityApi.md#communityControllerLikePost) | **PATCH** /v1/community/posts/{id}/like | 
-*CommunityApi* | [**communityControllerReportPost**](docs/CommunityApi.md#communityControllerReportPost) | **POST** /v1/community/posts/{id}/report | 
-*CommunityApi* | [**communityControllerSharePost**](docs/CommunityApi.md#communityControllerSharePost) | **PATCH** /v1/community/posts/{id}/share | 
-*CommunityApi* | [**communityControllerUnlikePost**](docs/CommunityApi.md#communityControllerUnlikePost) | **PATCH** /v1/community/posts/{id}/unlike | 
-*CommunityApi* | [**communityControllerUpdatePost**](docs/CommunityApi.md#communityControllerUpdatePost) | **PATCH** /v1/community/posts/{id} | 
 *CustomersApi* | [**customersCreate**](docs/CustomersApi.md#customersCreate) | **POST** /v1/customers | Create Customer
 *CustomersApi* | [**customersGenerateInvite**](docs/CustomersApi.md#customersGenerateInvite) | **POST** /v1/customers/{id}/share | Generate Shared Invite
 *CustomersApi* | [**customersGet**](docs/CustomersApi.md#customersGet) | **GET** /v1/customers/{id} | Retrieve Customer
@@ -238,8 +201,6 @@ Class | Method | HTTP request | Description
 *OrdersApi* | [**ordersList**](docs/OrdersApi.md#ordersList) | **GET** /v1/orders | List Orders
 *OrdersApi* | [**ordersUpdate**](docs/OrdersApi.md#ordersUpdate) | **PATCH** /v1/orders/{id} | Update Order Billing Address
 *OrdersApi* | [**refundsCreate**](docs/OrdersApi.md#refundsCreate) | **POST** /v1/orders/{id}/refund | Create Refund
-*PartnerApi* | [**partnerControllerGetPartnerCommissions**](docs/PartnerApi.md#partnerControllerGetPartnerCommissions) | **GET** /v1/partner/commissions | 
-*PartnerApi* | [**partnerControllerGetPartnerStats**](docs/PartnerApi.md#partnerControllerGetPartnerStats) | **GET** /v1/partner/stats | 
 *PayoutsApi* | [**payoutsCreateWithdrawal**](docs/PayoutsApi.md#payoutsCreateWithdrawal) | **POST** /v1/payouts/withdrawals | Create Withdrawal
 *PayoutsApi* | [**payoutsGetAccount**](docs/PayoutsApi.md#payoutsGetAccount) | **GET** /v1/payouts/account | Retrieve Payout Account
 *PayoutsApi* | [**payoutsGetAccountLink**](docs/PayoutsApi.md#payoutsGetAccountLink) | **GET** /v1/payouts/account-link | Create Account Link
@@ -266,16 +227,6 @@ Class | Method | HTTP request | Description
 *SubscriptionsApi* | [**subscriptionsAction**](docs/SubscriptionsApi.md#subscriptionsAction) | **POST** /v1/subscriptions/{subscriptionId}/{action} | Subscription Action
 *SubscriptionsApi* | [**subscriptionsGet**](docs/SubscriptionsApi.md#subscriptionsGet) | **GET** /v1/subscriptions/{id} | Retrieve Subscription Details
 *SubscriptionsApi* | [**subscriptionsList**](docs/SubscriptionsApi.md#subscriptionsList) | **GET** /v1/subscriptions | List Subscriptions
-*TicketApi* | [**ticketControllerCreateTicket**](docs/TicketApi.md#ticketControllerCreateTicket) | **POST** /v1/tickets | 
-*TicketApi* | [**ticketControllerGetTicketDetails**](docs/TicketApi.md#ticketControllerGetTicketDetails) | **GET** /v1/tickets/{id} | 
-*TicketApi* | [**ticketControllerGetTickets**](docs/TicketApi.md#ticketControllerGetTickets) | **GET** /v1/tickets | 
-*TicketApi* | [**ticketControllerReplyTicket**](docs/TicketApi.md#ticketControllerReplyTicket) | **POST** /v1/tickets/{id}/replies | 
-*TicketApi* | [**ticketControllerUpdateTicket**](docs/TicketApi.md#ticketControllerUpdateTicket) | **PATCH** /v1/tickets/{id} | 
-*UserProfileThemesApi* | [**usersGetMyPage**](docs/UserProfileThemesApi.md#usersGetMyPage) | **GET** /v1/user/my-page | Get My Page details
-*UserProfileThemesApi* | [**usersGetMyTheme**](docs/UserProfileThemesApi.md#usersGetMyTheme) | **GET** /v1/user/my-theme | Get My Theme
-*UserProfileThemesApi* | [**usersGetSettings**](docs/UserProfileThemesApi.md#usersGetSettings) | **GET** /v1/user/settings | Retrieve User Settings
-*UserProfileThemesApi* | [**usersGetStats**](docs/UserProfileThemesApi.md#usersGetStats) | **GET** /v1/user/dashboard-stats | Get Dashboard Statistics
-*UserProfileThemesApi* | [**usersGetThemeBySubdomain**](docs/UserProfileThemesApi.md#usersGetThemeBySubdomain) | **GET** /v1/user/theme/{subdomain} | Get Theme by Subdomain
 *WebhookApi* | [**webhookControllerHandleSvixWebhook**](docs/WebhookApi.md#webhookControllerHandleSvixWebhook) | **POST** /v1/webhook/svix | 
 *WebhookApi* | [**webhookControllerHandleWebhook**](docs/WebhookApi.md#webhookControllerHandleWebhook) | **POST** /v1/webhook | 
 
