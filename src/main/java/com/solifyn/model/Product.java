@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * Represents a product item created under your business, containing core pricing, status, license behavior, subscription settings, and metadata details.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-30T16:30:35.667118600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class Product {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -281,6 +281,11 @@ public class Product {
   @SerializedName(SERIALIZED_NAME_IS_LISTED)
   @javax.annotation.Nonnull
   private Boolean isListed;
+
+  public static final String SERIALIZED_NAME_IS_FREE = "isFree";
+  @SerializedName(SERIALIZED_NAME_IS_FREE)
+  @javax.annotation.Nonnull
+  private Boolean isFree;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -783,6 +788,25 @@ public class Product {
   }
 
 
+  public Product isFree(@javax.annotation.Nonnull Boolean isFree) {
+    this.isFree = isFree;
+    return this;
+  }
+
+  /**
+   * Whether the product is free.
+   * @return isFree
+   */
+  @javax.annotation.Nonnull
+  public Boolean getIsFree() {
+    return isFree;
+  }
+
+  public void setIsFree(@javax.annotation.Nonnull Boolean isFree) {
+    this.isFree = isFree;
+  }
+
+
   public Product createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -987,6 +1011,7 @@ public class Product {
         Objects.equals(this.stock, product.stock) &&
         Objects.equals(this.activationLimit, product.activationLimit) &&
         Objects.equals(this.isListed, product.isListed) &&
+        Objects.equals(this.isFree, product.isFree) &&
         Objects.equals(this.createdAt, product.createdAt) &&
         Objects.equals(this.updatedAt, product.updatedAt) &&
         Objects.equals(this.isPermanentlyDeleted, product.isPermanentlyDeleted) &&
@@ -1000,7 +1025,7 @@ public class Product {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, price, currency, description, status, imageUrl, taxCategory, pricingType, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, activationLimit, isListed, createdAt, updatedAt, isPermanentlyDeleted, brandId, digitalLink, instructions, activationMessage, expiryHours, businessId);
+    return Objects.hash(id, name, price, currency, description, status, imageUrl, taxCategory, pricingType, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, activationLimit, isListed, isFree, createdAt, updatedAt, isPermanentlyDeleted, brandId, digitalLink, instructions, activationMessage, expiryHours, businessId);
   }
 
   @Override
@@ -1030,6 +1055,7 @@ public class Product {
     sb.append("    stock: ").append(toIndentedString(stock)).append("\n");
     sb.append("    activationLimit: ").append(toIndentedString(activationLimit)).append("\n");
     sb.append("    isListed: ").append(toIndentedString(isListed)).append("\n");
+    sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isPermanentlyDeleted: ").append(toIndentedString(isPermanentlyDeleted)).append("\n");
@@ -1084,6 +1110,7 @@ public class Product {
     openapiFields.add("stock");
     openapiFields.add("activationLimit");
     openapiFields.add("isListed");
+    openapiFields.add("isFree");
     openapiFields.add("createdAt");
     openapiFields.add("updatedAt");
     openapiFields.add("isPermanentlyDeleted");
@@ -1118,6 +1145,7 @@ public class Product {
     openapiRequiredFields.add("stock");
     openapiRequiredFields.add("activationLimit");
     openapiRequiredFields.add("isListed");
+    openapiRequiredFields.add("isFree");
     openapiRequiredFields.add("createdAt");
     openapiRequiredFields.add("updatedAt");
     openapiRequiredFields.add("isPermanentlyDeleted");

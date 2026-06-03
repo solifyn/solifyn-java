@@ -25,6 +25,7 @@ import com.solifyn.model.OrderDetail;
 import com.solifyn.model.OrderProductCart;
 import com.solifyn.model.OrderRefund;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -56,7 +57,7 @@ import com.solifyn.JSON;
 /**
  * Represents an order (payment) processed under your business, containing customer, billing, product cart, and refund details.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-30T16:30:35.667118600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class Order {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -82,6 +83,11 @@ public class Order {
   @SerializedName(SERIALIZED_NAME_SUBTOTAL)
   @javax.annotation.Nonnull
   private Integer subtotal;
+
+  public static final String SERIALIZED_NAME_USD_TOTAL = "usdTotal";
+  @SerializedName(SERIALIZED_NAME_USD_TOTAL)
+  @javax.annotation.Nullable
+  private BigDecimal usdTotal;
 
   public static final String SERIALIZED_NAME_TAX_AMOUNT = "tax_amount";
   @SerializedName(SERIALIZED_NAME_TAX_AMOUNT)
@@ -278,6 +284,25 @@ public class Order {
 
   public void setSubtotal(@javax.annotation.Nonnull Integer subtotal) {
     this.subtotal = subtotal;
+  }
+
+
+  public Order usdTotal(@javax.annotation.Nullable BigDecimal usdTotal) {
+    this.usdTotal = usdTotal;
+    return this;
+  }
+
+  /**
+   * Total paid amount converted to USD.
+   * @return usdTotal
+   */
+  @javax.annotation.Nullable
+  public BigDecimal getUsdTotal() {
+    return usdTotal;
+  }
+
+  public void setUsdTotal(@javax.annotation.Nullable BigDecimal usdTotal) {
+    this.usdTotal = usdTotal;
   }
 
 
@@ -692,6 +717,7 @@ public class Order {
         Objects.equals(this.customer, order.customer) &&
         Objects.equals(this.totalAmount, order.totalAmount) &&
         Objects.equals(this.subtotal, order.subtotal) &&
+        Objects.equals(this.usdTotal, order.usdTotal) &&
         Objects.equals(this.taxAmount, order.taxAmount) &&
         Objects.equals(this.applicationFee, order.applicationFee) &&
         Objects.equals(this.amountAfterFees, order.amountAfterFees) &&
@@ -716,7 +742,7 @@ public class Order {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, invoiceUrl, customer, totalAmount, subtotal, taxAmount, applicationFee, amountAfterFees, currency, status, createdAt, paidAt, paymentMethod, cardLastFour, cardNetwork, cardType, billing, productCart, metadata, order, refundable, refunds, businessId, businessName, billingReason);
+    return Objects.hash(id, invoiceUrl, customer, totalAmount, subtotal, usdTotal, taxAmount, applicationFee, amountAfterFees, currency, status, createdAt, paidAt, paymentMethod, cardLastFour, cardNetwork, cardType, billing, productCart, metadata, order, refundable, refunds, businessId, businessName, billingReason);
   }
 
   @Override
@@ -728,6 +754,7 @@ public class Order {
     sb.append("    customer: ").append(toIndentedString(customer)).append("\n");
     sb.append("    totalAmount: ").append(toIndentedString(totalAmount)).append("\n");
     sb.append("    subtotal: ").append(toIndentedString(subtotal)).append("\n");
+    sb.append("    usdTotal: ").append(toIndentedString(usdTotal)).append("\n");
     sb.append("    taxAmount: ").append(toIndentedString(taxAmount)).append("\n");
     sb.append("    applicationFee: ").append(toIndentedString(applicationFee)).append("\n");
     sb.append("    amountAfterFees: ").append(toIndentedString(amountAfterFees)).append("\n");
@@ -775,6 +802,7 @@ public class Order {
     openapiFields.add("customer");
     openapiFields.add("total_amount");
     openapiFields.add("subtotal");
+    openapiFields.add("usdTotal");
     openapiFields.add("tax_amount");
     openapiFields.add("application_fee");
     openapiFields.add("amount_after_fees");

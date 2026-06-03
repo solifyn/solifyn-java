@@ -21,7 +21,7 @@ All URIs are relative to *http://localhost:8000*
 
 <a id="disputeCreatedPost"></a>
 # **disputeCreatedPost**
-> disputeCreatedPost(UNKNOWN_BASE_TYPE)
+> disputeCreatedPost(webhookDisputePayload)
 
 Dispute Created
 
@@ -47,9 +47,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookDisputePayload webhookDisputePayload = new WebhookDisputePayload(); // WebhookDisputePayload | 
     try {
-      apiInstance.disputeCreatedPost(UNKNOWN_BASE_TYPE);
+      apiInstance.disputeCreatedPost(webhookDisputePayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#disputeCreatedPost");
       System.err.println("Status code: " + e.getCode());
@@ -65,7 +65,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md)|  | [optional] |
 
 ### Return type
 
@@ -87,7 +87,7 @@ null (empty response body)
 
 <a id="disputeLostPost"></a>
 # **disputeLostPost**
-> disputeLostPost(UNKNOWN_BASE_TYPE)
+> disputeLostPost(webhookDisputePayload)
 
 Dispute Lost
 
@@ -113,9 +113,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookDisputePayload webhookDisputePayload = new WebhookDisputePayload(); // WebhookDisputePayload | 
     try {
-      apiInstance.disputeLostPost(UNKNOWN_BASE_TYPE);
+      apiInstance.disputeLostPost(webhookDisputePayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#disputeLostPost");
       System.err.println("Status code: " + e.getCode());
@@ -131,7 +131,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md)|  | [optional] |
 
 ### Return type
 
@@ -153,7 +153,7 @@ null (empty response body)
 
 <a id="disputeWonPost"></a>
 # **disputeWonPost**
-> disputeWonPost(UNKNOWN_BASE_TYPE)
+> disputeWonPost(webhookDisputePayload)
 
 Dispute Won
 
@@ -179,9 +179,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookDisputePayload webhookDisputePayload = new WebhookDisputePayload(); // WebhookDisputePayload | 
     try {
-      apiInstance.disputeWonPost(UNKNOWN_BASE_TYPE);
+      apiInstance.disputeWonPost(webhookDisputePayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#disputeWonPost");
       System.err.println("Status code: " + e.getCode());
@@ -197,7 +197,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md)|  | [optional] |
 
 ### Return type
 
@@ -219,7 +219,7 @@ null (empty response body)
 
 <a id="licenseCreatedPost"></a>
 # **licenseCreatedPost**
-> licenseCreatedPost(license)
+> licenseCreatedPost(webhookLicensePayload)
 
 License Created
 
@@ -245,9 +245,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    License license = new License(); // License | 
+    WebhookLicensePayload webhookLicensePayload = new WebhookLicensePayload(); // WebhookLicensePayload | 
     try {
-      apiInstance.licenseCreatedPost(license);
+      apiInstance.licenseCreatedPost(webhookLicensePayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#licenseCreatedPost");
       System.err.println("Status code: " + e.getCode());
@@ -263,7 +263,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **license** | [**License**](License.md)|  | [optional] |
+| **webhookLicensePayload** | [**WebhookLicensePayload**](WebhookLicensePayload.md)|  | [optional] |
 
 ### Return type
 
@@ -285,7 +285,7 @@ null (empty response body)
 
 <a id="licenseRevokedPost"></a>
 # **licenseRevokedPost**
-> licenseRevokedPost(license)
+> licenseRevokedPost(webhookLicensePayload)
 
 License Revoked
 
@@ -311,9 +311,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    License license = new License(); // License | 
+    WebhookLicensePayload webhookLicensePayload = new WebhookLicensePayload(); // WebhookLicensePayload | 
     try {
-      apiInstance.licenseRevokedPost(license);
+      apiInstance.licenseRevokedPost(webhookLicensePayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#licenseRevokedPost");
       System.err.println("Status code: " + e.getCode());
@@ -329,7 +329,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **license** | [**License**](License.md)|  | [optional] |
+| **webhookLicensePayload** | [**WebhookLicensePayload**](WebhookLicensePayload.md)|  | [optional] |
 
 ### Return type
 
@@ -351,7 +351,7 @@ null (empty response body)
 
 <a id="paymentCreatedPost"></a>
 # **paymentCreatedPost**
-> paymentCreatedPost(UNKNOWN_BASE_TYPE)
+> paymentCreatedPost(webhookPaymentPayload)
 
 Payment Created
 
@@ -377,9 +377,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookPaymentPayload webhookPaymentPayload = new WebhookPaymentPayload(); // WebhookPaymentPayload | 
     try {
-      apiInstance.paymentCreatedPost(UNKNOWN_BASE_TYPE);
+      apiInstance.paymentCreatedPost(webhookPaymentPayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#paymentCreatedPost");
       System.err.println("Status code: " + e.getCode());
@@ -395,7 +395,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookPaymentPayload** | [**WebhookPaymentPayload**](WebhookPaymentPayload.md)|  | [optional] |
 
 ### Return type
 
@@ -549,7 +549,7 @@ null (empty response body)
 
 <a id="refundFailedPost"></a>
 # **refundFailedPost**
-> refundFailedPost(UNKNOWN_BASE_TYPE)
+> refundFailedPost(webhookRefundPayload)
 
 Refund Failed
 
@@ -575,9 +575,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookRefundPayload webhookRefundPayload = new WebhookRefundPayload(); // WebhookRefundPayload | 
     try {
-      apiInstance.refundFailedPost(UNKNOWN_BASE_TYPE);
+      apiInstance.refundFailedPost(webhookRefundPayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#refundFailedPost");
       System.err.println("Status code: " + e.getCode());
@@ -593,7 +593,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookRefundPayload** | [**WebhookRefundPayload**](WebhookRefundPayload.md)|  | [optional] |
 
 ### Return type
 
@@ -615,7 +615,7 @@ null (empty response body)
 
 <a id="refundSucceededPost"></a>
 # **refundSucceededPost**
-> refundSucceededPost(UNKNOWN_BASE_TYPE)
+> refundSucceededPost(webhookRefundPayload)
 
 Refund Succeeded
 
@@ -641,9 +641,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookRefundPayload webhookRefundPayload = new WebhookRefundPayload(); // WebhookRefundPayload | 
     try {
-      apiInstance.refundSucceededPost(UNKNOWN_BASE_TYPE);
+      apiInstance.refundSucceededPost(webhookRefundPayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#refundSucceededPost");
       System.err.println("Status code: " + e.getCode());
@@ -659,7 +659,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookRefundPayload** | [**WebhookRefundPayload**](WebhookRefundPayload.md)|  | [optional] |
 
 ### Return type
 
@@ -681,7 +681,7 @@ null (empty response body)
 
 <a id="subscriptionCreatedPost"></a>
 # **subscriptionCreatedPost**
-> subscriptionCreatedPost(UNKNOWN_BASE_TYPE)
+> subscriptionCreatedPost(webhookSubscriptionPayload)
 
 Subscription Created
 
@@ -707,9 +707,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookSubscriptionPayload webhookSubscriptionPayload = new WebhookSubscriptionPayload(); // WebhookSubscriptionPayload | 
     try {
-      apiInstance.subscriptionCreatedPost(UNKNOWN_BASE_TYPE);
+      apiInstance.subscriptionCreatedPost(webhookSubscriptionPayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#subscriptionCreatedPost");
       System.err.println("Status code: " + e.getCode());
@@ -725,7 +725,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookSubscriptionPayload** | [**WebhookSubscriptionPayload**](WebhookSubscriptionPayload.md)|  | [optional] |
 
 ### Return type
 
@@ -747,7 +747,7 @@ null (empty response body)
 
 <a id="subscriptionDeactivatedPost"></a>
 # **subscriptionDeactivatedPost**
-> subscriptionDeactivatedPost(UNKNOWN_BASE_TYPE)
+> subscriptionDeactivatedPost(webhookSubscriptionPayload)
 
 Subscription Deactivated
 
@@ -773,9 +773,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookSubscriptionPayload webhookSubscriptionPayload = new WebhookSubscriptionPayload(); // WebhookSubscriptionPayload | 
     try {
-      apiInstance.subscriptionDeactivatedPost(UNKNOWN_BASE_TYPE);
+      apiInstance.subscriptionDeactivatedPost(webhookSubscriptionPayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#subscriptionDeactivatedPost");
       System.err.println("Status code: " + e.getCode());
@@ -791,7 +791,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookSubscriptionPayload** | [**WebhookSubscriptionPayload**](WebhookSubscriptionPayload.md)|  | [optional] |
 
 ### Return type
 
@@ -813,7 +813,7 @@ null (empty response body)
 
 <a id="subscriptionUpdatedPost"></a>
 # **subscriptionUpdatedPost**
-> subscriptionUpdatedPost(UNKNOWN_BASE_TYPE)
+> subscriptionUpdatedPost(webhookSubscriptionPayload)
 
 Subscription Updated
 
@@ -839,9 +839,9 @@ public class Example {
     ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     DefaultApi apiInstance = new DefaultApi(defaultClient);
-    UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE = new UNKNOWN_BASE_TYPE(); // UNKNOWN_BASE_TYPE | 
+    WebhookSubscriptionPayload webhookSubscriptionPayload = new WebhookSubscriptionPayload(); // WebhookSubscriptionPayload | 
     try {
-      apiInstance.subscriptionUpdatedPost(UNKNOWN_BASE_TYPE);
+      apiInstance.subscriptionUpdatedPost(webhookSubscriptionPayload);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#subscriptionUpdatedPost");
       System.err.println("Status code: " + e.getCode());
@@ -857,7 +857,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **UNKNOWN_BASE_TYPE** | [**UNKNOWN_BASE_TYPE**](UNKNOWN_BASE_TYPE.md)|  | [optional] |
+| **webhookSubscriptionPayload** | [**WebhookSubscriptionPayload**](WebhookSubscriptionPayload.md)|  | [optional] |
 
 ### Return type
 

@@ -27,6 +27,13 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import com.solifyn.model.ApiKeyResponseDto;
+import com.solifyn.model.AppPortalUrlResponseDto;
+import com.solifyn.model.CreateApiKeyDto;
+import com.solifyn.model.CreateWebhookEndpointDto;
+import com.solifyn.model.UpdateWebhookEndpointDto;
+import com.solifyn.model.WebhookDeliveryResponseDto;
+import com.solifyn.model.WebhookEndpointResponseDto;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -72,7 +79,8 @@ public class DeveloperApi {
     }
 
     /**
-     * Build call for developerControllerCreateApiKey
+     * Build call for developerCreateApiKey
+     * @param createApiKeyDto  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -83,7 +91,626 @@ public class DeveloperApi {
         <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerCreateApiKeyCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call developerCreateApiKeyCall(CreateApiKeyDto createApiKeyDto, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createApiKeyDto;
+
+        // create path and map variables
+        String localVarPath = "/v1/developer/api-keys";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call developerCreateApiKeyValidateBeforeCall(CreateApiKeyDto createApiKeyDto, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createApiKeyDto' is set
+        if (createApiKeyDto == null) {
+            throw new ApiException("Missing the required parameter 'createApiKeyDto' when calling developerCreateApiKey(Async)");
+        }
+
+        return developerCreateApiKeyCall(createApiKeyDto, _callback);
+
+    }
+
+    /**
+     * Create Developer API Key
+     * 
+     * @param createApiKeyDto  (required)
+     * @return ApiKeyResponseDto
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiKeyResponseDto developerCreateApiKey(CreateApiKeyDto createApiKeyDto) throws ApiException {
+        ApiResponse<ApiKeyResponseDto> localVarResp = developerCreateApiKeyWithHttpInfo(createApiKeyDto);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Developer API Key
+     * 
+     * @param createApiKeyDto  (required)
+     * @return ApiResponse&lt;ApiKeyResponseDto&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ApiKeyResponseDto> developerCreateApiKeyWithHttpInfo(CreateApiKeyDto createApiKeyDto) throws ApiException {
+        okhttp3.Call localVarCall = developerCreateApiKeyValidateBeforeCall(createApiKeyDto, null);
+        Type localVarReturnType = new TypeToken<ApiKeyResponseDto>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Developer API Key (asynchronously)
+     * 
+     * @param createApiKeyDto  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerCreateApiKeyAsync(CreateApiKeyDto createApiKeyDto, final ApiCallback<ApiKeyResponseDto> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = developerCreateApiKeyValidateBeforeCall(createApiKeyDto, _callback);
+        Type localVarReturnType = new TypeToken<ApiKeyResponseDto>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for developerCreateWebhook
+     * @param createWebhookEndpointDto  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerCreateWebhookCall(CreateWebhookEndpointDto createWebhookEndpointDto, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createWebhookEndpointDto;
+
+        // create path and map variables
+        String localVarPath = "/v1/developer/webhooks";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call developerCreateWebhookValidateBeforeCall(CreateWebhookEndpointDto createWebhookEndpointDto, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createWebhookEndpointDto' is set
+        if (createWebhookEndpointDto == null) {
+            throw new ApiException("Missing the required parameter 'createWebhookEndpointDto' when calling developerCreateWebhook(Async)");
+        }
+
+        return developerCreateWebhookCall(createWebhookEndpointDto, _callback);
+
+    }
+
+    /**
+     * Create Webhook Endpoint
+     * 
+     * @param createWebhookEndpointDto  (required)
+     * @return WebhookEndpointResponseDto
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public WebhookEndpointResponseDto developerCreateWebhook(CreateWebhookEndpointDto createWebhookEndpointDto) throws ApiException {
+        ApiResponse<WebhookEndpointResponseDto> localVarResp = developerCreateWebhookWithHttpInfo(createWebhookEndpointDto);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Create Webhook Endpoint
+     * 
+     * @param createWebhookEndpointDto  (required)
+     * @return ApiResponse&lt;WebhookEndpointResponseDto&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<WebhookEndpointResponseDto> developerCreateWebhookWithHttpInfo(CreateWebhookEndpointDto createWebhookEndpointDto) throws ApiException {
+        okhttp3.Call localVarCall = developerCreateWebhookValidateBeforeCall(createWebhookEndpointDto, null);
+        Type localVarReturnType = new TypeToken<WebhookEndpointResponseDto>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Create Webhook Endpoint (asynchronously)
+     * 
+     * @param createWebhookEndpointDto  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerCreateWebhookAsync(CreateWebhookEndpointDto createWebhookEndpointDto, final ApiCallback<WebhookEndpointResponseDto> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = developerCreateWebhookValidateBeforeCall(createWebhookEndpointDto, _callback);
+        Type localVarReturnType = new TypeToken<WebhookEndpointResponseDto>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for developerDeleteWebhook
+     * @param id The webhook endpoint ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerDeleteWebhookCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/developer/webhooks/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call developerDeleteWebhookValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling developerDeleteWebhook(Async)");
+        }
+
+        return developerDeleteWebhookCall(id, _callback);
+
+    }
+
+    /**
+     * Delete Webhook Endpoint
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public void developerDeleteWebhook(String id) throws ApiException {
+        developerDeleteWebhookWithHttpInfo(id);
+    }
+
+    /**
+     * Delete Webhook Endpoint
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> developerDeleteWebhookWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = developerDeleteWebhookValidateBeforeCall(id, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Delete Webhook Endpoint (asynchronously)
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerDeleteWebhookAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = developerDeleteWebhookValidateBeforeCall(id, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for developerGetAppPortal
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerGetAppPortalCall(final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/developer/webhooks/app-portal";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call developerGetAppPortalValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return developerGetAppPortalCall(_callback);
+
+    }
+
+    /**
+     * Retrieve Hosted Webhooks Portal URL
+     * 
+     * @return AppPortalUrlResponseDto
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public AppPortalUrlResponseDto developerGetAppPortal() throws ApiException {
+        ApiResponse<AppPortalUrlResponseDto> localVarResp = developerGetAppPortalWithHttpInfo();
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve Hosted Webhooks Portal URL
+     * 
+     * @return ApiResponse&lt;AppPortalUrlResponseDto&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<AppPortalUrlResponseDto> developerGetAppPortalWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = developerGetAppPortalValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<AppPortalUrlResponseDto>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Hosted Webhooks Portal URL (asynchronously)
+     * 
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerGetAppPortalAsync(final ApiCallback<AppPortalUrlResponseDto> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = developerGetAppPortalValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<AppPortalUrlResponseDto>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for developerGetWebhook
+     * @param id The webhook endpoint ID (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerGetWebhookCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/developer/webhooks/{id}"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call developerGetWebhookValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling developerGetWebhook(Async)");
+        }
+
+        return developerGetWebhookCall(id, _callback);
+
+    }
+
+    /**
+     * Retrieve Webhook Endpoint Details
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @return WebhookEndpointResponseDto
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public WebhookEndpointResponseDto developerGetWebhook(String id) throws ApiException {
+        ApiResponse<WebhookEndpointResponseDto> localVarResp = developerGetWebhookWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve Webhook Endpoint Details
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @return ApiResponse&lt;WebhookEndpointResponseDto&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<WebhookEndpointResponseDto> developerGetWebhookWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = developerGetWebhookValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<WebhookEndpointResponseDto>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Webhook Endpoint Details (asynchronously)
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerGetWebhookAsync(String id, final ApiCallback<WebhookEndpointResponseDto> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = developerGetWebhookValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<WebhookEndpointResponseDto>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for developerListApiKeys
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerListApiKeysCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -109,6 +736,7 @@ public class DeveloperApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -123,49 +751,52 @@ public class DeveloperApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerCreateApiKeyValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return developerControllerCreateApiKeyCall(_callback);
+    private okhttp3.Call developerListApiKeysValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return developerListApiKeysCall(_callback);
 
     }
 
     /**
+     * List Developer API Keys
      * 
-     * 
+     * @return List&lt;ApiKeyResponseDto&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public void developerControllerCreateApiKey() throws ApiException {
-        developerControllerCreateApiKeyWithHttpInfo();
+    public List<ApiKeyResponseDto> developerListApiKeys() throws ApiException {
+        ApiResponse<List<ApiKeyResponseDto>> localVarResp = developerListApiKeysWithHttpInfo();
+        return localVarResp.getData();
     }
 
     /**
+     * List Developer API Keys
      * 
-     * 
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;List&lt;ApiKeyResponseDto&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> developerControllerCreateApiKeyWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = developerControllerCreateApiKeyValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<List<ApiKeyResponseDto>> developerListApiKeysWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = developerListApiKeysValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<List<ApiKeyResponseDto>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     *  (asynchronously)
+     * List Developer API Keys (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -174,17 +805,19 @@ public class DeveloperApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerCreateApiKeyAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call developerListApiKeysAsync(final ApiCallback<List<ApiKeyResponseDto>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = developerControllerCreateApiKeyValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = developerListApiKeysValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<List<ApiKeyResponseDto>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for developerControllerCreateWebhookEndpoint
+     * Build call for developerListWebhookDeliveries
+     * @param id The webhook endpoint ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -192,10 +825,136 @@ public class DeveloperApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerCreateWebhookEndpointCall(final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call developerListWebhookDeliveriesCall(String id, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/v1/developer/webhooks/{id}/deliveries"
+            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call developerListWebhookDeliveriesValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'id' is set
+        if (id == null) {
+            throw new ApiException("Missing the required parameter 'id' when calling developerListWebhookDeliveries(Async)");
+        }
+
+        return developerListWebhookDeliveriesCall(id, _callback);
+
+    }
+
+    /**
+     * Retrieve Webhook Delivery Logs
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @return List&lt;WebhookDeliveryResponseDto&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public List<WebhookDeliveryResponseDto> developerListWebhookDeliveries(String id) throws ApiException {
+        ApiResponse<List<WebhookDeliveryResponseDto>> localVarResp = developerListWebhookDeliveriesWithHttpInfo(id);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Retrieve Webhook Delivery Logs
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @return ApiResponse&lt;List&lt;WebhookDeliveryResponseDto&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<List<WebhookDeliveryResponseDto>> developerListWebhookDeliveriesWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = developerListWebhookDeliveriesValidateBeforeCall(id, null);
+        Type localVarReturnType = new TypeToken<List<WebhookDeliveryResponseDto>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Retrieve Webhook Delivery Logs (asynchronously)
+     * 
+     * @param id The webhook endpoint ID (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerListWebhookDeliveriesAsync(String id, final ApiCallback<List<WebhookDeliveryResponseDto>> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = developerListWebhookDeliveriesValidateBeforeCall(id, _callback);
+        Type localVarReturnType = new TypeToken<List<WebhookDeliveryResponseDto>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for developerListWebhooks
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call developerListWebhooksCall(final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -221,6 +980,7 @@ public class DeveloperApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -235,49 +995,52 @@ public class DeveloperApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerCreateWebhookEndpointValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return developerControllerCreateWebhookEndpointCall(_callback);
+    private okhttp3.Call developerListWebhooksValidateBeforeCall(final ApiCallback _callback) throws ApiException {
+        return developerListWebhooksCall(_callback);
 
     }
 
     /**
+     * List Webhook Endpoints
      * 
-     * 
+     * @return List&lt;WebhookEndpointResponseDto&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public void developerControllerCreateWebhookEndpoint() throws ApiException {
-        developerControllerCreateWebhookEndpointWithHttpInfo();
+    public List<WebhookEndpointResponseDto> developerListWebhooks() throws ApiException {
+        ApiResponse<List<WebhookEndpointResponseDto>> localVarResp = developerListWebhooksWithHttpInfo();
+        return localVarResp.getData();
     }
 
     /**
+     * List Webhook Endpoints
      * 
-     * 
-     * @return ApiResponse&lt;Void&gt;
+     * @return ApiResponse&lt;List&lt;WebhookEndpointResponseDto&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> developerControllerCreateWebhookEndpointWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = developerControllerCreateWebhookEndpointValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<List<WebhookEndpointResponseDto>> developerListWebhooksWithHttpInfo() throws ApiException {
+        okhttp3.Call localVarCall = developerListWebhooksValidateBeforeCall(null);
+        Type localVarReturnType = new TypeToken<List<WebhookEndpointResponseDto>>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     *  (asynchronously)
+     * List Webhook Endpoints (asynchronously)
      * 
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -286,18 +1049,19 @@ public class DeveloperApi {
      <table border="1">
        <caption>Response Details</caption>
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td>  </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerCreateWebhookEndpointAsync(final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call developerListWebhooksAsync(final ApiCallback<List<WebhookEndpointResponseDto>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = developerControllerCreateWebhookEndpointValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = developerListWebhooksValidateBeforeCall(_callback);
+        Type localVarReturnType = new TypeToken<List<WebhookEndpointResponseDto>>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
     /**
-     * Build call for developerControllerDeleteApiKey
-     * @param id  (required)
+     * Build call for developerRevokeApiKey
+     * @param id The API key ID (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -308,7 +1072,7 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerDeleteApiKeyCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call developerRevokeApiKeyCall(String id, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -353,20 +1117,20 @@ public class DeveloperApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerDeleteApiKeyValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call developerRevokeApiKeyValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling developerControllerDeleteApiKey(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling developerRevokeApiKey(Async)");
         }
 
-        return developerControllerDeleteApiKeyCall(id, _callback);
+        return developerRevokeApiKeyCall(id, _callback);
 
     }
 
     /**
+     * Revoke API Key
      * 
-     * 
-     * @param id  (required)
+     * @param id The API key ID (required)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -375,14 +1139,14 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public void developerControllerDeleteApiKey(String id) throws ApiException {
-        developerControllerDeleteApiKeyWithHttpInfo(id);
+    public void developerRevokeApiKey(String id) throws ApiException {
+        developerRevokeApiKeyWithHttpInfo(id);
     }
 
     /**
+     * Revoke API Key
      * 
-     * 
-     * @param id  (required)
+     * @param id The API key ID (required)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -392,15 +1156,15 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> developerControllerDeleteApiKeyWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = developerControllerDeleteApiKeyValidateBeforeCall(id, null);
+    public ApiResponse<Void> developerRevokeApiKeyWithHttpInfo(String id) throws ApiException {
+        okhttp3.Call localVarCall = developerRevokeApiKeyValidateBeforeCall(id, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
-     *  (asynchronously)
+     * Revoke API Key (asynchronously)
      * 
-     * @param id  (required)
+     * @param id The API key ID (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -411,15 +1175,16 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerDeleteApiKeyAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call developerRevokeApiKeyAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = developerControllerDeleteApiKeyValidateBeforeCall(id, _callback);
+        okhttp3.Call localVarCall = developerRevokeApiKeyValidateBeforeCall(id, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
-     * Build call for developerControllerDeleteWebhookEndpoint
-     * @param id  (required)
+     * Build call for developerUpdateWebhook
+     * @param id The webhook endpoint ID (required)
+     * @param updateWebhookEndpointDto  (required)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -430,7 +1195,7 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerDeleteWebhookEndpointCall(String id, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call developerUpdateWebhookCall(String id, UpdateWebhookEndpointDto updateWebhookEndpointDto, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -444,7 +1209,7 @@ public class DeveloperApi {
             basePath = null;
         }
 
-        Object localVarPostBody = null;
+        Object localVarPostBody = updateWebhookEndpointDto;
 
         // create path and map variables
         String localVarPath = "/v1/developer/webhooks/{id}"
@@ -457,6 +1222,7 @@ public class DeveloperApi {
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
         final String[] localVarAccepts = {
+            "application/json"
         };
         final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
         if (localVarAccept != null) {
@@ -464,586 +1230,7 @@ public class DeveloperApi {
         }
 
         final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerDeleteWebhookEndpointValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling developerControllerDeleteWebhookEndpoint(Async)");
-        }
-
-        return developerControllerDeleteWebhookEndpointCall(id, _callback);
-
-    }
-
-    /**
-     * 
-     * 
-     * @param id  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public void developerControllerDeleteWebhookEndpoint(String id) throws ApiException {
-        developerControllerDeleteWebhookEndpointWithHttpInfo(id);
-    }
-
-    /**
-     * 
-     * 
-     * @param id  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> developerControllerDeleteWebhookEndpointWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = developerControllerDeleteWebhookEndpointValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param id  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerDeleteWebhookEndpointAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = developerControllerDeleteWebhookEndpointValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for developerControllerGetApiKeys
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetApiKeysCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/developer/api-keys";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerGetApiKeysValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return developerControllerGetApiKeysCall(_callback);
-
-    }
-
-    /**
-     * 
-     * 
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public void developerControllerGetApiKeys() throws ApiException {
-        developerControllerGetApiKeysWithHttpInfo();
-    }
-
-    /**
-     * 
-     * 
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> developerControllerGetApiKeysWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = developerControllerGetApiKeysValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetApiKeysAsync(final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = developerControllerGetApiKeysValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for developerControllerGetAppPortalUrl
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetAppPortalUrlCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/developer/webhooks/app-portal";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerGetAppPortalUrlValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return developerControllerGetAppPortalUrlCall(_callback);
-
-    }
-
-    /**
-     * 
-     * 
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public void developerControllerGetAppPortalUrl() throws ApiException {
-        developerControllerGetAppPortalUrlWithHttpInfo();
-    }
-
-    /**
-     * 
-     * 
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> developerControllerGetAppPortalUrlWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = developerControllerGetAppPortalUrlValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetAppPortalUrlAsync(final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = developerControllerGetAppPortalUrlValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for developerControllerGetWebhookDeliveries
-     * @param id  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetWebhookDeliveriesCall(String id, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/developer/webhooks/{id}/deliveries"
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerGetWebhookDeliveriesValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
-        // verify the required parameter 'id' is set
-        if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling developerControllerGetWebhookDeliveries(Async)");
-        }
-
-        return developerControllerGetWebhookDeliveriesCall(id, _callback);
-
-    }
-
-    /**
-     * 
-     * 
-     * @param id  (required)
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public void developerControllerGetWebhookDeliveries(String id) throws ApiException {
-        developerControllerGetWebhookDeliveriesWithHttpInfo(id);
-    }
-
-    /**
-     * 
-     * 
-     * @param id  (required)
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> developerControllerGetWebhookDeliveriesWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = developerControllerGetWebhookDeliveriesValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param id  (required)
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetWebhookDeliveriesAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = developerControllerGetWebhookDeliveriesValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for developerControllerGetWebhookEndpoints
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetWebhookEndpointsCall(final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/developer/webhooks";
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
-        };
-        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarContentType != null) {
-            localVarHeaderParams.put("Content-Type", localVarContentType);
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
-    }
-
-    @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerGetWebhookEndpointsValidateBeforeCall(final ApiCallback _callback) throws ApiException {
-        return developerControllerGetWebhookEndpointsCall(_callback);
-
-    }
-
-    /**
-     * 
-     * 
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public void developerControllerGetWebhookEndpoints() throws ApiException {
-        developerControllerGetWebhookEndpointsWithHttpInfo();
-    }
-
-    /**
-     * 
-     * 
-     * @return ApiResponse&lt;Void&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public ApiResponse<Void> developerControllerGetWebhookEndpointsWithHttpInfo() throws ApiException {
-        okhttp3.Call localVarCall = developerControllerGetWebhookEndpointsValidateBeforeCall(null);
-        return localVarApiClient.execute(localVarCall);
-    }
-
-    /**
-     *  (asynchronously)
-     * 
-     * @param _callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerGetWebhookEndpointsAsync(final ApiCallback<Void> _callback) throws ApiException {
-
-        okhttp3.Call localVarCall = developerControllerGetWebhookEndpointsValidateBeforeCall(_callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
-        return localVarCall;
-    }
-    /**
-     * Build call for developerControllerUpdateWebhookEndpoint
-     * @param id  (required)
-     * @param _callback Callback for upload/download progress
-     * @return Call to execute
-     * @throws ApiException If fail to serialize the request body object
-     * @http.response.details
-     <table border="1">
-       <caption>Response Details</caption>
-        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
-     </table>
-     */
-    public okhttp3.Call developerControllerUpdateWebhookEndpointCall(String id, final ApiCallback _callback) throws ApiException {
-        String basePath = null;
-        // Operation Servers
-        String[] localBasePaths = new String[] {  };
-
-        // Determine Base Path to Use
-        if (localCustomBaseUrl != null){
-            basePath = localCustomBaseUrl;
-        } else if ( localBasePaths.length > 0 ) {
-            basePath = localBasePaths[localHostIndex];
-        } else {
-            basePath = null;
-        }
-
-        Object localVarPostBody = null;
-
-        // create path and map variables
-        String localVarPath = "/v1/developer/webhooks/{id}"
-            .replace("{" + "id" + "}", localVarApiClient.escapeString(id.toString()));
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-        Map<String, String> localVarCookieParams = new HashMap<String, String>();
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-        };
-        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) {
-            localVarHeaderParams.put("Accept", localVarAccept);
-        }
-
-        final String[] localVarContentTypes = {
+            "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
         if (localVarContentType != null) {
@@ -1055,20 +1242,27 @@ public class DeveloperApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call developerControllerUpdateWebhookEndpointValidateBeforeCall(String id, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call developerUpdateWebhookValidateBeforeCall(String id, UpdateWebhookEndpointDto updateWebhookEndpointDto, final ApiCallback _callback) throws ApiException {
         // verify the required parameter 'id' is set
         if (id == null) {
-            throw new ApiException("Missing the required parameter 'id' when calling developerControllerUpdateWebhookEndpoint(Async)");
+            throw new ApiException("Missing the required parameter 'id' when calling developerUpdateWebhook(Async)");
         }
 
-        return developerControllerUpdateWebhookEndpointCall(id, _callback);
+        // verify the required parameter 'updateWebhookEndpointDto' is set
+        if (updateWebhookEndpointDto == null) {
+            throw new ApiException("Missing the required parameter 'updateWebhookEndpointDto' when calling developerUpdateWebhook(Async)");
+        }
+
+        return developerUpdateWebhookCall(id, updateWebhookEndpointDto, _callback);
 
     }
 
     /**
+     * Update Webhook Endpoint
      * 
-     * 
-     * @param id  (required)
+     * @param id The webhook endpoint ID (required)
+     * @param updateWebhookEndpointDto  (required)
+     * @return WebhookEndpointResponseDto
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1077,15 +1271,17 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public void developerControllerUpdateWebhookEndpoint(String id) throws ApiException {
-        developerControllerUpdateWebhookEndpointWithHttpInfo(id);
+    public WebhookEndpointResponseDto developerUpdateWebhook(String id, UpdateWebhookEndpointDto updateWebhookEndpointDto) throws ApiException {
+        ApiResponse<WebhookEndpointResponseDto> localVarResp = developerUpdateWebhookWithHttpInfo(id, updateWebhookEndpointDto);
+        return localVarResp.getData();
     }
 
     /**
+     * Update Webhook Endpoint
      * 
-     * 
-     * @param id  (required)
-     * @return ApiResponse&lt;Void&gt;
+     * @param id The webhook endpoint ID (required)
+     * @param updateWebhookEndpointDto  (required)
+     * @return ApiResponse&lt;WebhookEndpointResponseDto&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1094,15 +1290,17 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> developerControllerUpdateWebhookEndpointWithHttpInfo(String id) throws ApiException {
-        okhttp3.Call localVarCall = developerControllerUpdateWebhookEndpointValidateBeforeCall(id, null);
-        return localVarApiClient.execute(localVarCall);
+    public ApiResponse<WebhookEndpointResponseDto> developerUpdateWebhookWithHttpInfo(String id, UpdateWebhookEndpointDto updateWebhookEndpointDto) throws ApiException {
+        okhttp3.Call localVarCall = developerUpdateWebhookValidateBeforeCall(id, updateWebhookEndpointDto, null);
+        Type localVarReturnType = new TypeToken<WebhookEndpointResponseDto>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     *  (asynchronously)
+     * Update Webhook Endpoint (asynchronously)
      * 
-     * @param id  (required)
+     * @param id The webhook endpoint ID (required)
+     * @param updateWebhookEndpointDto  (required)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1113,10 +1311,11 @@ public class DeveloperApi {
         <tr><td> 200 </td><td>  </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call developerControllerUpdateWebhookEndpointAsync(String id, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call developerUpdateWebhookAsync(String id, UpdateWebhookEndpointDto updateWebhookEndpointDto, final ApiCallback<WebhookEndpointResponseDto> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = developerControllerUpdateWebhookEndpointValidateBeforeCall(id, _callback);
-        localVarApiClient.executeAsync(localVarCall, _callback);
+        okhttp3.Call localVarCall = developerUpdateWebhookValidateBeforeCall(id, updateWebhookEndpointDto, _callback);
+        Type localVarReturnType = new TypeToken<WebhookEndpointResponseDto>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
 }

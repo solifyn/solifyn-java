@@ -6,6 +6,7 @@ All URIs are relative to *http://localhost:8000*
 |------------- | ------------- | -------------|
 | [**checkoutCreate**](CheckoutApi.md#checkoutCreate) | **POST** /v1/checkout/create | Create Checkout Session |
 | [**checkoutCreateCollection**](CheckoutApi.md#checkoutCreateCollection) | **POST** /v1/checkout/collection/create | Create Collection Checkout Session |
+| [**checkoutCreateSetup**](CheckoutApi.md#checkoutCreateSetup) | **POST** /v1/checkout/setup-configuration | Create Setup Checkout Configuration |
 | [**checkoutGetSession**](CheckoutApi.md#checkoutGetSession) | **GET** /v1/checkout/session/{id} | Get Checkout Session Details |
 | [**checkoutPricePreview**](CheckoutApi.md#checkoutPricePreview) | **GET** /v1/checkout/price-preview | Get Converted Price Preview |
 | [**checkoutSupportedCurrencies**](CheckoutApi.md#checkoutSupportedCurrencies) | **GET** /v1/checkout/supported-currencies | Get Supported Currencies |
@@ -134,6 +135,67 @@ No authorization required
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** | Collection checkout session created. |  -  |
+
+<a id="checkoutCreateSetup"></a>
+# **checkoutCreateSetup**
+> checkoutCreateSetup(createSetupCheckoutDto)
+
+Create Setup Checkout Configuration
+
+Create a new checkout session in setup mode for collecting cards without immediate charge.
+
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.models.*;
+import com.solifyn.api.CheckoutApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:8000");
+
+    CheckoutApi apiInstance = new CheckoutApi(defaultClient);
+    CreateSetupCheckoutDto createSetupCheckoutDto = new CreateSetupCheckoutDto(); // CreateSetupCheckoutDto | 
+    try {
+      apiInstance.checkoutCreateSetup(createSetupCheckoutDto);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling CheckoutApi#checkoutCreateSetup");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createSetupCheckoutDto** | [**CreateSetupCheckoutDto**](CreateSetupCheckoutDto.md)|  | |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | Setup checkout configuration created. |  -  |
 
 <a id="checkoutGetSession"></a>
 # **checkoutGetSession**

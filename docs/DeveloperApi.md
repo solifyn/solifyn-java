@@ -4,22 +4,23 @@ All URIs are relative to *http://localhost:8000*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
-| [**developerControllerCreateApiKey**](DeveloperApi.md#developerControllerCreateApiKey) | **POST** /v1/developer/api-keys |  |
-| [**developerControllerCreateWebhookEndpoint**](DeveloperApi.md#developerControllerCreateWebhookEndpoint) | **POST** /v1/developer/webhooks |  |
-| [**developerControllerDeleteApiKey**](DeveloperApi.md#developerControllerDeleteApiKey) | **DELETE** /v1/developer/api-keys/{id} |  |
-| [**developerControllerDeleteWebhookEndpoint**](DeveloperApi.md#developerControllerDeleteWebhookEndpoint) | **DELETE** /v1/developer/webhooks/{id} |  |
-| [**developerControllerGetApiKeys**](DeveloperApi.md#developerControllerGetApiKeys) | **GET** /v1/developer/api-keys |  |
-| [**developerControllerGetAppPortalUrl**](DeveloperApi.md#developerControllerGetAppPortalUrl) | **GET** /v1/developer/webhooks/app-portal |  |
-| [**developerControllerGetWebhookDeliveries**](DeveloperApi.md#developerControllerGetWebhookDeliveries) | **GET** /v1/developer/webhooks/{id}/deliveries |  |
-| [**developerControllerGetWebhookEndpoints**](DeveloperApi.md#developerControllerGetWebhookEndpoints) | **GET** /v1/developer/webhooks |  |
-| [**developerControllerUpdateWebhookEndpoint**](DeveloperApi.md#developerControllerUpdateWebhookEndpoint) | **PATCH** /v1/developer/webhooks/{id} |  |
+| [**developerCreateApiKey**](DeveloperApi.md#developerCreateApiKey) | **POST** /v1/developer/api-keys | Create Developer API Key |
+| [**developerCreateWebhook**](DeveloperApi.md#developerCreateWebhook) | **POST** /v1/developer/webhooks | Create Webhook Endpoint |
+| [**developerDeleteWebhook**](DeveloperApi.md#developerDeleteWebhook) | **DELETE** /v1/developer/webhooks/{id} | Delete Webhook Endpoint |
+| [**developerGetAppPortal**](DeveloperApi.md#developerGetAppPortal) | **GET** /v1/developer/webhooks/app-portal | Retrieve Hosted Webhooks Portal URL |
+| [**developerGetWebhook**](DeveloperApi.md#developerGetWebhook) | **GET** /v1/developer/webhooks/{id} | Retrieve Webhook Endpoint Details |
+| [**developerListApiKeys**](DeveloperApi.md#developerListApiKeys) | **GET** /v1/developer/api-keys | List Developer API Keys |
+| [**developerListWebhookDeliveries**](DeveloperApi.md#developerListWebhookDeliveries) | **GET** /v1/developer/webhooks/{id}/deliveries | Retrieve Webhook Delivery Logs |
+| [**developerListWebhooks**](DeveloperApi.md#developerListWebhooks) | **GET** /v1/developer/webhooks | List Webhook Endpoints |
+| [**developerRevokeApiKey**](DeveloperApi.md#developerRevokeApiKey) | **DELETE** /v1/developer/api-keys/{id} | Revoke API Key |
+| [**developerUpdateWebhook**](DeveloperApi.md#developerUpdateWebhook) | **PATCH** /v1/developer/webhooks/{id} | Update Webhook Endpoint |
 
 
-<a id="developerControllerCreateApiKey"></a>
-# **developerControllerCreateApiKey**
-> developerControllerCreateApiKey()
+<a id="developerCreateApiKey"></a>
+# **developerCreateApiKey**
+> ApiKeyResponseDto developerCreateApiKey(createApiKeyDto)
 
-
+Create Developer API Key
 
 ### Example
 ```java
@@ -36,10 +37,12 @@ public class Example {
     defaultClient.setBasePath("http://localhost:8000");
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    CreateApiKeyDto createApiKeyDto = new CreateApiKeyDto(); // CreateApiKeyDto | 
     try {
-      apiInstance.developerControllerCreateApiKey();
+      ApiKeyResponseDto result = apiInstance.developerCreateApiKey(createApiKeyDto);
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerCreateApiKey");
+      System.err.println("Exception when calling DeveloperApi#developerCreateApiKey");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -50,11 +53,14 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createApiKeyDto** | [**CreateApiKeyDto**](CreateApiKeyDto.md)|  | |
 
 ### Return type
 
-null (empty response body)
+[**ApiKeyResponseDto**](ApiKeyResponseDto.md)
 
 ### Authorization
 
@@ -62,19 +68,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** |  |  -  |
 
-<a id="developerControllerCreateWebhookEndpoint"></a>
-# **developerControllerCreateWebhookEndpoint**
-> developerControllerCreateWebhookEndpoint()
+<a id="developerCreateWebhook"></a>
+# **developerCreateWebhook**
+> WebhookEndpointResponseDto developerCreateWebhook(createWebhookEndpointDto)
 
-
+Create Webhook Endpoint
 
 ### Example
 ```java
@@ -91,10 +97,12 @@ public class Example {
     defaultClient.setBasePath("http://localhost:8000");
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    CreateWebhookEndpointDto createWebhookEndpointDto = new CreateWebhookEndpointDto(); // CreateWebhookEndpointDto | 
     try {
-      apiInstance.developerControllerCreateWebhookEndpoint();
+      WebhookEndpointResponseDto result = apiInstance.developerCreateWebhook(createWebhookEndpointDto);
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerCreateWebhookEndpoint");
+      System.err.println("Exception when calling DeveloperApi#developerCreateWebhook");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -105,11 +113,14 @@ public class Example {
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **createWebhookEndpointDto** | [**CreateWebhookEndpointDto**](CreateWebhookEndpointDto.md)|  | |
 
 ### Return type
 
-null (empty response body)
+[**WebhookEndpointResponseDto**](WebhookEndpointResponseDto.md)
 
 ### Authorization
 
@@ -117,19 +128,19 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **201** |  |  -  |
 
-<a id="developerControllerDeleteApiKey"></a>
-# **developerControllerDeleteApiKey**
-> developerControllerDeleteApiKey(id)
+<a id="developerDeleteWebhook"></a>
+# **developerDeleteWebhook**
+> developerDeleteWebhook(id)
 
-
+Delete Webhook Endpoint
 
 ### Example
 ```java
@@ -146,11 +157,11 @@ public class Example {
     defaultClient.setBasePath("http://localhost:8000");
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | The webhook endpoint ID
     try {
-      apiInstance.developerControllerDeleteApiKey(id);
+      apiInstance.developerDeleteWebhook(id);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerDeleteApiKey");
+      System.err.println("Exception when calling DeveloperApi#developerDeleteWebhook");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -164,7 +175,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| The webhook endpoint ID | |
 
 ### Return type
 
@@ -184,70 +195,11 @@ No authorization required
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 
-<a id="developerControllerDeleteWebhookEndpoint"></a>
-# **developerControllerDeleteWebhookEndpoint**
-> developerControllerDeleteWebhookEndpoint(id)
+<a id="developerGetAppPortal"></a>
+# **developerGetAppPortal**
+> AppPortalUrlResponseDto developerGetAppPortal()
 
-
-
-### Example
-```java
-// Import classes:
-import com.solifyn.ApiClient;
-import com.solifyn.ApiException;
-import com.solifyn.Configuration;
-import com.solifyn.models.*;
-import com.solifyn.api.DeveloperApi;
-
-public class Example {
-  public static void main(String[] args) {
-    ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
-
-    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
-    String id = "id_example"; // String | 
-    try {
-      apiInstance.developerControllerDeleteWebhookEndpoint(id);
-    } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerDeleteWebhookEndpoint");
-      System.err.println("Status code: " + e.getCode());
-      System.err.println("Reason: " + e.getResponseBody());
-      System.err.println("Response headers: " + e.getResponseHeaders());
-      e.printStackTrace();
-    }
-  }
-}
-```
-
-### Parameters
-
-| Name | Type | Description  | Notes |
-|------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
-
-### Return type
-
-null (empty response body)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: Not defined
-
-### HTTP response details
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-| **200** |  |  -  |
-
-<a id="developerControllerGetApiKeys"></a>
-# **developerControllerGetApiKeys**
-> developerControllerGetApiKeys()
-
-
+Retrieve Hosted Webhooks Portal URL
 
 ### Example
 ```java
@@ -265,9 +217,10 @@ public class Example {
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
     try {
-      apiInstance.developerControllerGetApiKeys();
+      AppPortalUrlResponseDto result = apiInstance.developerGetAppPortal();
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerGetApiKeys");
+      System.err.println("Exception when calling DeveloperApi#developerGetAppPortal");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -282,7 +235,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**AppPortalUrlResponseDto**](AppPortalUrlResponseDto.md)
 
 ### Authorization
 
@@ -291,18 +244,78 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 
-<a id="developerControllerGetAppPortalUrl"></a>
-# **developerControllerGetAppPortalUrl**
-> developerControllerGetAppPortalUrl()
+<a id="developerGetWebhook"></a>
+# **developerGetWebhook**
+> WebhookEndpointResponseDto developerGetWebhook(id)
 
+Retrieve Webhook Endpoint Details
 
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.models.*;
+import com.solifyn.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:8000");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    String id = "id_example"; // String | The webhook endpoint ID
+    try {
+      WebhookEndpointResponseDto result = apiInstance.developerGetWebhook(id);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerGetWebhook");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The webhook endpoint ID | |
+
+### Return type
+
+[**WebhookEndpointResponseDto**](WebhookEndpointResponseDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+<a id="developerListApiKeys"></a>
+# **developerListApiKeys**
+> List&lt;ApiKeyResponseDto&gt; developerListApiKeys()
+
+List Developer API Keys
 
 ### Example
 ```java
@@ -320,9 +333,10 @@ public class Example {
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
     try {
-      apiInstance.developerControllerGetAppPortalUrl();
+      List<ApiKeyResponseDto> result = apiInstance.developerListApiKeys();
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerGetAppPortalUrl");
+      System.err.println("Exception when calling DeveloperApi#developerListApiKeys");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -337,7 +351,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**List&lt;ApiKeyResponseDto&gt;**](ApiKeyResponseDto.md)
 
 ### Authorization
 
@@ -346,18 +360,18 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 
-<a id="developerControllerGetWebhookDeliveries"></a>
-# **developerControllerGetWebhookDeliveries**
-> developerControllerGetWebhookDeliveries(id)
+<a id="developerListWebhookDeliveries"></a>
+# **developerListWebhookDeliveries**
+> List&lt;WebhookDeliveryResponseDto&gt; developerListWebhookDeliveries(id)
 
-
+Retrieve Webhook Delivery Logs
 
 ### Example
 ```java
@@ -374,11 +388,12 @@ public class Example {
     defaultClient.setBasePath("http://localhost:8000");
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | The webhook endpoint ID
     try {
-      apiInstance.developerControllerGetWebhookDeliveries(id);
+      List<WebhookDeliveryResponseDto> result = apiInstance.developerListWebhookDeliveries(id);
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerGetWebhookDeliveries");
+      System.err.println("Exception when calling DeveloperApi#developerListWebhookDeliveries");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -392,11 +407,11 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| The webhook endpoint ID | |
 
 ### Return type
 
-null (empty response body)
+[**List&lt;WebhookDeliveryResponseDto&gt;**](WebhookDeliveryResponseDto.md)
 
 ### Authorization
 
@@ -405,18 +420,18 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 
-<a id="developerControllerGetWebhookEndpoints"></a>
-# **developerControllerGetWebhookEndpoints**
-> developerControllerGetWebhookEndpoints()
+<a id="developerListWebhooks"></a>
+# **developerListWebhooks**
+> List&lt;WebhookEndpointResponseDto&gt; developerListWebhooks()
 
-
+List Webhook Endpoints
 
 ### Example
 ```java
@@ -434,9 +449,10 @@ public class Example {
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
     try {
-      apiInstance.developerControllerGetWebhookEndpoints();
+      List<WebhookEndpointResponseDto> result = apiInstance.developerListWebhooks();
+      System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerGetWebhookEndpoints");
+      System.err.println("Exception when calling DeveloperApi#developerListWebhooks");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -451,7 +467,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-null (empty response body)
+[**List&lt;WebhookEndpointResponseDto&gt;**](WebhookEndpointResponseDto.md)
 
 ### Authorization
 
@@ -460,18 +476,18 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: Not defined
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** |  |  -  |
 
-<a id="developerControllerUpdateWebhookEndpoint"></a>
-# **developerControllerUpdateWebhookEndpoint**
-> developerControllerUpdateWebhookEndpoint(id)
+<a id="developerRevokeApiKey"></a>
+# **developerRevokeApiKey**
+> developerRevokeApiKey(id)
 
-
+Revoke API Key
 
 ### Example
 ```java
@@ -488,11 +504,11 @@ public class Example {
     defaultClient.setBasePath("http://localhost:8000");
 
     DeveloperApi apiInstance = new DeveloperApi(defaultClient);
-    String id = "id_example"; // String | 
+    String id = "id_example"; // String | The API key ID
     try {
-      apiInstance.developerControllerUpdateWebhookEndpoint(id);
+      apiInstance.developerRevokeApiKey(id);
     } catch (ApiException e) {
-      System.err.println("Exception when calling DeveloperApi#developerControllerUpdateWebhookEndpoint");
+      System.err.println("Exception when calling DeveloperApi#developerRevokeApiKey");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -506,7 +522,7 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **id** | **String**|  | |
+| **id** | **String**| The API key ID | |
 
 ### Return type
 
@@ -520,6 +536,68 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** |  |  -  |
+
+<a id="developerUpdateWebhook"></a>
+# **developerUpdateWebhook**
+> WebhookEndpointResponseDto developerUpdateWebhook(id, updateWebhookEndpointDto)
+
+Update Webhook Endpoint
+
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.models.*;
+import com.solifyn.api.DeveloperApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("http://localhost:8000");
+
+    DeveloperApi apiInstance = new DeveloperApi(defaultClient);
+    String id = "id_example"; // String | The webhook endpoint ID
+    UpdateWebhookEndpointDto updateWebhookEndpointDto = new UpdateWebhookEndpointDto(); // UpdateWebhookEndpointDto | 
+    try {
+      WebhookEndpointResponseDto result = apiInstance.developerUpdateWebhook(id, updateWebhookEndpointDto);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DeveloperApi#developerUpdateWebhook");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **id** | **String**| The webhook endpoint ID | |
+| **updateWebhookEndpointDto** | [**UpdateWebhookEndpointDto**](UpdateWebhookEndpointDto.md)|  | |
+
+### Return type
+
+[**WebhookEndpointResponseDto**](WebhookEndpointResponseDto.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 ### HTTP response details
 | Status code | Description | Response headers |

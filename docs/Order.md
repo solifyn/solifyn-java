@@ -13,6 +13,7 @@ Represents an order (payment) processed under your business, containing customer
 |**customer** | [**OrderCustomer**](OrderCustomer.md) | Customer details. |  |
 |**totalAmount** | **Integer** | Total paid amount in cents. |  |
 |**subtotal** | **Integer** | Subtotal amount in cents. |  |
+|**usdTotal** | **BigDecimal** | Total paid amount converted to USD. |  [optional] |
 |**taxAmount** | **Integer** | Tax amount in cents. |  |
 |**applicationFee** | **Integer** | Application fee in cents. |  |
 |**amountAfterFees** | **Integer** | Net amount after fees in cents. |  |

@@ -27,12 +27,12 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import java.math.BigDecimal;
-import com.solifyn.model.License;
-import java.util.List;
-import java.time.OffsetDateTime;
 import com.solifyn.model.Order;
-import com.solifyn.model.UNKNOWN_BASE_TYPE;
+import com.solifyn.model.WebhookDisputePayload;
+import com.solifyn.model.WebhookLicensePayload;
+import com.solifyn.model.WebhookPaymentPayload;
+import com.solifyn.model.WebhookRefundPayload;
+import com.solifyn.model.WebhookSubscriptionPayload;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -79,7 +79,7 @@ public class DefaultApi {
 
     /**
      * Build call for disputeCreatedPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -90,7 +90,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call disputeCreatedPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call disputeCreatedPostCall(WebhookDisputePayload webhookDisputePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -104,7 +104,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookDisputePayload;
 
         // create path and map variables
         String localVarPath = "/dispute.created";
@@ -135,15 +135,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call disputeCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return disputeCreatedPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call disputeCreatedPostValidateBeforeCall(WebhookDisputePayload webhookDisputePayload, final ApiCallback _callback) throws ApiException {
+        return disputeCreatedPostCall(webhookDisputePayload, _callback);
 
     }
 
     /**
      * Dispute Created
      * Occurs when a payment charge is disputed by the customer (chargeback initiated).
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -152,14 +152,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void disputeCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        disputeCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void disputeCreatedPost(WebhookDisputePayload webhookDisputePayload) throws ApiException {
+        disputeCreatedPostWithHttpInfo(webhookDisputePayload);
     }
 
     /**
      * Dispute Created
      * Occurs when a payment charge is disputed by the customer (chargeback initiated).
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -169,15 +169,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> disputeCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = disputeCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> disputeCreatedPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload) throws ApiException {
+        okhttp3.Call localVarCall = disputeCreatedPostValidateBeforeCall(webhookDisputePayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Dispute Created (asynchronously)
      * Occurs when a payment charge is disputed by the customer (chargeback initiated).
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -188,15 +188,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call disputeCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call disputeCreatedPostAsync(WebhookDisputePayload webhookDisputePayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = disputeCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = disputeCreatedPostValidateBeforeCall(webhookDisputePayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for disputeLostPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -207,7 +207,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call disputeLostPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call disputeLostPostCall(WebhookDisputePayload webhookDisputePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -221,7 +221,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookDisputePayload;
 
         // create path and map variables
         String localVarPath = "/dispute.lost";
@@ -252,15 +252,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call disputeLostPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return disputeLostPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call disputeLostPostValidateBeforeCall(WebhookDisputePayload webhookDisputePayload, final ApiCallback _callback) throws ApiException {
+        return disputeLostPostCall(webhookDisputePayload, _callback);
 
     }
 
     /**
      * Dispute Lost
      * Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -269,14 +269,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void disputeLostPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        disputeLostPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void disputeLostPost(WebhookDisputePayload webhookDisputePayload) throws ApiException {
+        disputeLostPostWithHttpInfo(webhookDisputePayload);
     }
 
     /**
      * Dispute Lost
      * Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -286,15 +286,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> disputeLostPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = disputeLostPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> disputeLostPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload) throws ApiException {
+        okhttp3.Call localVarCall = disputeLostPostValidateBeforeCall(webhookDisputePayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Dispute Lost (asynchronously)
      * Occurs when a dispute challenge is lost and the funds are returned to the cardholder.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -305,15 +305,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call disputeLostPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call disputeLostPostAsync(WebhookDisputePayload webhookDisputePayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = disputeLostPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = disputeLostPostValidateBeforeCall(webhookDisputePayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for disputeWonPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -324,7 +324,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call disputeWonPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call disputeWonPostCall(WebhookDisputePayload webhookDisputePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -338,7 +338,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookDisputePayload;
 
         // create path and map variables
         String localVarPath = "/dispute.won";
@@ -369,15 +369,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call disputeWonPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return disputeWonPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call disputeWonPostValidateBeforeCall(WebhookDisputePayload webhookDisputePayload, final ApiCallback _callback) throws ApiException {
+        return disputeWonPostCall(webhookDisputePayload, _callback);
 
     }
 
     /**
      * Dispute Won
      * Occurs when a dispute challenge is won by the merchant.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -386,14 +386,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void disputeWonPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        disputeWonPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void disputeWonPost(WebhookDisputePayload webhookDisputePayload) throws ApiException {
+        disputeWonPostWithHttpInfo(webhookDisputePayload);
     }
 
     /**
      * Dispute Won
      * Occurs when a dispute challenge is won by the merchant.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -403,15 +403,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> disputeWonPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = disputeWonPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> disputeWonPostWithHttpInfo(WebhookDisputePayload webhookDisputePayload) throws ApiException {
+        okhttp3.Call localVarCall = disputeWonPostValidateBeforeCall(webhookDisputePayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Dispute Won (asynchronously)
      * Occurs when a dispute challenge is won by the merchant.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookDisputePayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -422,15 +422,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call disputeWonPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call disputeWonPostAsync(WebhookDisputePayload webhookDisputePayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = disputeWonPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = disputeWonPostValidateBeforeCall(webhookDisputePayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for licenseCreatedPost
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -441,7 +441,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call licenseCreatedPostCall(License license, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call licenseCreatedPostCall(WebhookLicensePayload webhookLicensePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -455,7 +455,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = license;
+        Object localVarPostBody = webhookLicensePayload;
 
         // create path and map variables
         String localVarPath = "/license.created";
@@ -486,15 +486,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call licenseCreatedPostValidateBeforeCall(License license, final ApiCallback _callback) throws ApiException {
-        return licenseCreatedPostCall(license, _callback);
+    private okhttp3.Call licenseCreatedPostValidateBeforeCall(WebhookLicensePayload webhookLicensePayload, final ApiCallback _callback) throws ApiException {
+        return licenseCreatedPostCall(webhookLicensePayload, _callback);
 
     }
 
     /**
      * License Created
      * Occurs when a new software license key is created or assigned to a customer purchase.
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -503,14 +503,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void licenseCreatedPost(License license) throws ApiException {
-        licenseCreatedPostWithHttpInfo(license);
+    public void licenseCreatedPost(WebhookLicensePayload webhookLicensePayload) throws ApiException {
+        licenseCreatedPostWithHttpInfo(webhookLicensePayload);
     }
 
     /**
      * License Created
      * Occurs when a new software license key is created or assigned to a customer purchase.
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -520,15 +520,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> licenseCreatedPostWithHttpInfo(License license) throws ApiException {
-        okhttp3.Call localVarCall = licenseCreatedPostValidateBeforeCall(license, null);
+    public ApiResponse<Void> licenseCreatedPostWithHttpInfo(WebhookLicensePayload webhookLicensePayload) throws ApiException {
+        okhttp3.Call localVarCall = licenseCreatedPostValidateBeforeCall(webhookLicensePayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * License Created (asynchronously)
      * Occurs when a new software license key is created or assigned to a customer purchase.
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -539,15 +539,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call licenseCreatedPostAsync(License license, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call licenseCreatedPostAsync(WebhookLicensePayload webhookLicensePayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = licenseCreatedPostValidateBeforeCall(license, _callback);
+        okhttp3.Call localVarCall = licenseCreatedPostValidateBeforeCall(webhookLicensePayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for licenseRevokedPost
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -558,7 +558,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call licenseRevokedPostCall(License license, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call licenseRevokedPostCall(WebhookLicensePayload webhookLicensePayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -572,7 +572,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = license;
+        Object localVarPostBody = webhookLicensePayload;
 
         // create path and map variables
         String localVarPath = "/license.revoked";
@@ -603,15 +603,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call licenseRevokedPostValidateBeforeCall(License license, final ApiCallback _callback) throws ApiException {
-        return licenseRevokedPostCall(license, _callback);
+    private okhttp3.Call licenseRevokedPostValidateBeforeCall(WebhookLicensePayload webhookLicensePayload, final ApiCallback _callback) throws ApiException {
+        return licenseRevokedPostCall(webhookLicensePayload, _callback);
 
     }
 
     /**
      * License Revoked
      * Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -620,14 +620,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void licenseRevokedPost(License license) throws ApiException {
-        licenseRevokedPostWithHttpInfo(license);
+    public void licenseRevokedPost(WebhookLicensePayload webhookLicensePayload) throws ApiException {
+        licenseRevokedPostWithHttpInfo(webhookLicensePayload);
     }
 
     /**
      * License Revoked
      * Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -637,15 +637,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> licenseRevokedPostWithHttpInfo(License license) throws ApiException {
-        okhttp3.Call localVarCall = licenseRevokedPostValidateBeforeCall(license, null);
+    public ApiResponse<Void> licenseRevokedPostWithHttpInfo(WebhookLicensePayload webhookLicensePayload) throws ApiException {
+        okhttp3.Call localVarCall = licenseRevokedPostValidateBeforeCall(webhookLicensePayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * License Revoked (asynchronously)
      * Occurs when a software license key is revoked (e.g., due to subscription cancellation, refund, or dispute).
-     * @param license  (optional)
+     * @param webhookLicensePayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -656,15 +656,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call licenseRevokedPostAsync(License license, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call licenseRevokedPostAsync(WebhookLicensePayload webhookLicensePayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = licenseRevokedPostValidateBeforeCall(license, _callback);
+        okhttp3.Call localVarCall = licenseRevokedPostValidateBeforeCall(webhookLicensePayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for paymentCreatedPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookPaymentPayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -675,7 +675,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call paymentCreatedPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call paymentCreatedPostCall(WebhookPaymentPayload webhookPaymentPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -689,7 +689,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookPaymentPayload;
 
         // create path and map variables
         String localVarPath = "/payment.created";
@@ -720,15 +720,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call paymentCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return paymentCreatedPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call paymentCreatedPostValidateBeforeCall(WebhookPaymentPayload webhookPaymentPayload, final ApiCallback _callback) throws ApiException {
+        return paymentCreatedPostCall(webhookPaymentPayload, _callback);
 
     }
 
     /**
      * Payment Created
      * Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookPaymentPayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -737,14 +737,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void paymentCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        paymentCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void paymentCreatedPost(WebhookPaymentPayload webhookPaymentPayload) throws ApiException {
+        paymentCreatedPostWithHttpInfo(webhookPaymentPayload);
     }
 
     /**
      * Payment Created
      * Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookPaymentPayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -754,15 +754,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> paymentCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = paymentCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> paymentCreatedPostWithHttpInfo(WebhookPaymentPayload webhookPaymentPayload) throws ApiException {
+        okhttp3.Call localVarCall = paymentCreatedPostValidateBeforeCall(webhookPaymentPayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Payment Created (asynchronously)
      * Occurs when a new payment is initiated (e.g., at checkout start or subscription creation). The payment may still be in an incomplete or pending state.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookPaymentPayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -773,9 +773,9 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call paymentCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call paymentCreatedPostAsync(WebhookPaymentPayload webhookPaymentPayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = paymentCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = paymentCreatedPostValidateBeforeCall(webhookPaymentPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
@@ -1015,7 +1015,7 @@ public class DefaultApi {
     }
     /**
      * Build call for refundFailedPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1026,7 +1026,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call refundFailedPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call refundFailedPostCall(WebhookRefundPayload webhookRefundPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1040,7 +1040,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookRefundPayload;
 
         // create path and map variables
         String localVarPath = "/refund.failed";
@@ -1071,15 +1071,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call refundFailedPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return refundFailedPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call refundFailedPostValidateBeforeCall(WebhookRefundPayload webhookRefundPayload, final ApiCallback _callback) throws ApiException {
+        return refundFailedPostCall(webhookRefundPayload, _callback);
 
     }
 
     /**
      * Refund Failed
      * Occurs when a payment refund fails.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1088,14 +1088,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void refundFailedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        refundFailedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void refundFailedPost(WebhookRefundPayload webhookRefundPayload) throws ApiException {
+        refundFailedPostWithHttpInfo(webhookRefundPayload);
     }
 
     /**
      * Refund Failed
      * Occurs when a payment refund fails.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1105,15 +1105,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> refundFailedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = refundFailedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> refundFailedPostWithHttpInfo(WebhookRefundPayload webhookRefundPayload) throws ApiException {
+        okhttp3.Call localVarCall = refundFailedPostValidateBeforeCall(webhookRefundPayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Refund Failed (asynchronously)
      * Occurs when a payment refund fails.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1124,15 +1124,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call refundFailedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call refundFailedPostAsync(WebhookRefundPayload webhookRefundPayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = refundFailedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = refundFailedPostValidateBeforeCall(webhookRefundPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for refundSucceededPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1143,7 +1143,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call refundSucceededPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call refundSucceededPostCall(WebhookRefundPayload webhookRefundPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1157,7 +1157,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookRefundPayload;
 
         // create path and map variables
         String localVarPath = "/refund.succeeded";
@@ -1188,15 +1188,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call refundSucceededPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return refundSucceededPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call refundSucceededPostValidateBeforeCall(WebhookRefundPayload webhookRefundPayload, final ApiCallback _callback) throws ApiException {
+        return refundSucceededPostCall(webhookRefundPayload, _callback);
 
     }
 
     /**
      * Refund Succeeded
      * Occurs when a payment refund is confirmed as succeeded.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1205,14 +1205,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void refundSucceededPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        refundSucceededPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void refundSucceededPost(WebhookRefundPayload webhookRefundPayload) throws ApiException {
+        refundSucceededPostWithHttpInfo(webhookRefundPayload);
     }
 
     /**
      * Refund Succeeded
      * Occurs when a payment refund is confirmed as succeeded.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1222,15 +1222,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> refundSucceededPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = refundSucceededPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> refundSucceededPostWithHttpInfo(WebhookRefundPayload webhookRefundPayload) throws ApiException {
+        okhttp3.Call localVarCall = refundSucceededPostValidateBeforeCall(webhookRefundPayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Refund Succeeded (asynchronously)
      * Occurs when a payment refund is confirmed as succeeded.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookRefundPayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1241,15 +1241,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call refundSucceededPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call refundSucceededPostAsync(WebhookRefundPayload webhookRefundPayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = refundSucceededPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = refundSucceededPostValidateBeforeCall(webhookRefundPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for subscriptionCreatedPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1260,7 +1260,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscriptionCreatedPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call subscriptionCreatedPostCall(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1274,7 +1274,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookSubscriptionPayload;
 
         // create path and map variables
         String localVarPath = "/subscription.created";
@@ -1305,15 +1305,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call subscriptionCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return subscriptionCreatedPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call subscriptionCreatedPostValidateBeforeCall(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback _callback) throws ApiException {
+        return subscriptionCreatedPostCall(webhookSubscriptionPayload, _callback);
 
     }
 
     /**
      * Subscription Created
      * Occurs when a customer subscription is successfully started.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1322,14 +1322,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void subscriptionCreatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        subscriptionCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void subscriptionCreatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload) throws ApiException {
+        subscriptionCreatedPostWithHttpInfo(webhookSubscriptionPayload);
     }
 
     /**
      * Subscription Created
      * Occurs when a customer subscription is successfully started.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1339,15 +1339,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> subscriptionCreatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = subscriptionCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> subscriptionCreatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload) throws ApiException {
+        okhttp3.Call localVarCall = subscriptionCreatedPostValidateBeforeCall(webhookSubscriptionPayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Subscription Created (asynchronously)
      * Occurs when a customer subscription is successfully started.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1358,15 +1358,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscriptionCreatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call subscriptionCreatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = subscriptionCreatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = subscriptionCreatedPostValidateBeforeCall(webhookSubscriptionPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for subscriptionDeactivatedPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1377,7 +1377,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscriptionDeactivatedPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call subscriptionDeactivatedPostCall(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1391,7 +1391,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookSubscriptionPayload;
 
         // create path and map variables
         String localVarPath = "/subscription.deactivated";
@@ -1422,15 +1422,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call subscriptionDeactivatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return subscriptionDeactivatedPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call subscriptionDeactivatedPostValidateBeforeCall(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback _callback) throws ApiException {
+        return subscriptionDeactivatedPostCall(webhookSubscriptionPayload, _callback);
 
     }
 
     /**
      * Subscription Deactivated
      * Occurs when a customer subscription is deactivated or expired.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1439,14 +1439,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void subscriptionDeactivatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        subscriptionDeactivatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void subscriptionDeactivatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload) throws ApiException {
+        subscriptionDeactivatedPostWithHttpInfo(webhookSubscriptionPayload);
     }
 
     /**
      * Subscription Deactivated
      * Occurs when a customer subscription is deactivated or expired.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1456,15 +1456,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> subscriptionDeactivatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = subscriptionDeactivatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> subscriptionDeactivatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload) throws ApiException {
+        okhttp3.Call localVarCall = subscriptionDeactivatedPostValidateBeforeCall(webhookSubscriptionPayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Subscription Deactivated (asynchronously)
      * Occurs when a customer subscription is deactivated or expired.
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1475,15 +1475,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscriptionDeactivatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call subscriptionDeactivatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = subscriptionDeactivatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = subscriptionDeactivatedPostValidateBeforeCall(webhookSubscriptionPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
      * Build call for subscriptionUpdatedPost
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -1494,7 +1494,7 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscriptionUpdatedPostCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call subscriptionUpdatedPostCall(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -1508,7 +1508,7 @@ public class DefaultApi {
             basePath = null;
         }
 
-        Object localVarPostBody = UNKNOWN_BASE_TYPE;
+        Object localVarPostBody = webhookSubscriptionPayload;
 
         // create path and map variables
         String localVarPath = "/subscription.updated";
@@ -1539,15 +1539,15 @@ public class DefaultApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call subscriptionUpdatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback _callback) throws ApiException {
-        return subscriptionUpdatedPostCall(UNKNOWN_BASE_TYPE, _callback);
+    private okhttp3.Call subscriptionUpdatedPostValidateBeforeCall(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback _callback) throws ApiException {
+        return subscriptionUpdatedPostCall(webhookSubscriptionPayload, _callback);
 
     }
 
     /**
      * Subscription Updated
      * Occurs when a customer subscription is updated (e.g., cancel at period end changes).
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table border="1">
@@ -1556,14 +1556,14 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public void subscriptionUpdatedPost(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        subscriptionUpdatedPostWithHttpInfo(UNKNOWN_BASE_TYPE);
+    public void subscriptionUpdatedPost(WebhookSubscriptionPayload webhookSubscriptionPayload) throws ApiException {
+        subscriptionUpdatedPostWithHttpInfo(webhookSubscriptionPayload);
     }
 
     /**
      * Subscription Updated
      * Occurs when a customer subscription is updated (e.g., cancel at period end changes).
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @return ApiResponse&lt;Void&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1573,15 +1573,15 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<Void> subscriptionUpdatedPostWithHttpInfo(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE) throws ApiException {
-        okhttp3.Call localVarCall = subscriptionUpdatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, null);
+    public ApiResponse<Void> subscriptionUpdatedPostWithHttpInfo(WebhookSubscriptionPayload webhookSubscriptionPayload) throws ApiException {
+        okhttp3.Call localVarCall = subscriptionUpdatedPostValidateBeforeCall(webhookSubscriptionPayload, null);
         return localVarApiClient.execute(localVarCall);
     }
 
     /**
      * Subscription Updated (asynchronously)
      * Occurs when a customer subscription is updated (e.g., cancel at period end changes).
-     * @param UNKNOWN_BASE_TYPE  (optional)
+     * @param webhookSubscriptionPayload  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1592,9 +1592,9 @@ public class DefaultApi {
         <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call subscriptionUpdatedPostAsync(UNKNOWN_BASE_TYPE UNKNOWN_BASE_TYPE, final ApiCallback<Void> _callback) throws ApiException {
+    public okhttp3.Call subscriptionUpdatedPostAsync(WebhookSubscriptionPayload webhookSubscriptionPayload, final ApiCallback<Void> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = subscriptionUpdatedPostValidateBeforeCall(UNKNOWN_BASE_TYPE, _callback);
+        okhttp3.Call localVarCall = subscriptionUpdatedPostValidateBeforeCall(webhookSubscriptionPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

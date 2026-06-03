@@ -31,6 +31,7 @@ Represents a product item created under your business, containing core pricing, 
 |**stock** | **Integer** | Available stock quantity, or null for unlimited inventory. |  |
 |**activationLimit** | **Integer** | Maximum number of simultaneous active instances/devices allowed per issued license key (applicable if hasLicenseKey is true). |  |
 |**isListed** | **Boolean** | Defines if the product is listed publicly on the merchant&#39;s storefront template. |  |
+|**isFree** | **Boolean** | Whether the product is free. |  |
 |**createdAt** | **OffsetDateTime** | Timestamp indicating exactly when the product was created. |  |
 |**updatedAt** | **OffsetDateTime** | Timestamp indicating when the product was last modified. |  |
 |**isPermanentlyDeleted** | **Boolean** | Indicates if the product has been permanently deleted. |  |

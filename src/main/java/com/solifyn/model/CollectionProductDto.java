@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * CollectionProductDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-30T16:30:35.667118600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class CollectionProductDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -281,6 +281,11 @@ public class CollectionProductDto {
   @SerializedName(SERIALIZED_NAME_IS_LISTED)
   @javax.annotation.Nonnull
   private Boolean isListed;
+
+  public static final String SERIALIZED_NAME_IS_FREE = "isFree";
+  @SerializedName(SERIALIZED_NAME_IS_FREE)
+  @javax.annotation.Nonnull
+  private Boolean isFree;
 
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
@@ -788,6 +793,25 @@ public class CollectionProductDto {
   }
 
 
+  public CollectionProductDto isFree(@javax.annotation.Nonnull Boolean isFree) {
+    this.isFree = isFree;
+    return this;
+  }
+
+  /**
+   * Whether the product is free.
+   * @return isFree
+   */
+  @javax.annotation.Nonnull
+  public Boolean getIsFree() {
+    return isFree;
+  }
+
+  public void setIsFree(@javax.annotation.Nonnull Boolean isFree) {
+    this.isFree = isFree;
+  }
+
+
   public CollectionProductDto createdAt(@javax.annotation.Nonnull OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
@@ -1011,6 +1035,7 @@ public class CollectionProductDto {
         Objects.equals(this.stock, collectionProductDto.stock) &&
         Objects.equals(this.activationLimit, collectionProductDto.activationLimit) &&
         Objects.equals(this.isListed, collectionProductDto.isListed) &&
+        Objects.equals(this.isFree, collectionProductDto.isFree) &&
         Objects.equals(this.createdAt, collectionProductDto.createdAt) &&
         Objects.equals(this.updatedAt, collectionProductDto.updatedAt) &&
         Objects.equals(this.isPermanentlyDeleted, collectionProductDto.isPermanentlyDeleted) &&
@@ -1025,7 +1050,7 @@ public class CollectionProductDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, name, price, currency, description, status, imageUrl, taxCategory, pricingType, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, activationLimit, isListed, createdAt, updatedAt, isPermanentlyDeleted, brandId, digitalLink, instructions, activationMessage, expiryHours, businessId, quantity);
+    return Objects.hash(id, name, price, currency, description, status, imageUrl, taxCategory, pricingType, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, activationLimit, isListed, isFree, createdAt, updatedAt, isPermanentlyDeleted, brandId, digitalLink, instructions, activationMessage, expiryHours, businessId, quantity);
   }
 
   @Override
@@ -1055,6 +1080,7 @@ public class CollectionProductDto {
     sb.append("    stock: ").append(toIndentedString(stock)).append("\n");
     sb.append("    activationLimit: ").append(toIndentedString(activationLimit)).append("\n");
     sb.append("    isListed: ").append(toIndentedString(isListed)).append("\n");
+    sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("    isPermanentlyDeleted: ").append(toIndentedString(isPermanentlyDeleted)).append("\n");
@@ -1110,6 +1136,7 @@ public class CollectionProductDto {
     openapiFields.add("stock");
     openapiFields.add("activationLimit");
     openapiFields.add("isListed");
+    openapiFields.add("isFree");
     openapiFields.add("createdAt");
     openapiFields.add("updatedAt");
     openapiFields.add("isPermanentlyDeleted");
@@ -1145,6 +1172,7 @@ public class CollectionProductDto {
     openapiRequiredFields.add("stock");
     openapiRequiredFields.add("activationLimit");
     openapiRequiredFields.add("isListed");
+    openapiRequiredFields.add("isFree");
     openapiRequiredFields.add("createdAt");
     openapiRequiredFields.add("updatedAt");
     openapiRequiredFields.add("isPermanentlyDeleted");

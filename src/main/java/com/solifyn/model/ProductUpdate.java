@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * ProductUpdate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-05-30T16:30:35.667118600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ProductUpdate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -429,6 +429,11 @@ public class ProductUpdate {
   @SerializedName(SERIALIZED_NAME_IS_LISTED)
   @javax.annotation.Nullable
   private Boolean isListed = true;
+
+  public static final String SERIALIZED_NAME_IS_FREE = "isFree";
+  @SerializedName(SERIALIZED_NAME_IS_FREE)
+  @javax.annotation.Nullable
+  private Boolean isFree = false;
 
   public static final String SERIALIZED_NAME_ADDONS = "addons";
   @SerializedName(SERIALIZED_NAME_ADDONS)
@@ -853,6 +858,25 @@ public class ProductUpdate {
   }
 
 
+  public ProductUpdate isFree(@javax.annotation.Nullable Boolean isFree) {
+    this.isFree = isFree;
+    return this;
+  }
+
+  /**
+   * Whether the product is free of charge.
+   * @return isFree
+   */
+  @javax.annotation.Nullable
+  public Boolean getIsFree() {
+    return isFree;
+  }
+
+  public void setIsFree(@javax.annotation.Nullable Boolean isFree) {
+    this.isFree = isFree;
+  }
+
+
   public ProductUpdate addons(@javax.annotation.Nullable List<ProductCreateAddonsInner> addons) {
     this.addons = addons;
     return this;
@@ -911,12 +935,13 @@ public class ProductUpdate {
         Objects.equals(this.customFields, productUpdate.customFields) &&
         Objects.equals(this.stock, productUpdate.stock) &&
         Objects.equals(this.isListed, productUpdate.isListed) &&
+        Objects.equals(this.isFree, productUpdate.isFree) &&
         Objects.equals(this.addons, productUpdate.addons);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, addons);
+    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons);
   }
 
   @Override
@@ -944,6 +969,7 @@ public class ProductUpdate {
     sb.append("    customFields: ").append(toIndentedString(customFields)).append("\n");
     sb.append("    stock: ").append(toIndentedString(stock)).append("\n");
     sb.append("    isListed: ").append(toIndentedString(isListed)).append("\n");
+    sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
     sb.append("    addons: ").append(toIndentedString(addons)).append("\n");
     sb.append("}");
     return sb.toString();
@@ -988,6 +1014,7 @@ public class ProductUpdate {
     openapiFields.add("customFields");
     openapiFields.add("stock");
     openapiFields.add("isListed");
+    openapiFields.add("isFree");
     openapiFields.add("addons");
 
     // a set of required properties/fields (JSON key names)

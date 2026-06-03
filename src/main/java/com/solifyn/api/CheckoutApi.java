@@ -31,6 +31,7 @@ import com.solifyn.model.CheckoutResponseDto;
 import com.solifyn.model.CheckoutSessionDetailsDto;
 import com.solifyn.model.CreateCheckoutDto;
 import com.solifyn.model.CreateCollectionCheckoutDto;
+import com.solifyn.model.CreateSetupCheckoutDto;
 import com.solifyn.model.PricePreviewResponseDto;
 import com.solifyn.model.SupportedCurrenciesResponseDto;
 
@@ -329,6 +330,128 @@ public class CheckoutApi {
         okhttp3.Call localVarCall = checkoutCreateCollectionValidateBeforeCall(createCollectionCheckoutDto, _callback);
         Type localVarReturnType = new TypeToken<CheckoutResponseDto>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for checkoutCreateSetup
+     * @param createSetupCheckoutDto  (required)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Setup checkout configuration created. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkoutCreateSetupCall(CreateSetupCheckoutDto createSetupCheckoutDto, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createSetupCheckoutDto;
+
+        // create path and map variables
+        String localVarPath = "/v1/checkout/setup-configuration";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call checkoutCreateSetupValidateBeforeCall(CreateSetupCheckoutDto createSetupCheckoutDto, final ApiCallback _callback) throws ApiException {
+        // verify the required parameter 'createSetupCheckoutDto' is set
+        if (createSetupCheckoutDto == null) {
+            throw new ApiException("Missing the required parameter 'createSetupCheckoutDto' when calling checkoutCreateSetup(Async)");
+        }
+
+        return checkoutCreateSetupCall(createSetupCheckoutDto, _callback);
+
+    }
+
+    /**
+     * Create Setup Checkout Configuration
+     * Create a new checkout session in setup mode for collecting cards without immediate charge.
+     * @param createSetupCheckoutDto  (required)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Setup checkout configuration created. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void checkoutCreateSetup(CreateSetupCheckoutDto createSetupCheckoutDto) throws ApiException {
+        checkoutCreateSetupWithHttpInfo(createSetupCheckoutDto);
+    }
+
+    /**
+     * Create Setup Checkout Configuration
+     * Create a new checkout session in setup mode for collecting cards without immediate charge.
+     * @param createSetupCheckoutDto  (required)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Setup checkout configuration created. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> checkoutCreateSetupWithHttpInfo(CreateSetupCheckoutDto createSetupCheckoutDto) throws ApiException {
+        okhttp3.Call localVarCall = checkoutCreateSetupValidateBeforeCall(createSetupCheckoutDto, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Create Setup Checkout Configuration (asynchronously)
+     * Create a new checkout session in setup mode for collecting cards without immediate charge.
+     * @param createSetupCheckoutDto  (required)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> Setup checkout configuration created. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call checkoutCreateSetupAsync(CreateSetupCheckoutDto createSetupCheckoutDto, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = checkoutCreateSetupValidateBeforeCall(createSetupCheckoutDto, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }
     /**
