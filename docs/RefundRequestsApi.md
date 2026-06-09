@@ -1,6 +1,6 @@
 # RefundRequestsApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -29,7 +29,7 @@ import com.solifyn.api.RefundRequestsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     RefundRequestsApi apiInstance = new RefundRequestsApi(defaultClient);
     try {
@@ -84,7 +84,7 @@ import com.solifyn.api.RefundRequestsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     RefundRequestsApi apiInstance = new RefundRequestsApi(defaultClient);
     String id = "id_example"; // String | 
@@ -143,7 +143,7 @@ import com.solifyn.api.RefundRequestsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     RefundRequestsApi apiInstance = new RefundRequestsApi(defaultClient);
     String id = "id_example"; // String | 
@@ -202,7 +202,7 @@ import com.solifyn.api.RefundRequestsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     RefundRequestsApi apiInstance = new RefundRequestsApi(defaultClient);
     String id = "id_example"; // String | 
@@ -261,7 +261,7 @@ import com.solifyn.api.RefundRequestsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     RefundRequestsApi apiInstance = new RefundRequestsApi(defaultClient);
     try {

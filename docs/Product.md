@@ -20,6 +20,9 @@ Represents a product item created under your business, containing core pricing, 
 |**discount** | **BigDecimal** | Discount value as a percentage or fixed amount. |  |
 |**hasLicenseKey** | **Boolean** | Indicates if the product issues a cryptographically secure software license key upon checkout completion. |  |
 |**hasDigitalDelivery** | **Boolean** | Whether the product includes digital file downloads upon purchase. |  |
+|**hasGithubAccess** | **Boolean** | Whether the product includes GitHub repository access. |  |
+|**githubRepo** | **String** | GitHub repository to grant access to (format: owner/repo). |  |
+|**githubPermission** | [**GithubPermissionEnum**](#GithubPermissionEnum) | GitHub collaborator permission level. |  |
 |**isTaxInclusive** | **Boolean** | Whether the product price already includes applicable sales taxes. |  |
 |**billingPeriod** | **Integer** | The subscription billing cycle interval in days (for subscription products). |  |
 |**trialPeriodDays** | **Integer** | Trial duration in days for subscription products. |  |
@@ -62,6 +65,18 @@ Represents a product item created under your business, containing core pricing, 
 | USAGE_BASED | &quot;usage_based&quot; |
 | ONE_TIME | &quot;one_time&quot; |
 | RENEWAL | &quot;renewal&quot; |
+
+
+
+## Enum: GithubPermissionEnum
+
+| Name | Value |
+|---- | -----|
+| PULL | &quot;pull&quot; |
+| TRIAGE | &quot;triage&quot; |
+| PUSH | &quot;push&quot; |
+| MAINTAIN | &quot;maintain&quot; |
+| ADMIN | &quot;admin&quot; |
 
 
 

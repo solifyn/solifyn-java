@@ -22,7 +22,9 @@ import com.google.gson.stream.JsonWriter;
 import com.solifyn.model.Product;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +52,7 @@ import com.solifyn.JSON;
 /**
  * CheckoutSessionDetailsDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T06:25:11.671332+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class CheckoutSessionDetailsDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -106,6 +108,11 @@ public class CheckoutSessionDetailsDto {
   @SerializedName(SERIALIZED_NAME_PRODUCT)
   @javax.annotation.Nullable
   private Product product;
+
+  public static final String SERIALIZED_NAME_ENTITLEMENT_GRANTS = "entitlementGrants";
+  @SerializedName(SERIALIZED_NAME_ENTITLEMENT_GRANTS)
+  @javax.annotation.Nullable
+  private List<Object> entitlementGrants = new ArrayList<>();
 
   public CheckoutSessionDetailsDto() {
   }
@@ -319,6 +326,33 @@ public class CheckoutSessionDetailsDto {
   }
 
 
+  public CheckoutSessionDetailsDto entitlementGrants(@javax.annotation.Nullable List<Object> entitlementGrants) {
+    this.entitlementGrants = entitlementGrants;
+    return this;
+  }
+
+  public CheckoutSessionDetailsDto addEntitlementGrantsItem(Object entitlementGrantsItem) {
+    if (this.entitlementGrants == null) {
+      this.entitlementGrants = new ArrayList<>();
+    }
+    this.entitlementGrants.add(entitlementGrantsItem);
+    return this;
+  }
+
+  /**
+   * List of entitlement grants (e.g. GitHub repo invites) associated with this checkout.
+   * @return entitlementGrants
+   */
+  @javax.annotation.Nullable
+  public List<Object> getEntitlementGrants() {
+    return entitlementGrants;
+  }
+
+  public void setEntitlementGrants(@javax.annotation.Nullable List<Object> entitlementGrants) {
+    this.entitlementGrants = entitlementGrants;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -339,12 +373,13 @@ public class CheckoutSessionDetailsDto {
         Objects.equals(this.sessionId, checkoutSessionDetailsDto.sessionId) &&
         Objects.equals(this.paymentId, checkoutSessionDetailsDto.paymentId) &&
         Objects.equals(this.checkoutUrl, checkoutSessionDetailsDto.checkoutUrl) &&
-        Objects.equals(this.product, checkoutSessionDetailsDto.product);
+        Objects.equals(this.product, checkoutSessionDetailsDto.product) &&
+        Objects.equals(this.entitlementGrants, checkoutSessionDetailsDto.entitlementGrants);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, price, currency, storeName, status, billingAddress, customFields, sessionId, paymentId, checkoutUrl, product);
+    return Objects.hash(id, price, currency, storeName, status, billingAddress, customFields, sessionId, paymentId, checkoutUrl, product, entitlementGrants);
   }
 
   @Override
@@ -362,6 +397,7 @@ public class CheckoutSessionDetailsDto {
     sb.append("    paymentId: ").append(toIndentedString(paymentId)).append("\n");
     sb.append("    checkoutUrl: ").append(toIndentedString(checkoutUrl)).append("\n");
     sb.append("    product: ").append(toIndentedString(product)).append("\n");
+    sb.append("    entitlementGrants: ").append(toIndentedString(entitlementGrants)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -395,6 +431,7 @@ public class CheckoutSessionDetailsDto {
     openapiFields.add("paymentId");
     openapiFields.add("checkoutUrl");
     openapiFields.add("product");
+    openapiFields.add("entitlementGrants");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -457,6 +494,10 @@ public class CheckoutSessionDetailsDto {
       // validate the optional field `product`
       if (jsonObj.get("product") != null && !jsonObj.get("product").isJsonNull()) {
         Product.validateJsonElement(jsonObj.get("product"));
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("entitlementGrants") != null && !jsonObj.get("entitlementGrants").isJsonNull() && !jsonObj.get("entitlementGrants").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `entitlementGrants` to be an array in the JSON string but got `%s`", jsonObj.get("entitlementGrants").toString()));
       }
   }
 

@@ -18,6 +18,7 @@
 |**paymentId** | **String** | Database payment transaction ID |  [optional] |
 |**checkoutUrl** | **String** | Checkout session redirect URL if loaded in link mode |  [optional] |
 |**product** | [**Product**](Product.md) | The details of the product being purchased |  [optional] |
+|**entitlementGrants** | **List&lt;Object&gt;** | List of entitlement grants (e.g. GitHub repo invites) associated with this checkout. |  [optional] |
 
 
 

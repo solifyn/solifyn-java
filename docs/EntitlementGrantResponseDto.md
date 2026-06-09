@@ -1,0 +1,27 @@
+
+
+# EntitlementGrantResponseDto
+
+
+## Properties
+
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**id** | **UUID** | The unique entitlement grant ID. |  |
+|**businessId** | **UUID** | The business ID context. |  |
+|**customerId** | **UUID** | The customer ID. |  |
+|**paymentId** | **UUID** | Associated payment transaction ID. |  [optional] |
+|**productId** | **UUID** | The purchased product ID. |  |
+|**type** | **String** | The type of entitlement (e.g. GITHUB, DISCORD, TELEGRAM). |  |
+|**githubRepo** | **String** | Target GitHub repository (owner/repo) if type is GITHUB. |  [optional] |
+|**githubPermission** | **String** | GitHub access permission level if type is GITHUB. |  [optional] |
+|**githubUsername** | **String** | The connected customer GitHub username. |  [optional] |
+|**status** | **String** | Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED). |  |
+|**oauthUrl** | **String** | OAuth URL to redirect the customer to. |  [optional] |
+|**errorDetails** | **String** | Error message if invitation delivery failed. |  [optional] |
+|**metadata** | **Object** | Platform-specific metadata. |  [optional] |
+|**createdAt** | **String** | Creation timestamp. |  |
+|**updatedAt** | **String** | Modification timestamp. |  |
+
+
+

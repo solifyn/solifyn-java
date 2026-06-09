@@ -1,6 +1,6 @@
 # WebhookEndpointApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -27,13 +27,18 @@ Create Operational Webhook Endpoint
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     OperationalWebhookEndpointInDto operationalWebhookEndpointInDto = new OperationalWebhookEndpointInDto(); // OperationalWebhookEndpointInDto | 
@@ -63,7 +68,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -87,13 +92,18 @@ Delete Operational Webhook Endpoint
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -122,7 +132,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -146,13 +156,18 @@ Get Operational Webhook Endpoint
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -182,7 +197,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -206,13 +221,18 @@ Get Operational Webhook Endpoint Headers
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -242,7 +262,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -266,13 +286,18 @@ Get Operational Webhook Endpoint Secret
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -302,7 +327,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -326,13 +351,18 @@ List Operational Webhook Endpoints
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     try {
@@ -358,7 +388,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -382,13 +412,18 @@ Rotate Operational Webhook Endpoint Secret
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -419,7 +454,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -443,13 +478,18 @@ Update Operational Webhook Endpoint
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -481,7 +521,7 @@ public class Example {
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 
@@ -505,13 +545,18 @@ Set Operational Webhook Endpoint Headers
 import com.solifyn.ApiClient;
 import com.solifyn.ApiException;
 import com.solifyn.Configuration;
+import com.solifyn.auth.*;
 import com.solifyn.models.*;
 import com.solifyn.api.WebhookEndpointApi;
 
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
 
     WebhookEndpointApi apiInstance = new WebhookEndpointApi(defaultClient);
     String id = "id_example"; // String | The endpoint ID or UID
@@ -542,7 +587,7 @@ null (empty response body)
 
 ### Authorization
 
-No authorization required
+[ApiKeyAuth](../README.md#ApiKeyAuth)
 
 ### HTTP request headers
 

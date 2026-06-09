@@ -1,6 +1,6 @@
 # MetersApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -34,7 +34,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -101,7 +101,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -168,7 +168,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -239,7 +239,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -308,7 +308,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -379,7 +379,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
@@ -446,7 +446,7 @@ import com.solifyn.api.MetersApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
     
     // Configure HTTP bearer authorization: ApiKeyAuth
     HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");

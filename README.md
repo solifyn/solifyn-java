@@ -2,7 +2,7 @@
 
 Solifyn API
 - API version: 1.0.0
-  - Build date: 2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]
+  - Build date: 2026-06-10T06:25:11.671332+07:00[Asia/Saigon]
   - Generator version: 7.10.0
 
 Welcome to the Solifyn API Reference. Leverage our secure endpoints to manage products and issue, validate, and manage software license keys programmatically.
@@ -90,7 +90,7 @@ import com.solifyn.api.BalanceApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     BalanceApi apiInstance = new BalanceApi(defaultClient);
     try {
@@ -109,7 +109,7 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -167,6 +167,12 @@ Class | Method | HTTP request | Description
 *DisputesApi* | [**disputesSubmitEvidence**](docs/DisputesApi.md#disputesSubmitEvidence) | **POST** /v1/transactions/disputes/{id}/submit | Submit Dispute Evidence
 *DisputesApi* | [**disputesUpdateEvidence**](docs/DisputesApi.md#disputesUpdateEvidence) | **PATCH** /v1/transactions/disputes/{id}/evidence | Update Dispute Evidence
 *DisputesApi* | [**disputesUploadEvidenceFile**](docs/DisputesApi.md#disputesUploadEvidenceFile) | **POST** /v1/transactions/disputes/upload | Upload Evidence File
+*EntitlementGrantsApi* | [**entitlementGrantsGet**](docs/EntitlementGrantsApi.md#entitlementGrantsGet) | **GET** /v1/entitlement-grants/{id} | Retrieve Entitlement Grant
+*EntitlementGrantsApi* | [**entitlementGrantsList**](docs/EntitlementGrantsApi.md#entitlementGrantsList) | **GET** /v1/entitlement-grants | List Entitlement Grants
+*EntitlementGrantsApi* | [**entitlementGrantsRetry**](docs/EntitlementGrantsApi.md#entitlementGrantsRetry) | **POST** /v1/entitlement-grants/{id}/retry | Retry Entitlement Grant Delivery
+*EntitlementGrantsApi* | [**entitlementGrantsRevoke**](docs/EntitlementGrantsApi.md#entitlementGrantsRevoke) | **POST** /v1/entitlement-grants/{id}/revoke | Manually Revoke Entitlement Grant
+*GitHubIntegrationApi* | [**githubGetInstallUrl**](docs/GitHubIntegrationApi.md#githubGetInstallUrl) | **GET** /v1/github/install | Get GitHub App Installation URL
+*GitHubIntegrationApi* | [**githubListRepos**](docs/GitHubIntegrationApi.md#githubListRepos) | **GET** /v1/github/repos | List Available GitHub Repositories
 *LicenseApi* | [**licensesCreate**](docs/LicenseApi.md#licensesCreate) | **POST** /v1/licenses | Create License Key
 *LicenseApi* | [**licensesDeleteInstance**](docs/LicenseApi.md#licensesDeleteInstance) | **DELETE** /v1/licenses/instances/{instanceId} | Force Delete Instance
 *LicenseApi* | [**licensesGet**](docs/LicenseApi.md#licensesGet) | **GET** /v1/licenses/{id} | Get License Key
@@ -290,6 +296,8 @@ Class | Method | HTTP request | Description
  - [DisputeFileUpload](docs/DisputeFileUpload.md)
  - [DisputeList](docs/DisputeList.md)
  - [DisputeListMetaDto](docs/DisputeListMetaDto.md)
+ - [EntitlementGrantResponseDto](docs/EntitlementGrantResponseDto.md)
+ - [GithubReposResponseDto](docs/GithubReposResponseDto.md)
  - [Instance](docs/Instance.md)
  - [Invoice](docs/Invoice.md)
  - [License](docs/License.md)
@@ -357,6 +365,7 @@ Class | Method | HTTP request | Description
  - [SubscriptionUserDto](docs/SubscriptionUserDto.md)
  - [SubscriptionsAction201Response](docs/SubscriptionsAction201Response.md)
  - [SupportedCurrenciesResponseDto](docs/SupportedCurrenciesResponseDto.md)
+ - [SyncLoginDto](docs/SyncLoginDto.md)
  - [UpdateCheckoutLinkDto](docs/UpdateCheckoutLinkDto.md)
  - [UpdateCollectionDto](docs/UpdateCollectionDto.md)
  - [UpdateCollectionProductDto](docs/UpdateCollectionProductDto.md)

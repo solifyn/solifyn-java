@@ -64,6 +64,10 @@ docs/DisputeFileUpload.md
 docs/DisputeList.md
 docs/DisputeListMetaDto.md
 docs/DisputesApi.md
+docs/EntitlementGrantResponseDto.md
+docs/EntitlementGrantsApi.md
+docs/GitHubIntegrationApi.md
+docs/GithubReposResponseDto.md
 docs/Instance.md
 docs/Invoice.md
 docs/License.md
@@ -141,6 +145,7 @@ docs/SubscriptionUserDto.md
 docs/SubscriptionsAction201Response.md
 docs/SubscriptionsApi.md
 docs/SupportedCurrenciesResponseDto.md
+docs/SyncLoginDto.md
 docs/UpdateCheckoutLinkDto.md
 docs/UpdateCollectionDto.md
 docs/UpdateCollectionProductDto.md
@@ -190,6 +195,8 @@ src/main/java/com/solifyn/api/DeveloperApi.java
 src/main/java/com/solifyn/api/DigitalFileApi.java
 src/main/java/com/solifyn/api/DiscountsApi.java
 src/main/java/com/solifyn/api/DisputesApi.java
+src/main/java/com/solifyn/api/EntitlementGrantsApi.java
+src/main/java/com/solifyn/api/GitHubIntegrationApi.java
 src/main/java/com/solifyn/api/LicenseApi.java
 src/main/java/com/solifyn/api/LicenseKeysApi.java
 src/main/java/com/solifyn/api/LicenseKeysClientApi.java
@@ -256,6 +263,8 @@ src/main/java/com/solifyn/model/DisputeEvidenceUpdate.java
 src/main/java/com/solifyn/model/DisputeFileUpload.java
 src/main/java/com/solifyn/model/DisputeList.java
 src/main/java/com/solifyn/model/DisputeListMetaDto.java
+src/main/java/com/solifyn/model/EntitlementGrantResponseDto.java
+src/main/java/com/solifyn/model/GithubReposResponseDto.java
 src/main/java/com/solifyn/model/Instance.java
 src/main/java/com/solifyn/model/Invoice.java
 src/main/java/com/solifyn/model/License.java
@@ -323,6 +332,7 @@ src/main/java/com/solifyn/model/SubscriptionSeatAdjustment.java
 src/main/java/com/solifyn/model/SubscriptionUserDto.java
 src/main/java/com/solifyn/model/SubscriptionsAction201Response.java
 src/main/java/com/solifyn/model/SupportedCurrenciesResponseDto.java
+src/main/java/com/solifyn/model/SyncLoginDto.java
 src/main/java/com/solifyn/model/UpdateCheckoutLinkDto.java
 src/main/java/com/solifyn/model/UpdateCollectionDto.java
 src/main/java/com/solifyn/model/UpdateCollectionProductDto.java
@@ -338,5 +348,3 @@ src/main/java/com/solifyn/model/WebhookPaymentPayload.java
 src/main/java/com/solifyn/model/WebhookPaymentPayloadBillingAddress.java
 src/main/java/com/solifyn/model/WebhookRefundPayload.java
 src/main/java/com/solifyn/model/WebhookSubscriptionPayload.java
-src/test/java/com/solifyn/api/RefundRequestsApiTest.java
-src/test/java/com/solifyn/model/CreateSetupCheckoutDtoTest.java

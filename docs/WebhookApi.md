@@ -1,6 +1,6 @@
 # WebhookApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -26,7 +26,7 @@ import com.solifyn.api.WebhookApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     try {
@@ -81,7 +81,7 @@ import com.solifyn.api.WebhookApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     WebhookApi apiInstance = new WebhookApi(defaultClient);
     String businessId = "businessId_example"; // String | 

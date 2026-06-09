@@ -61,15 +61,15 @@ import com.solifyn.auth.ApiKeyAuth;
  */
 public class ApiClient {
 
-    private String basePath = "http://localhost:8000";
+    private String basePath = "https://api.solifyn.com";
     protected List<ServerConfiguration> servers = new ArrayList<ServerConfiguration>(Arrays.asList(
     new ServerConfiguration(
-      "http://localhost:8000",
+      "https://api.solifyn.com",
       "Live environment",
       new HashMap<String, ServerVariable>()
     ),
     new ServerConfiguration(
-      "http://localhost:8001",
+      "https://sandbox-api.solifyn.com",
       "Test environment",
       new HashMap<String, ServerVariable>()
     )
@@ -163,7 +163,7 @@ public class ApiClient {
     /**
      * Set base path
      *
-     * @param basePath Base path of the URL (e.g http://localhost:8000
+     * @param basePath Base path of the URL (e.g https://api.solifyn.com
      * @return An instance of OkHttpClient
      */
     public ApiClient setBasePath(String basePath) {

@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * ProductUpdate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-04T06:44:41.869456600+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T06:25:11.671332+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ProductUpdate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -370,6 +370,79 @@ public class ProductUpdate {
   @javax.annotation.Nullable
   private Boolean hasDigitalDelivery = false;
 
+  public static final String SERIALIZED_NAME_HAS_GITHUB_ACCESS = "hasGithubAccess";
+  @SerializedName(SERIALIZED_NAME_HAS_GITHUB_ACCESS)
+  @javax.annotation.Nullable
+  private Boolean hasGithubAccess = false;
+
+  public static final String SERIALIZED_NAME_GITHUB_REPO = "githubRepo";
+  @SerializedName(SERIALIZED_NAME_GITHUB_REPO)
+  @javax.annotation.Nullable
+  private String githubRepo;
+
+  /**
+   * GitHub collaborator permission level.
+   */
+  @JsonAdapter(GithubPermissionEnum.Adapter.class)
+  public enum GithubPermissionEnum {
+    PULL("pull"),
+    
+    TRIAGE("triage"),
+    
+    PUSH("push"),
+    
+    MAINTAIN("maintain"),
+    
+    ADMIN("admin");
+
+    private String value;
+
+    GithubPermissionEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static GithubPermissionEnum fromValue(String value) {
+      for (GithubPermissionEnum b : GithubPermissionEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<GithubPermissionEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final GithubPermissionEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public GithubPermissionEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return GithubPermissionEnum.fromValue(value);
+      }
+    }
+
+    public static void validateJsonElement(JsonElement jsonElement) throws IOException {
+      String value = jsonElement.getAsString();
+      GithubPermissionEnum.fromValue(value);
+    }
+  }
+
+  public static final String SERIALIZED_NAME_GITHUB_PERMISSION = "githubPermission";
+  @SerializedName(SERIALIZED_NAME_GITHUB_PERMISSION)
+  @javax.annotation.Nullable
+  private GithubPermissionEnum githubPermission;
+
   public static final String SERIALIZED_NAME_IS_TAX_INCLUSIVE = "isTaxInclusive";
   @SerializedName(SERIALIZED_NAME_IS_TAX_INCLUSIVE)
   @javax.annotation.Nullable
@@ -611,6 +684,63 @@ public class ProductUpdate {
 
   public void setHasDigitalDelivery(@javax.annotation.Nullable Boolean hasDigitalDelivery) {
     this.hasDigitalDelivery = hasDigitalDelivery;
+  }
+
+
+  public ProductUpdate hasGithubAccess(@javax.annotation.Nullable Boolean hasGithubAccess) {
+    this.hasGithubAccess = hasGithubAccess;
+    return this;
+  }
+
+  /**
+   * Whether the purchase includes GitHub repository access.
+   * @return hasGithubAccess
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasGithubAccess() {
+    return hasGithubAccess;
+  }
+
+  public void setHasGithubAccess(@javax.annotation.Nullable Boolean hasGithubAccess) {
+    this.hasGithubAccess = hasGithubAccess;
+  }
+
+
+  public ProductUpdate githubRepo(@javax.annotation.Nullable String githubRepo) {
+    this.githubRepo = githubRepo;
+    return this;
+  }
+
+  /**
+   * GitHub repository to grant access to (format: owner/repo).
+   * @return githubRepo
+   */
+  @javax.annotation.Nullable
+  public String getGithubRepo() {
+    return githubRepo;
+  }
+
+  public void setGithubRepo(@javax.annotation.Nullable String githubRepo) {
+    this.githubRepo = githubRepo;
+  }
+
+
+  public ProductUpdate githubPermission(@javax.annotation.Nullable GithubPermissionEnum githubPermission) {
+    this.githubPermission = githubPermission;
+    return this;
+  }
+
+  /**
+   * GitHub collaborator permission level.
+   * @return githubPermission
+   */
+  @javax.annotation.Nullable
+  public GithubPermissionEnum getGithubPermission() {
+    return githubPermission;
+  }
+
+  public void setGithubPermission(@javax.annotation.Nullable GithubPermissionEnum githubPermission) {
+    this.githubPermission = githubPermission;
   }
 
 
@@ -923,6 +1053,9 @@ public class ProductUpdate {
         Objects.equals(this.discount, productUpdate.discount) &&
         Objects.equals(this.hasLicenseKey, productUpdate.hasLicenseKey) &&
         Objects.equals(this.hasDigitalDelivery, productUpdate.hasDigitalDelivery) &&
+        Objects.equals(this.hasGithubAccess, productUpdate.hasGithubAccess) &&
+        Objects.equals(this.githubRepo, productUpdate.githubRepo) &&
+        Objects.equals(this.githubPermission, productUpdate.githubPermission) &&
         Objects.equals(this.isTaxInclusive, productUpdate.isTaxInclusive) &&
         Objects.equals(this.activationLimit, productUpdate.activationLimit) &&
         Objects.equals(this.brandId, productUpdate.brandId) &&
@@ -941,7 +1074,7 @@ public class ProductUpdate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons);
+    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons);
   }
 
   @Override
@@ -957,6 +1090,9 @@ public class ProductUpdate {
     sb.append("    discount: ").append(toIndentedString(discount)).append("\n");
     sb.append("    hasLicenseKey: ").append(toIndentedString(hasLicenseKey)).append("\n");
     sb.append("    hasDigitalDelivery: ").append(toIndentedString(hasDigitalDelivery)).append("\n");
+    sb.append("    hasGithubAccess: ").append(toIndentedString(hasGithubAccess)).append("\n");
+    sb.append("    githubRepo: ").append(toIndentedString(githubRepo)).append("\n");
+    sb.append("    githubPermission: ").append(toIndentedString(githubPermission)).append("\n");
     sb.append("    isTaxInclusive: ").append(toIndentedString(isTaxInclusive)).append("\n");
     sb.append("    activationLimit: ").append(toIndentedString(activationLimit)).append("\n");
     sb.append("    brandId: ").append(toIndentedString(brandId)).append("\n");
@@ -1002,6 +1138,9 @@ public class ProductUpdate {
     openapiFields.add("discount");
     openapiFields.add("hasLicenseKey");
     openapiFields.add("hasDigitalDelivery");
+    openapiFields.add("hasGithubAccess");
+    openapiFields.add("githubRepo");
+    openapiFields.add("githubPermission");
     openapiFields.add("isTaxInclusive");
     openapiFields.add("activationLimit");
     openapiFields.add("brandId");
@@ -1064,6 +1203,16 @@ public class ProductUpdate {
       // validate the optional field `taxCategory`
       if (jsonObj.get("taxCategory") != null && !jsonObj.get("taxCategory").isJsonNull()) {
         TaxCategoryEnum.validateJsonElement(jsonObj.get("taxCategory"));
+      }
+      if ((jsonObj.get("githubRepo") != null && !jsonObj.get("githubRepo").isJsonNull()) && !jsonObj.get("githubRepo").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `githubRepo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("githubRepo").toString()));
+      }
+      if ((jsonObj.get("githubPermission") != null && !jsonObj.get("githubPermission").isJsonNull()) && !jsonObj.get("githubPermission").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `githubPermission` to be a primitive type in the JSON string but got `%s`", jsonObj.get("githubPermission").toString()));
+      }
+      // validate the optional field `githubPermission`
+      if (jsonObj.get("githubPermission") != null && !jsonObj.get("githubPermission").isJsonNull()) {
+        GithubPermissionEnum.validateJsonElement(jsonObj.get("githubPermission"));
       }
       if ((jsonObj.get("brandId") != null && !jsonObj.get("brandId").isJsonNull()) && !jsonObj.get("brandId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `brandId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("brandId").toString()));

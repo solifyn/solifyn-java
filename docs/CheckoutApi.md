@@ -1,6 +1,6 @@
 # CheckoutApi
 
-All URIs are relative to *http://localhost:8000*
+All URIs are relative to *https://api.solifyn.com*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -32,7 +32,7 @@ import com.solifyn.api.CheckoutApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     CheckoutApi apiInstance = new CheckoutApi(defaultClient);
     CreateCheckoutDto createCheckoutDto = new CreateCheckoutDto(); // CreateCheckoutDto | 
@@ -94,7 +94,7 @@ import com.solifyn.api.CheckoutApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     CheckoutApi apiInstance = new CheckoutApi(defaultClient);
     CreateCollectionCheckoutDto createCollectionCheckoutDto = new CreateCollectionCheckoutDto(); // CreateCollectionCheckoutDto | 
@@ -156,7 +156,7 @@ import com.solifyn.api.CheckoutApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     CheckoutApi apiInstance = new CheckoutApi(defaultClient);
     CreateSetupCheckoutDto createSetupCheckoutDto = new CreateSetupCheckoutDto(); // CreateSetupCheckoutDto | 
@@ -217,7 +217,7 @@ import com.solifyn.api.CheckoutApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     CheckoutApi apiInstance = new CheckoutApi(defaultClient);
     String id = "ch_XXXXXXXXXXX"; // String | Internal database checkout session ID
@@ -279,7 +279,7 @@ import com.solifyn.api.CheckoutApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     CheckoutApi apiInstance = new CheckoutApi(defaultClient);
     String productId = "prod_z2o92kEl6cYYX"; // String | Public product ID
@@ -351,7 +351,7 @@ import com.solifyn.api.CheckoutApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("http://localhost:8000");
+    defaultClient.setBasePath("https://api.solifyn.com");
 
     CheckoutApi apiInstance = new CheckoutApi(defaultClient);
     try {

@@ -16,6 +16,9 @@
 |**discount** | **BigDecimal** | Percentage or flat rate discount. |  [optional] |
 |**hasLicenseKey** | **Boolean** | Whether to automatically issue license keys upon successful orders. |  [optional] |
 |**hasDigitalDelivery** | **Boolean** | Whether the purchase includes downloadable files. |  [optional] |
+|**hasGithubAccess** | **Boolean** | Whether the purchase includes GitHub repository access. |  [optional] |
+|**githubRepo** | **String** | GitHub repository to grant access to (format: owner/repo). |  [optional] |
+|**githubPermission** | [**GithubPermissionEnum**](#GithubPermissionEnum) | GitHub collaborator permission level. |  [optional] |
 |**isTaxInclusive** | **Boolean** | Whether tax is included in the base price. |  [optional] |
 |**activationLimit** | **Integer** | Maximum concurrent activated instances allowed per license key. |  [optional] |
 |**brandId** | **String** | Brand id for the product, if not provided will default to primary brand. |  [optional] |
@@ -130,6 +133,18 @@
 | SAAS | &quot;saas&quot; |
 | PHYSICAL_PRODUCTS | &quot;physical_products&quot; |
 | SERVICE | &quot;service&quot; |
+
+
+
+## Enum: GithubPermissionEnum
+
+| Name | Value |
+|---- | -----|
+| PULL | &quot;pull&quot; |
+| TRIAGE | &quot;triage&quot; |
+| PUSH | &quot;push&quot; |
+| MAINTAIN | &quot;maintain&quot; |
+| ADMIN | &quot;admin&quot; |
 
 
 
