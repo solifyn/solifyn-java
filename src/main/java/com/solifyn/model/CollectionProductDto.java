@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +56,7 @@ import com.solifyn.JSON;
 /**
  * CollectionProductDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class CollectionProductDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -89,7 +90,7 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String imageUrl;
 
   /**
@@ -214,7 +215,7 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_DISCOUNT = "discount";
   @SerializedName(SERIALIZED_NAME_DISCOUNT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal discount;
 
   public static final String SERIALIZED_NAME_HAS_LICENSE_KEY = "hasLicenseKey";
@@ -234,7 +235,7 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_GITHUB_REPO = "githubRepo";
   @SerializedName(SERIALIZED_NAME_GITHUB_REPO)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String githubRepo;
 
   /**
@@ -273,7 +274,7 @@ public class CollectionProductDto {
           return b;
         }
       }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+      return null;
     }
 
     public static class Adapter extends TypeAdapter<GithubPermissionEnum> {
@@ -297,7 +298,7 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_GITHUB_PERMISSION = "githubPermission";
   @SerializedName(SERIALIZED_NAME_GITHUB_PERMISSION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private GithubPermissionEnum githubPermission;
 
   public static final String SERIALIZED_NAME_IS_TAX_INCLUSIVE = "isTaxInclusive";
@@ -307,22 +308,22 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_BILLING_PERIOD = "billingPeriod";
   @SerializedName(SERIALIZED_NAME_BILLING_PERIOD)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer billingPeriod;
 
   public static final String SERIALIZED_NAME_TRIAL_PERIOD_DAYS = "trialPeriodDays";
   @SerializedName(SERIALIZED_NAME_TRIAL_PERIOD_DAYS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer trialPeriodDays;
 
   public static final String SERIALIZED_NAME_EXPIRATION_DAYS = "expirationDays";
   @SerializedName(SERIALIZED_NAME_EXPIRATION_DAYS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer expirationDays;
 
   public static final String SERIALIZED_NAME_STATEMENT_DESCRIPTOR = "statementDescriptor";
   @SerializedName(SERIALIZED_NAME_STATEMENT_DESCRIPTOR)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String statementDescriptor;
 
   public static final String SERIALIZED_NAME_PAY_WHAT_YOU_WANT = "payWhatYouWant";
@@ -332,17 +333,17 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
   @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nonnull
-  private Map<String, String> metadata = new HashMap<>();
+  @javax.annotation.Nullable
+  private Map<String, String> metadata;
 
   public static final String SERIALIZED_NAME_CUSTOM_FIELDS = "customFields";
   @SerializedName(SERIALIZED_NAME_CUSTOM_FIELDS)
-  @javax.annotation.Nonnull
-  private List<Object> customFields = new ArrayList<>();
+  @javax.annotation.Nullable
+  private List<Object> customFields;
 
   public static final String SERIALIZED_NAME_STOCK = "stock";
   @SerializedName(SERIALIZED_NAME_STOCK)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer stock;
 
   public static final String SERIALIZED_NAME_ACTIVATION_LIMIT = "activationLimit";
@@ -377,27 +378,27 @@ public class CollectionProductDto {
 
   public static final String SERIALIZED_NAME_BRAND_ID = "brandId";
   @SerializedName(SERIALIZED_NAME_BRAND_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String brandId;
 
   public static final String SERIALIZED_NAME_DIGITAL_LINK = "digitalLink";
   @SerializedName(SERIALIZED_NAME_DIGITAL_LINK)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String digitalLink;
 
   public static final String SERIALIZED_NAME_INSTRUCTIONS = "instructions";
   @SerializedName(SERIALIZED_NAME_INSTRUCTIONS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String instructions;
 
   public static final String SERIALIZED_NAME_ACTIVATION_MESSAGE = "activationMessage";
   @SerializedName(SERIALIZED_NAME_ACTIVATION_MESSAGE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String activationMessage;
 
   public static final String SERIALIZED_NAME_EXPIRY_HOURS = "expiryHours";
   @SerializedName(SERIALIZED_NAME_EXPIRY_HOURS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer expiryHours;
 
   public static final String SERIALIZED_NAME_BUSINESS_ID = "businessId";
@@ -527,7 +528,7 @@ public class CollectionProductDto {
   }
 
 
-  public CollectionProductDto imageUrl(@javax.annotation.Nonnull String imageUrl) {
+  public CollectionProductDto imageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
     return this;
   }
@@ -536,12 +537,12 @@ public class CollectionProductDto {
    * URL of the product cover image.
    * @return imageUrl
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getImageUrl() {
     return imageUrl;
   }
 
-  public void setImageUrl(@javax.annotation.Nonnull String imageUrl) {
+  public void setImageUrl(@javax.annotation.Nullable String imageUrl) {
     this.imageUrl = imageUrl;
   }
 
@@ -584,7 +585,7 @@ public class CollectionProductDto {
   }
 
 
-  public CollectionProductDto discount(@javax.annotation.Nonnull BigDecimal discount) {
+  public CollectionProductDto discount(@javax.annotation.Nullable BigDecimal discount) {
     this.discount = discount;
     return this;
   }
@@ -593,12 +594,12 @@ public class CollectionProductDto {
    * Discount value as a percentage or fixed amount.
    * @return discount
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getDiscount() {
     return discount;
   }
 
-  public void setDiscount(@javax.annotation.Nonnull BigDecimal discount) {
+  public void setDiscount(@javax.annotation.Nullable BigDecimal discount) {
     this.discount = discount;
   }
 
@@ -660,7 +661,7 @@ public class CollectionProductDto {
   }
 
 
-  public CollectionProductDto githubRepo(@javax.annotation.Nonnull String githubRepo) {
+  public CollectionProductDto githubRepo(@javax.annotation.Nullable String githubRepo) {
     this.githubRepo = githubRepo;
     return this;
   }
@@ -669,17 +670,17 @@ public class CollectionProductDto {
    * GitHub repository to grant access to (format: owner/repo).
    * @return githubRepo
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getGithubRepo() {
     return githubRepo;
   }
 
-  public void setGithubRepo(@javax.annotation.Nonnull String githubRepo) {
+  public void setGithubRepo(@javax.annotation.Nullable String githubRepo) {
     this.githubRepo = githubRepo;
   }
 
 
-  public CollectionProductDto githubPermission(@javax.annotation.Nonnull GithubPermissionEnum githubPermission) {
+  public CollectionProductDto githubPermission(@javax.annotation.Nullable GithubPermissionEnum githubPermission) {
     this.githubPermission = githubPermission;
     return this;
   }
@@ -688,12 +689,12 @@ public class CollectionProductDto {
    * GitHub collaborator permission level.
    * @return githubPermission
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public GithubPermissionEnum getGithubPermission() {
     return githubPermission;
   }
 
-  public void setGithubPermission(@javax.annotation.Nonnull GithubPermissionEnum githubPermission) {
+  public void setGithubPermission(@javax.annotation.Nullable GithubPermissionEnum githubPermission) {
     this.githubPermission = githubPermission;
   }
 
@@ -717,7 +718,7 @@ public class CollectionProductDto {
   }
 
 
-  public CollectionProductDto billingPeriod(@javax.annotation.Nonnull Integer billingPeriod) {
+  public CollectionProductDto billingPeriod(@javax.annotation.Nullable Integer billingPeriod) {
     this.billingPeriod = billingPeriod;
     return this;
   }
@@ -726,17 +727,17 @@ public class CollectionProductDto {
    * The subscription billing cycle interval in days (for subscription products).
    * @return billingPeriod
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getBillingPeriod() {
     return billingPeriod;
   }
 
-  public void setBillingPeriod(@javax.annotation.Nonnull Integer billingPeriod) {
+  public void setBillingPeriod(@javax.annotation.Nullable Integer billingPeriod) {
     this.billingPeriod = billingPeriod;
   }
 
 
-  public CollectionProductDto trialPeriodDays(@javax.annotation.Nonnull Integer trialPeriodDays) {
+  public CollectionProductDto trialPeriodDays(@javax.annotation.Nullable Integer trialPeriodDays) {
     this.trialPeriodDays = trialPeriodDays;
     return this;
   }
@@ -745,17 +746,17 @@ public class CollectionProductDto {
    * Trial duration in days for subscription products.
    * @return trialPeriodDays
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getTrialPeriodDays() {
     return trialPeriodDays;
   }
 
-  public void setTrialPeriodDays(@javax.annotation.Nonnull Integer trialPeriodDays) {
+  public void setTrialPeriodDays(@javax.annotation.Nullable Integer trialPeriodDays) {
     this.trialPeriodDays = trialPeriodDays;
   }
 
 
-  public CollectionProductDto expirationDays(@javax.annotation.Nonnull Integer expirationDays) {
+  public CollectionProductDto expirationDays(@javax.annotation.Nullable Integer expirationDays) {
     this.expirationDays = expirationDays;
     return this;
   }
@@ -764,17 +765,17 @@ public class CollectionProductDto {
    * Automatic expiration period in days for the subscription entitlement.
    * @return expirationDays
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getExpirationDays() {
     return expirationDays;
   }
 
-  public void setExpirationDays(@javax.annotation.Nonnull Integer expirationDays) {
+  public void setExpirationDays(@javax.annotation.Nullable Integer expirationDays) {
     this.expirationDays = expirationDays;
   }
 
 
-  public CollectionProductDto statementDescriptor(@javax.annotation.Nonnull String statementDescriptor) {
+  public CollectionProductDto statementDescriptor(@javax.annotation.Nullable String statementDescriptor) {
     this.statementDescriptor = statementDescriptor;
     return this;
   }
@@ -783,12 +784,12 @@ public class CollectionProductDto {
    * Custom text displayed on customer credit card statements for purchases of this product.
    * @return statementDescriptor
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getStatementDescriptor() {
     return statementDescriptor;
   }
 
-  public void setStatementDescriptor(@javax.annotation.Nonnull String statementDescriptor) {
+  public void setStatementDescriptor(@javax.annotation.Nullable String statementDescriptor) {
     this.statementDescriptor = statementDescriptor;
   }
 
@@ -812,7 +813,7 @@ public class CollectionProductDto {
   }
 
 
-  public CollectionProductDto metadata(@javax.annotation.Nonnull Map<String, String> metadata) {
+  public CollectionProductDto metadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
     return this;
   }
@@ -829,17 +830,17 @@ public class CollectionProductDto {
    * Custom developer metadata key-value pairs associated with the product.
    * @return metadata
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Map<String, String> getMetadata() {
     return metadata;
   }
 
-  public void setMetadata(@javax.annotation.Nonnull Map<String, String> metadata) {
+  public void setMetadata(@javax.annotation.Nullable Map<String, String> metadata) {
     this.metadata = metadata;
   }
 
 
-  public CollectionProductDto customFields(@javax.annotation.Nonnull List<Object> customFields) {
+  public CollectionProductDto customFields(@javax.annotation.Nullable List<Object> customFields) {
     this.customFields = customFields;
     return this;
   }
@@ -856,17 +857,17 @@ public class CollectionProductDto {
    * Custom form field questions to ask the customer during checkout.
    * @return customFields
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public List<Object> getCustomFields() {
     return customFields;
   }
 
-  public void setCustomFields(@javax.annotation.Nonnull List<Object> customFields) {
+  public void setCustomFields(@javax.annotation.Nullable List<Object> customFields) {
     this.customFields = customFields;
   }
 
 
-  public CollectionProductDto stock(@javax.annotation.Nonnull Integer stock) {
+  public CollectionProductDto stock(@javax.annotation.Nullable Integer stock) {
     this.stock = stock;
     return this;
   }
@@ -875,12 +876,12 @@ public class CollectionProductDto {
    * Available stock quantity, or null for unlimited inventory.
    * @return stock
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getStock() {
     return stock;
   }
 
-  public void setStock(@javax.annotation.Nonnull Integer stock) {
+  public void setStock(@javax.annotation.Nullable Integer stock) {
     this.stock = stock;
   }
 
@@ -999,7 +1000,7 @@ public class CollectionProductDto {
   }
 
 
-  public CollectionProductDto brandId(@javax.annotation.Nonnull String brandId) {
+  public CollectionProductDto brandId(@javax.annotation.Nullable String brandId) {
     this.brandId = brandId;
     return this;
   }
@@ -1008,17 +1009,17 @@ public class CollectionProductDto {
    * Optional brand identifier.
    * @return brandId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getBrandId() {
     return brandId;
   }
 
-  public void setBrandId(@javax.annotation.Nonnull String brandId) {
+  public void setBrandId(@javax.annotation.Nullable String brandId) {
     this.brandId = brandId;
   }
 
 
-  public CollectionProductDto digitalLink(@javax.annotation.Nonnull String digitalLink) {
+  public CollectionProductDto digitalLink(@javax.annotation.Nullable String digitalLink) {
     this.digitalLink = digitalLink;
     return this;
   }
@@ -1027,17 +1028,17 @@ public class CollectionProductDto {
    * Secure link for digital delivery.
    * @return digitalLink
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getDigitalLink() {
     return digitalLink;
   }
 
-  public void setDigitalLink(@javax.annotation.Nonnull String digitalLink) {
+  public void setDigitalLink(@javax.annotation.Nullable String digitalLink) {
     this.digitalLink = digitalLink;
   }
 
 
-  public CollectionProductDto instructions(@javax.annotation.Nonnull String instructions) {
+  public CollectionProductDto instructions(@javax.annotation.Nullable String instructions) {
     this.instructions = instructions;
     return this;
   }
@@ -1046,17 +1047,17 @@ public class CollectionProductDto {
    * Special instructions provided upon purchase.
    * @return instructions
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getInstructions() {
     return instructions;
   }
 
-  public void setInstructions(@javax.annotation.Nonnull String instructions) {
+  public void setInstructions(@javax.annotation.Nullable String instructions) {
     this.instructions = instructions;
   }
 
 
-  public CollectionProductDto activationMessage(@javax.annotation.Nonnull String activationMessage) {
+  public CollectionProductDto activationMessage(@javax.annotation.Nullable String activationMessage) {
     this.activationMessage = activationMessage;
     return this;
   }
@@ -1065,17 +1066,17 @@ public class CollectionProductDto {
    * Custom message displayed when a license key is activated.
    * @return activationMessage
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getActivationMessage() {
     return activationMessage;
   }
 
-  public void setActivationMessage(@javax.annotation.Nonnull String activationMessage) {
+  public void setActivationMessage(@javax.annotation.Nullable String activationMessage) {
     this.activationMessage = activationMessage;
   }
 
 
-  public CollectionProductDto expiryHours(@javax.annotation.Nonnull Integer expiryHours) {
+  public CollectionProductDto expiryHours(@javax.annotation.Nullable Integer expiryHours) {
     this.expiryHours = expiryHours;
     return this;
   }
@@ -1084,12 +1085,12 @@ public class CollectionProductDto {
    * Number of hours until the license key expires.
    * @return expiryHours
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getExpiryHours() {
     return expiryHours;
   }
 
-  public void setExpiryHours(@javax.annotation.Nonnull Integer expiryHours) {
+  public void setExpiryHours(@javax.annotation.Nullable Integer expiryHours) {
     this.expiryHours = expiryHours;
   }
 
@@ -1181,9 +1182,20 @@ public class CollectionProductDto {
         Objects.equals(this.quantity, collectionProductDto.quantity);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(id, name, price, currency, description, status, imageUrl, taxCategory, pricingType, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, isTaxInclusive, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, activationLimit, isListed, isFree, createdAt, updatedAt, isPermanentlyDeleted, brandId, digitalLink, instructions, activationMessage, expiryHours, businessId, quantity);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override
@@ -1370,7 +1382,7 @@ public class CollectionProductDto {
       if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      if (!jsonObj.get("imageUrl").isJsonPrimitive()) {
+      if ((jsonObj.get("imageUrl") != null && !jsonObj.get("imageUrl").isJsonNull()) && !jsonObj.get("imageUrl").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `imageUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("imageUrl").toString()));
       }
       if (!jsonObj.get("taxCategory").isJsonPrimitive()) {
@@ -1383,15 +1395,15 @@ public class CollectionProductDto {
       }
       // validate the required field `pricingType`
       PricingTypeEnum.validateJsonElement(jsonObj.get("pricingType"));
-      if (!jsonObj.get("githubRepo").isJsonPrimitive()) {
+      if ((jsonObj.get("githubRepo") != null && !jsonObj.get("githubRepo").isJsonNull()) && !jsonObj.get("githubRepo").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `githubRepo` to be a primitive type in the JSON string but got `%s`", jsonObj.get("githubRepo").toString()));
       }
-      if (!jsonObj.get("githubPermission").isJsonPrimitive()) {
+      if ((jsonObj.get("githubPermission") != null && !jsonObj.get("githubPermission").isJsonNull()) && !jsonObj.get("githubPermission").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `githubPermission` to be a primitive type in the JSON string but got `%s`", jsonObj.get("githubPermission").toString()));
       }
       // validate the required field `githubPermission`
       GithubPermissionEnum.validateJsonElement(jsonObj.get("githubPermission"));
-      if (!jsonObj.get("statementDescriptor").isJsonPrimitive()) {
+      if ((jsonObj.get("statementDescriptor") != null && !jsonObj.get("statementDescriptor").isJsonNull()) && !jsonObj.get("statementDescriptor").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `statementDescriptor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("statementDescriptor").toString()));
       }
       // ensure the required json array is present
@@ -1400,16 +1412,16 @@ public class CollectionProductDto {
       } else if (!jsonObj.get("customFields").isJsonArray()) {
         throw new IllegalArgumentException(String.format("Expected the field `customFields` to be an array in the JSON string but got `%s`", jsonObj.get("customFields").toString()));
       }
-      if (!jsonObj.get("brandId").isJsonPrimitive()) {
+      if ((jsonObj.get("brandId") != null && !jsonObj.get("brandId").isJsonNull()) && !jsonObj.get("brandId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `brandId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("brandId").toString()));
       }
-      if (!jsonObj.get("digitalLink").isJsonPrimitive()) {
+      if ((jsonObj.get("digitalLink") != null && !jsonObj.get("digitalLink").isJsonNull()) && !jsonObj.get("digitalLink").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `digitalLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("digitalLink").toString()));
       }
-      if (!jsonObj.get("instructions").isJsonPrimitive()) {
+      if ((jsonObj.get("instructions") != null && !jsonObj.get("instructions").isJsonNull()) && !jsonObj.get("instructions").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `instructions` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instructions").toString()));
       }
-      if (!jsonObj.get("activationMessage").isJsonPrimitive()) {
+      if ((jsonObj.get("activationMessage") != null && !jsonObj.get("activationMessage").isJsonNull()) && !jsonObj.get("activationMessage").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `activationMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activationMessage").toString()));
       }
       if (!jsonObj.get("businessId").isJsonPrimitive()) {

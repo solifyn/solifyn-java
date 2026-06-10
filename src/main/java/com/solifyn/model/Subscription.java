@@ -27,6 +27,7 @@ import com.solifyn.model.SubscriptionUserDto;
 import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Arrays;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -54,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * Represents a customer subscription membership resource, containing current billing terms, plan, status, and metadata.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class Subscription {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -98,12 +99,12 @@ public class Subscription {
 
   public static final String SERIALIZED_NAME_RENEWAL_PERIOD_START = "renewal_period_start";
   @SerializedName(SERIALIZED_NAME_RENEWAL_PERIOD_START)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object renewalPeriodStart;
 
   public static final String SERIALIZED_NAME_RENEWAL_PERIOD_END = "renewal_period_end";
   @SerializedName(SERIALIZED_NAME_RENEWAL_PERIOD_END)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object renewalPeriodEnd;
 
   public static final String SERIALIZED_NAME_CANCEL_AT_PERIOD_END = "cancel_at_period_end";
@@ -113,17 +114,17 @@ public class Subscription {
 
   public static final String SERIALIZED_NAME_CANCEL_OPTION = "cancel_option";
   @SerializedName(SERIALIZED_NAME_CANCEL_OPTION)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object cancelOption;
 
   public static final String SERIALIZED_NAME_CANCELLATION_REASON = "cancellation_reason";
   @SerializedName(SERIALIZED_NAME_CANCELLATION_REASON)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object cancellationReason;
 
   public static final String SERIALIZED_NAME_CANCELED_AT = "canceled_at";
   @SerializedName(SERIALIZED_NAME_CANCELED_AT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object canceledAt;
 
   public static final String SERIALIZED_NAME_CURRENCY = "currency";
@@ -143,7 +144,7 @@ public class Subscription {
 
   public static final String SERIALIZED_NAME_PROMO_CODE = "promo_code";
   @SerializedName(SERIALIZED_NAME_PROMO_CODE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object promoCode;
 
   public static final String SERIALIZED_NAME_PRODUCT = "product";
@@ -153,7 +154,7 @@ public class Subscription {
 
   public static final String SERIALIZED_NAME_LICENSE_KEY = "license_key";
   @SerializedName(SERIALIZED_NAME_LICENSE_KEY)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object licenseKey;
 
   public static final String SERIALIZED_NAME_METADATA = "metadata";
@@ -341,7 +342,7 @@ public class Subscription {
   }
 
 
-  public Subscription renewalPeriodStart(@javax.annotation.Nonnull Object renewalPeriodStart) {
+  public Subscription renewalPeriodStart(@javax.annotation.Nullable Object renewalPeriodStart) {
     this.renewalPeriodStart = renewalPeriodStart;
     return this;
   }
@@ -350,17 +351,17 @@ public class Subscription {
    * Start timestamp of the current renewal period
    * @return renewalPeriodStart
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getRenewalPeriodStart() {
     return renewalPeriodStart;
   }
 
-  public void setRenewalPeriodStart(@javax.annotation.Nonnull Object renewalPeriodStart) {
+  public void setRenewalPeriodStart(@javax.annotation.Nullable Object renewalPeriodStart) {
     this.renewalPeriodStart = renewalPeriodStart;
   }
 
 
-  public Subscription renewalPeriodEnd(@javax.annotation.Nonnull Object renewalPeriodEnd) {
+  public Subscription renewalPeriodEnd(@javax.annotation.Nullable Object renewalPeriodEnd) {
     this.renewalPeriodEnd = renewalPeriodEnd;
     return this;
   }
@@ -369,12 +370,12 @@ public class Subscription {
    * End timestamp of the current renewal period
    * @return renewalPeriodEnd
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getRenewalPeriodEnd() {
     return renewalPeriodEnd;
   }
 
-  public void setRenewalPeriodEnd(@javax.annotation.Nonnull Object renewalPeriodEnd) {
+  public void setRenewalPeriodEnd(@javax.annotation.Nullable Object renewalPeriodEnd) {
     this.renewalPeriodEnd = renewalPeriodEnd;
   }
 
@@ -398,7 +399,7 @@ public class Subscription {
   }
 
 
-  public Subscription cancelOption(@javax.annotation.Nonnull Object cancelOption) {
+  public Subscription cancelOption(@javax.annotation.Nullable Object cancelOption) {
     this.cancelOption = cancelOption;
     return this;
   }
@@ -407,17 +408,17 @@ public class Subscription {
    * The cancel option details
    * @return cancelOption
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getCancelOption() {
     return cancelOption;
   }
 
-  public void setCancelOption(@javax.annotation.Nonnull Object cancelOption) {
+  public void setCancelOption(@javax.annotation.Nullable Object cancelOption) {
     this.cancelOption = cancelOption;
   }
 
 
-  public Subscription cancellationReason(@javax.annotation.Nonnull Object cancellationReason) {
+  public Subscription cancellationReason(@javax.annotation.Nullable Object cancellationReason) {
     this.cancellationReason = cancellationReason;
     return this;
   }
@@ -426,17 +427,17 @@ public class Subscription {
    * The reason for cancellation
    * @return cancellationReason
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getCancellationReason() {
     return cancellationReason;
   }
 
-  public void setCancellationReason(@javax.annotation.Nonnull Object cancellationReason) {
+  public void setCancellationReason(@javax.annotation.Nullable Object cancellationReason) {
     this.cancellationReason = cancellationReason;
   }
 
 
-  public Subscription canceledAt(@javax.annotation.Nonnull Object canceledAt) {
+  public Subscription canceledAt(@javax.annotation.Nullable Object canceledAt) {
     this.canceledAt = canceledAt;
     return this;
   }
@@ -445,12 +446,12 @@ public class Subscription {
    * Timestamp when the subscription was canceled
    * @return canceledAt
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getCanceledAt() {
     return canceledAt;
   }
 
-  public void setCanceledAt(@javax.annotation.Nonnull Object canceledAt) {
+  public void setCanceledAt(@javax.annotation.Nullable Object canceledAt) {
     this.canceledAt = canceledAt;
   }
 
@@ -512,7 +513,7 @@ public class Subscription {
   }
 
 
-  public Subscription promoCode(@javax.annotation.Nonnull Object promoCode) {
+  public Subscription promoCode(@javax.annotation.Nullable Object promoCode) {
     this.promoCode = promoCode;
     return this;
   }
@@ -521,12 +522,12 @@ public class Subscription {
    * The promo code applied to the subscription
    * @return promoCode
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getPromoCode() {
     return promoCode;
   }
 
-  public void setPromoCode(@javax.annotation.Nonnull Object promoCode) {
+  public void setPromoCode(@javax.annotation.Nullable Object promoCode) {
     this.promoCode = promoCode;
   }
 
@@ -550,7 +551,7 @@ public class Subscription {
   }
 
 
-  public Subscription licenseKey(@javax.annotation.Nonnull Object licenseKey) {
+  public Subscription licenseKey(@javax.annotation.Nullable Object licenseKey) {
     this.licenseKey = licenseKey;
     return this;
   }
@@ -559,12 +560,12 @@ public class Subscription {
    * The license key associated with this subscription
    * @return licenseKey
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getLicenseKey() {
     return licenseKey;
   }
 
-  public void setLicenseKey(@javax.annotation.Nonnull Object licenseKey) {
+  public void setLicenseKey(@javax.annotation.Nullable Object licenseKey) {
     this.licenseKey = licenseKey;
   }
 
@@ -721,9 +722,20 @@ public class Subscription {
         Objects.equals(this.customerId, subscription.customerId);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(id, status, createdAt, joinedAt, updatedAt, manageUrl, member, user, renewalPeriodStart, renewalPeriodEnd, cancelAtPeriodEnd, cancelOption, cancellationReason, canceledAt, currency, company, plan, promoCode, product, licenseKey, metadata, paymentCollectionPaused, checkoutConfigurationId, price, type, customerId);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

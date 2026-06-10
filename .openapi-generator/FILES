@@ -47,7 +47,6 @@ docs/CustomerResponseDto.md
 docs/CustomerSharedInviteResponseDto.md
 docs/CustomersApi.md
 docs/DashboardStatsDto.md
-docs/DefaultApi.md
 docs/DeveloperApi.md
 docs/DigitalFileApi.md
 docs/Discount.md
@@ -191,7 +190,6 @@ src/main/java/com/solifyn/api/CheckoutApi.java
 src/main/java/com/solifyn/api/CheckoutLinksApi.java
 src/main/java/com/solifyn/api/CollectionsApi.java
 src/main/java/com/solifyn/api/CustomersApi.java
-src/main/java/com/solifyn/api/DefaultApi.java
 src/main/java/com/solifyn/api/DeveloperApi.java
 src/main/java/com/solifyn/api/DigitalFileApi.java
 src/main/java/com/solifyn/api/DiscountsApi.java

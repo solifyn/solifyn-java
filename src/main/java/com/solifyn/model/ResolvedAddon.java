@@ -49,7 +49,7 @@ import com.solifyn.JSON;
 /**
  * ResolvedAddon
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ResolvedAddon {
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
@@ -63,7 +63,7 @@ public class ResolvedAddon {
 
   public static final String SERIALIZED_NAME_IMAGE_URL = "imageUrl";
   @SerializedName(SERIALIZED_NAME_IMAGE_URL)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object imageUrl;
 
   public static final String SERIALIZED_NAME_QUANTITY = "quantity";
@@ -112,7 +112,7 @@ public class ResolvedAddon {
   }
 
 
-  public ResolvedAddon imageUrl(@javax.annotation.Nonnull Object imageUrl) {
+  public ResolvedAddon imageUrl(@javax.annotation.Nullable Object imageUrl) {
     this.imageUrl = imageUrl;
     return this;
   }
@@ -121,12 +121,12 @@ public class ResolvedAddon {
    * URL of the addon image
    * @return imageUrl
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getImageUrl() {
     return imageUrl;
   }
 
-  public void setImageUrl(@javax.annotation.Nonnull Object imageUrl) {
+  public void setImageUrl(@javax.annotation.Nullable Object imageUrl) {
     this.imageUrl = imageUrl;
   }
 

@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +56,7 @@ import com.solifyn.JSON;
 /**
  * Represents a usage meter with its most recent usage events and total usage event count.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class MeterDetailResponseDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -156,7 +157,7 @@ public class MeterDetailResponseDto {
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
   @javax.annotation.Nullable
-  private Map<String, Object> filters = new HashMap<>();
+  private Map<String, Object> filters;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
   @SerializedName(SERIALIZED_NAME_ARCHIVED)
@@ -494,9 +495,20 @@ public class MeterDetailResponseDto {
         Objects.equals(this.totalUsageEvents, meterDetailResponseDto.totalUsageEvents);
   }
 
+  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
+    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
+  }
+
   @Override
   public int hashCode() {
     return Objects.hash(id, businessId, name, description, eventName, aggregationType, aggregationKey, unit, filters, archived, createdAt, updatedAt, usageEvents, totalUsageEvents);
+  }
+
+  private static <T> int hashCodeNullable(JsonNullable<T> a) {
+    if (a == null) {
+      return 1;
+    }
+    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
   }
 
   @Override

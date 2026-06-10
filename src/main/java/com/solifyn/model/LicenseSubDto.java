@@ -50,7 +50,7 @@ import com.solifyn.JSON;
 /**
  * LicenseSubDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class LicenseSubDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -69,17 +69,17 @@ public class LicenseSubDto {
 
   public static final String SERIALIZED_NAME_ACTIVATION_LIMIT = "activationLimit";
   @SerializedName(SERIALIZED_NAME_ACTIVATION_LIMIT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal activationLimit;
 
   public static final String SERIALIZED_NAME_ACTIVATION_MESSAGE = "activationMessage";
   @SerializedName(SERIALIZED_NAME_ACTIVATION_MESSAGE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String activationMessage;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expiresAt";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String expiresAt;
 
   public static final String SERIALIZED_NAME_PRODUCT = "product";
@@ -147,7 +147,7 @@ public class LicenseSubDto {
   }
 
 
-  public LicenseSubDto activationLimit(@javax.annotation.Nonnull BigDecimal activationLimit) {
+  public LicenseSubDto activationLimit(@javax.annotation.Nullable BigDecimal activationLimit) {
     this.activationLimit = activationLimit;
     return this;
   }
@@ -156,17 +156,17 @@ public class LicenseSubDto {
    * Get activationLimit
    * @return activationLimit
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getActivationLimit() {
     return activationLimit;
   }
 
-  public void setActivationLimit(@javax.annotation.Nonnull BigDecimal activationLimit) {
+  public void setActivationLimit(@javax.annotation.Nullable BigDecimal activationLimit) {
     this.activationLimit = activationLimit;
   }
 
 
-  public LicenseSubDto activationMessage(@javax.annotation.Nonnull String activationMessage) {
+  public LicenseSubDto activationMessage(@javax.annotation.Nullable String activationMessage) {
     this.activationMessage = activationMessage;
     return this;
   }
@@ -175,17 +175,17 @@ public class LicenseSubDto {
    * Get activationMessage
    * @return activationMessage
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getActivationMessage() {
     return activationMessage;
   }
 
-  public void setActivationMessage(@javax.annotation.Nonnull String activationMessage) {
+  public void setActivationMessage(@javax.annotation.Nullable String activationMessage) {
     this.activationMessage = activationMessage;
   }
 
 
-  public LicenseSubDto expiresAt(@javax.annotation.Nonnull String expiresAt) {
+  public LicenseSubDto expiresAt(@javax.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -194,12 +194,12 @@ public class LicenseSubDto {
    * Get expiresAt
    * @return expiresAt
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nonnull String expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
   }
 
@@ -335,10 +335,10 @@ public class LicenseSubDto {
       if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
-      if (!jsonObj.get("activationMessage").isJsonPrimitive()) {
+      if ((jsonObj.get("activationMessage") != null && !jsonObj.get("activationMessage").isJsonNull()) && !jsonObj.get("activationMessage").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `activationMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activationMessage").toString()));
       }
-      if (!jsonObj.get("expiresAt").isJsonPrimitive()) {
+      if ((jsonObj.get("expiresAt") != null && !jsonObj.get("expiresAt").isJsonNull()) && !jsonObj.get("expiresAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `expiresAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expiresAt").toString()));
       }
       // validate the optional field `product`

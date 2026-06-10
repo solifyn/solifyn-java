@@ -49,7 +49,7 @@ import com.solifyn.JSON;
 /**
  * Represents a discount code created under your business, containing type, amount, usage limits, and expiration details.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class Discount {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -135,7 +135,7 @@ public class Discount {
 
   public static final String SERIALIZED_NAME_USAGE_LIMIT = "usageLimit";
   @SerializedName(SERIALIZED_NAME_USAGE_LIMIT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Integer usageLimit;
 
   public static final String SERIALIZED_NAME_TIMES_USED = "timesUsed";
@@ -145,7 +145,7 @@ public class Discount {
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expiresAt";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private OffsetDateTime expiresAt;
 
   /**
@@ -337,7 +337,7 @@ public class Discount {
   }
 
 
-  public Discount usageLimit(@javax.annotation.Nonnull Integer usageLimit) {
+  public Discount usageLimit(@javax.annotation.Nullable Integer usageLimit) {
     this.usageLimit = usageLimit;
     return this;
   }
@@ -346,12 +346,12 @@ public class Discount {
    * Maximum number of times this discount code can be redeemed. Null represents unlimited usage.
    * @return usageLimit
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Integer getUsageLimit() {
     return usageLimit;
   }
 
-  public void setUsageLimit(@javax.annotation.Nonnull Integer usageLimit) {
+  public void setUsageLimit(@javax.annotation.Nullable Integer usageLimit) {
     this.usageLimit = usageLimit;
   }
 
@@ -375,7 +375,7 @@ public class Discount {
   }
 
 
-  public Discount expiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
+  public Discount expiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -384,12 +384,12 @@ public class Discount {
    * The expiration timestamp after which the discount code is no longer valid.
    * @return expiresAt
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public OffsetDateTime getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nonnull OffsetDateTime expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable OffsetDateTime expiresAt) {
     this.expiresAt = expiresAt;
   }
 

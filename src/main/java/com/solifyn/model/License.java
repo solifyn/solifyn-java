@@ -49,7 +49,7 @@ import com.solifyn.JSON;
 /**
  * Represents a cryptographically secure software license key issued to a customer upon purchase or manual issuance.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class License {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -127,27 +127,27 @@ public class License {
 
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String productId;
 
   public static final String SERIALIZED_NAME_PAYMENT_ID = "paymentId";
   @SerializedName(SERIALIZED_NAME_PAYMENT_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String paymentId;
 
   public static final String SERIALIZED_NAME_CUSTOMER_ID = "customerId";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String customerId;
 
   public static final String SERIALIZED_NAME_ACTIVATION_LIMIT = "activationLimit";
   @SerializedName(SERIALIZED_NAME_ACTIVATION_LIMIT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal activationLimit;
 
   public static final String SERIALIZED_NAME_ACTIVATION_MESSAGE = "activationMessage";
   @SerializedName(SERIALIZED_NAME_ACTIVATION_MESSAGE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String activationMessage;
 
   public static final String SERIALIZED_NAME_INSTANCES_COUNT = "instancesCount";
@@ -157,17 +157,17 @@ public class License {
 
   public static final String SERIALIZED_NAME_EXPIRY_HOURS = "expiryHours";
   @SerializedName(SERIALIZED_NAME_EXPIRY_HOURS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private BigDecimal expiryHours;
 
   public static final String SERIALIZED_NAME_EXPIRES_AT = "expiresAt";
   @SerializedName(SERIALIZED_NAME_EXPIRES_AT)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String expiresAt;
 
   public static final String SERIALIZED_NAME_FILTERS = "filters";
   @SerializedName(SERIALIZED_NAME_FILTERS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object filters;
 
   public static final String SERIALIZED_NAME_ARCHIVED = "archived";
@@ -264,7 +264,7 @@ public class License {
   }
 
 
-  public License productId(@javax.annotation.Nonnull String productId) {
+  public License productId(@javax.annotation.Nullable String productId) {
     this.productId = productId;
     return this;
   }
@@ -273,17 +273,17 @@ public class License {
    * The unique ID of the product this license key is associated with.
    * @return productId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getProductId() {
     return productId;
   }
 
-  public void setProductId(@javax.annotation.Nonnull String productId) {
+  public void setProductId(@javax.annotation.Nullable String productId) {
     this.productId = productId;
   }
 
 
-  public License paymentId(@javax.annotation.Nonnull String paymentId) {
+  public License paymentId(@javax.annotation.Nullable String paymentId) {
     this.paymentId = paymentId;
     return this;
   }
@@ -292,17 +292,17 @@ public class License {
    * The unique payment identifier that triggered the issuance of this license key.
    * @return paymentId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getPaymentId() {
     return paymentId;
   }
 
-  public void setPaymentId(@javax.annotation.Nonnull String paymentId) {
+  public void setPaymentId(@javax.annotation.Nullable String paymentId) {
     this.paymentId = paymentId;
   }
 
 
-  public License customerId(@javax.annotation.Nonnull String customerId) {
+  public License customerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
     return this;
   }
@@ -311,17 +311,17 @@ public class License {
    * The unique customer identifier (ID) who received this license key.
    * @return customerId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getCustomerId() {
     return customerId;
   }
 
-  public void setCustomerId(@javax.annotation.Nonnull String customerId) {
+  public void setCustomerId(@javax.annotation.Nullable String customerId) {
     this.customerId = customerId;
   }
 
 
-  public License activationLimit(@javax.annotation.Nonnull BigDecimal activationLimit) {
+  public License activationLimit(@javax.annotation.Nullable BigDecimal activationLimit) {
     this.activationLimit = activationLimit;
     return this;
   }
@@ -330,17 +330,17 @@ public class License {
    * Maximum number of simultaneous active device instances allowed for this license. Null means unlimited.
    * @return activationLimit
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getActivationLimit() {
     return activationLimit;
   }
 
-  public void setActivationLimit(@javax.annotation.Nonnull BigDecimal activationLimit) {
+  public void setActivationLimit(@javax.annotation.Nullable BigDecimal activationLimit) {
     this.activationLimit = activationLimit;
   }
 
 
-  public License activationMessage(@javax.annotation.Nonnull String activationMessage) {
+  public License activationMessage(@javax.annotation.Nullable String activationMessage) {
     this.activationMessage = activationMessage;
     return this;
   }
@@ -349,12 +349,12 @@ public class License {
    * Optional message displayed to the customer upon successful activation.
    * @return activationMessage
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getActivationMessage() {
     return activationMessage;
   }
 
-  public void setActivationMessage(@javax.annotation.Nonnull String activationMessage) {
+  public void setActivationMessage(@javax.annotation.Nullable String activationMessage) {
     this.activationMessage = activationMessage;
   }
 
@@ -378,7 +378,7 @@ public class License {
   }
 
 
-  public License expiryHours(@javax.annotation.Nonnull BigDecimal expiryHours) {
+  public License expiryHours(@javax.annotation.Nullable BigDecimal expiryHours) {
     this.expiryHours = expiryHours;
     return this;
   }
@@ -387,17 +387,17 @@ public class License {
    * Relative expiry duration in hours from the time of issuance.
    * @return expiryHours
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public BigDecimal getExpiryHours() {
     return expiryHours;
   }
 
-  public void setExpiryHours(@javax.annotation.Nonnull BigDecimal expiryHours) {
+  public void setExpiryHours(@javax.annotation.Nullable BigDecimal expiryHours) {
     this.expiryHours = expiryHours;
   }
 
 
-  public License expiresAt(@javax.annotation.Nonnull String expiresAt) {
+  public License expiresAt(@javax.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
     return this;
   }
@@ -406,17 +406,17 @@ public class License {
    * Absolute expiration timestamp. The license becomes invalid after this point.
    * @return expiresAt
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getExpiresAt() {
     return expiresAt;
   }
 
-  public void setExpiresAt(@javax.annotation.Nonnull String expiresAt) {
+  public void setExpiresAt(@javax.annotation.Nullable String expiresAt) {
     this.expiresAt = expiresAt;
   }
 
 
-  public License filters(@javax.annotation.Nonnull Object filters) {
+  public License filters(@javax.annotation.Nullable Object filters) {
     this.filters = filters;
     return this;
   }
@@ -425,12 +425,12 @@ public class License {
    * Optional custom metadata filters associated with the license.
    * @return filters
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getFilters() {
     return filters;
   }
 
-  public void setFilters(@javax.annotation.Nonnull Object filters) {
+  public void setFilters(@javax.annotation.Nullable Object filters) {
     this.filters = filters;
   }
 
@@ -646,19 +646,19 @@ public class License {
       if (!jsonObj.get("businessId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `businessId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("businessId").toString()));
       }
-      if (!jsonObj.get("productId").isJsonPrimitive()) {
+      if ((jsonObj.get("productId") != null && !jsonObj.get("productId").isJsonNull()) && !jsonObj.get("productId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
       }
-      if (!jsonObj.get("paymentId").isJsonPrimitive()) {
+      if ((jsonObj.get("paymentId") != null && !jsonObj.get("paymentId").isJsonNull()) && !jsonObj.get("paymentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `paymentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("paymentId").toString()));
       }
-      if (!jsonObj.get("customerId").isJsonPrimitive()) {
+      if ((jsonObj.get("customerId") != null && !jsonObj.get("customerId").isJsonNull()) && !jsonObj.get("customerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `customerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerId").toString()));
       }
-      if (!jsonObj.get("activationMessage").isJsonPrimitive()) {
+      if ((jsonObj.get("activationMessage") != null && !jsonObj.get("activationMessage").isJsonNull()) && !jsonObj.get("activationMessage").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `activationMessage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activationMessage").toString()));
       }
-      if (!jsonObj.get("expiresAt").isJsonPrimitive()) {
+      if ((jsonObj.get("expiresAt") != null && !jsonObj.get("expiresAt").isJsonNull()) && !jsonObj.get("expiresAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `expiresAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("expiresAt").toString()));
       }
       if (!jsonObj.get("createdAt").isJsonPrimitive()) {

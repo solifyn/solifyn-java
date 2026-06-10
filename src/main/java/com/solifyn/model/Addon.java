@@ -49,7 +49,7 @@ import com.solifyn.JSON;
 /**
  * Addon
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T10:53:51.188720300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T11:03:57.669874500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class Addon {
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
@@ -63,12 +63,12 @@ public class Addon {
 
   public static final String SERIALIZED_NAME_MAX_QUANTITY = "maxQuantity";
   @SerializedName(SERIALIZED_NAME_MAX_QUANTITY)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object maxQuantity;
 
   public static final String SERIALIZED_NAME_PRICE_OVERRIDE = "priceOverride";
   @SerializedName(SERIALIZED_NAME_PRICE_OVERRIDE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private Object priceOverride;
 
   public static final String SERIALIZED_NAME_IS_SEAT_ADDON = "isSeatAddon";
@@ -117,7 +117,7 @@ public class Addon {
   }
 
 
-  public Addon maxQuantity(@javax.annotation.Nonnull Object maxQuantity) {
+  public Addon maxQuantity(@javax.annotation.Nullable Object maxQuantity) {
     this.maxQuantity = maxQuantity;
     return this;
   }
@@ -126,17 +126,17 @@ public class Addon {
    * Maximum quantity allowed (null if unlimited).
    * @return maxQuantity
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getMaxQuantity() {
     return maxQuantity;
   }
 
-  public void setMaxQuantity(@javax.annotation.Nonnull Object maxQuantity) {
+  public void setMaxQuantity(@javax.annotation.Nullable Object maxQuantity) {
     this.maxQuantity = maxQuantity;
   }
 
 
-  public Addon priceOverride(@javax.annotation.Nonnull Object priceOverride) {
+  public Addon priceOverride(@javax.annotation.Nullable Object priceOverride) {
     this.priceOverride = priceOverride;
     return this;
   }
@@ -145,12 +145,12 @@ public class Addon {
    * Price override (null if using base product price).
    * @return priceOverride
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public Object getPriceOverride() {
     return priceOverride;
   }
 
-  public void setPriceOverride(@javax.annotation.Nonnull Object priceOverride) {
+  public void setPriceOverride(@javax.annotation.Nullable Object priceOverride) {
     this.priceOverride = priceOverride;
   }
 
