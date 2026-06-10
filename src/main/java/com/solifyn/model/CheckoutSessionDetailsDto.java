@@ -52,7 +52,7 @@ import com.solifyn.JSON;
 /**
  * CheckoutSessionDetailsDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:29:17.492837500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class CheckoutSessionDetailsDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

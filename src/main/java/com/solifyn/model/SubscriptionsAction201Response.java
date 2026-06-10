@@ -66,7 +66,7 @@ import com.google.gson.JsonParseException;
 
 import com.solifyn.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:29:17.492837500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class SubscriptionsAction201Response extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(SubscriptionsAction201Response.class.getName());
 

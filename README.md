@@ -2,7 +2,7 @@
 
 Solifyn API
 - API version: 1.0.0
-  - Build date: 2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]
+  - Build date: 2026-06-11T03:29:17.492837500+07:00[Asia/Saigon]
   - Generator version: 7.10.0
 
 Welcome to the Solifyn API Reference. Leverage our secure endpoints to manage products and issue, validate, and manage software license keys programmatically.
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.solifyn</groupId>
   <artifactId>solifyn-java</artifactId>
-  <version>1.0.5</version>
+  <version>1.1.4</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.solifyn:solifyn-java:1.0.5"
+     implementation "com.solifyn:solifyn-java:1.1.4"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/solifyn-java-1.0.5.jar`
+* `target/solifyn-java-1.1.4.jar`
 * `target/lib/*.jar`
 
 ## Getting Started

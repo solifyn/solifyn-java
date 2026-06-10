@@ -354,4 +354,3 @@ src/main/java/com/solifyn/model/WebhookPaymentPayload.java
 src/main/java/com/solifyn/model/WebhookPaymentPayloadBillingAddress.java
 src/main/java/com/solifyn/model/WebhookRefundPayload.java
 src/main/java/com/solifyn/model/WebhookSubscriptionPayload.java
-src/test/java/com/solifyn/api/DefaultApiTest.java
