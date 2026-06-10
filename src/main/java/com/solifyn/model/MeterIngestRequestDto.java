@@ -51,7 +51,7 @@ import com.solifyn.JSON;
 /**
  * MeterIngestRequestDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T06:25:11.671332+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T09:19:16.497589300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class MeterIngestRequestDto {
   public static final String SERIALIZED_NAME_EVENTS = "events";
   @SerializedName(SERIALIZED_NAME_EVENTS)
