@@ -2,7 +2,7 @@
 
 Solifyn API
 - API version: 1.0.0
-  - Build date: 2026-06-11T01:47:13.349412100+07:00[Asia/Saigon]
+  - Build date: 2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]
   - Generator version: 7.10.0
 
 Welcome to the Solifyn API Reference. Leverage our secure endpoints to manage products and issue, validate, and manage software license keys programmatically.
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.solifyn</groupId>
   <artifactId>solifyn-java</artifactId>
-  <version>1.1.3</version>
+  <version>1.0.5</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.solifyn:solifyn-java:1.1.3"
+     implementation "com.solifyn:solifyn-java:1.0.5"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/solifyn-java-1.1.3.jar`
+* `target/solifyn-java-1.0.5.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -155,6 +155,8 @@ Class | Method | HTTP request | Description
 *DigitalFileApi* | [**digitalFileControllerCreate**](docs/DigitalFileApi.md#digitalFileControllerCreate) | **POST** /v1/digital-files | 
 *DigitalFileApi* | [**digitalFileControllerFindAll**](docs/DigitalFileApi.md#digitalFileControllerFindAll) | **GET** /v1/digital-files | 
 *DigitalFileApi* | [**digitalFileControllerRemove**](docs/DigitalFileApi.md#digitalFileControllerRemove) | **DELETE** /v1/digital-files/{id} | 
+*DiscordIntegrationApi* | [**discordGetInstallUrl**](docs/DiscordIntegrationApi.md#discordGetInstallUrl) | **GET** /v1/discord/install | Get Discord Bot Installation URL
+*DiscordIntegrationApi* | [**discordListRoles**](docs/DiscordIntegrationApi.md#discordListRoles) | **GET** /v1/discord/roles | List Guild Discord Roles
 *DiscountsApi* | [**discountsCreate**](docs/DiscountsApi.md#discountsCreate) | **POST** /v1/discounts | Create Discount
 *DiscountsApi* | [**discountsDelete**](docs/DiscountsApi.md#discountsDelete) | **DELETE** /v1/discounts/{id} | Delete Discount
 *DiscountsApi* | [**discountsGet**](docs/DiscountsApi.md#discountsGet) | **GET** /v1/discounts/{id} | Retrieve Discount
@@ -284,6 +286,7 @@ Class | Method | HTTP request | Description
  - [CustomerResponseDto](docs/CustomerResponseDto.md)
  - [CustomerSharedInviteResponseDto](docs/CustomerSharedInviteResponseDto.md)
  - [DashboardStatsDto](docs/DashboardStatsDto.md)
+ - [DiscordRolesResponseDto](docs/DiscordRolesResponseDto.md)
  - [Discount](docs/Discount.md)
  - [DiscountCreate](docs/DiscountCreate.md)
  - [DiscountUpdate](docs/DiscountUpdate.md)

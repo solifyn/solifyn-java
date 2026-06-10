@@ -54,7 +54,7 @@ import com.solifyn.JSON;
 /**
  * Represents detailed information about a customer subscription including active base product configuration, billing and payment history, and purchased add-ons.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T01:47:13.349412100+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class SubscriptionDetail {
   public static final String SERIALIZED_NAME_SUBSCRIPTION = "subscription";
   @SerializedName(SERIALIZED_NAME_SUBSCRIPTION)
@@ -73,7 +73,7 @@ public class SubscriptionDetail {
 
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private SubscriptionDetailProduct product;
 
   public SubscriptionDetail() {
@@ -152,7 +152,7 @@ public class SubscriptionDetail {
   }
 
 
-  public SubscriptionDetail product(@javax.annotation.Nullable SubscriptionDetailProduct product) {
+  public SubscriptionDetail product(@javax.annotation.Nonnull SubscriptionDetailProduct product) {
     this.product = product;
     return this;
   }
@@ -161,12 +161,12 @@ public class SubscriptionDetail {
    * The core product information associated with this subscription
    * @return product
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public SubscriptionDetailProduct getProduct() {
     return product;
   }
 
-  public void setProduct(@javax.annotation.Nullable SubscriptionDetailProduct product) {
+  public void setProduct(@javax.annotation.Nonnull SubscriptionDetailProduct product) {
     this.product = product;
   }
 

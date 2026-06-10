@@ -28,7 +28,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.openapitools.jackson.nullable.JsonNullable;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -56,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * ProductUpdate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T01:47:13.349412100+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ProductUpdate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -444,6 +443,21 @@ public class ProductUpdate {
   @javax.annotation.Nullable
   private GithubPermissionEnum githubPermission;
 
+  public static final String SERIALIZED_NAME_HAS_DISCORD_ACCESS = "hasDiscordAccess";
+  @SerializedName(SERIALIZED_NAME_HAS_DISCORD_ACCESS)
+  @javax.annotation.Nullable
+  private Boolean hasDiscordAccess = false;
+
+  public static final String SERIALIZED_NAME_DISCORD_GUILD_ID = "discordGuildId";
+  @SerializedName(SERIALIZED_NAME_DISCORD_GUILD_ID)
+  @javax.annotation.Nullable
+  private String discordGuildId;
+
+  public static final String SERIALIZED_NAME_DISCORD_ROLE_ID = "discordRoleId";
+  @SerializedName(SERIALIZED_NAME_DISCORD_ROLE_ID)
+  @javax.annotation.Nullable
+  private String discordRoleId;
+
   public static final String SERIALIZED_NAME_IS_TAX_INCLUSIVE = "isTaxInclusive";
   @SerializedName(SERIALIZED_NAME_IS_TAX_INCLUSIVE)
   @javax.annotation.Nullable
@@ -742,6 +756,63 @@ public class ProductUpdate {
 
   public void setGithubPermission(@javax.annotation.Nullable GithubPermissionEnum githubPermission) {
     this.githubPermission = githubPermission;
+  }
+
+
+  public ProductUpdate hasDiscordAccess(@javax.annotation.Nullable Boolean hasDiscordAccess) {
+    this.hasDiscordAccess = hasDiscordAccess;
+    return this;
+  }
+
+  /**
+   * Whether the purchase includes Discord server role access.
+   * @return hasDiscordAccess
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasDiscordAccess() {
+    return hasDiscordAccess;
+  }
+
+  public void setHasDiscordAccess(@javax.annotation.Nullable Boolean hasDiscordAccess) {
+    this.hasDiscordAccess = hasDiscordAccess;
+  }
+
+
+  public ProductUpdate discordGuildId(@javax.annotation.Nullable String discordGuildId) {
+    this.discordGuildId = discordGuildId;
+    return this;
+  }
+
+  /**
+   * Discord Guild (Server) ID to grant access to.
+   * @return discordGuildId
+   */
+  @javax.annotation.Nullable
+  public String getDiscordGuildId() {
+    return discordGuildId;
+  }
+
+  public void setDiscordGuildId(@javax.annotation.Nullable String discordGuildId) {
+    this.discordGuildId = discordGuildId;
+  }
+
+
+  public ProductUpdate discordRoleId(@javax.annotation.Nullable String discordRoleId) {
+    this.discordRoleId = discordRoleId;
+    return this;
+  }
+
+  /**
+   * Discord Role ID to assign to the user.
+   * @return discordRoleId
+   */
+  @javax.annotation.Nullable
+  public String getDiscordRoleId() {
+    return discordRoleId;
+  }
+
+  public void setDiscordRoleId(@javax.annotation.Nullable String discordRoleId) {
+    this.discordRoleId = discordRoleId;
   }
 
 
@@ -1057,6 +1128,9 @@ public class ProductUpdate {
         Objects.equals(this.hasGithubAccess, productUpdate.hasGithubAccess) &&
         Objects.equals(this.githubRepo, productUpdate.githubRepo) &&
         Objects.equals(this.githubPermission, productUpdate.githubPermission) &&
+        Objects.equals(this.hasDiscordAccess, productUpdate.hasDiscordAccess) &&
+        Objects.equals(this.discordGuildId, productUpdate.discordGuildId) &&
+        Objects.equals(this.discordRoleId, productUpdate.discordRoleId) &&
         Objects.equals(this.isTaxInclusive, productUpdate.isTaxInclusive) &&
         Objects.equals(this.activationLimit, productUpdate.activationLimit) &&
         Objects.equals(this.brandId, productUpdate.brandId) &&
@@ -1073,20 +1147,9 @@ public class ProductUpdate {
         Objects.equals(this.addons, productUpdate.addons);
   }
 
-  private static <T> boolean equalsNullable(JsonNullable<T> a, JsonNullable<T> b) {
-    return a == b || (a != null && b != null && a.isPresent() && b.isPresent() && Objects.deepEquals(a.get(), b.get()));
-  }
-
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons);
-  }
-
-  private static <T> int hashCodeNullable(JsonNullable<T> a) {
-    if (a == null) {
-      return 1;
-    }
-    return a.isPresent() ? Arrays.deepHashCode(new Object[]{a.get()}) : 31;
+    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, hasDiscordAccess, discordGuildId, discordRoleId, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons);
   }
 
   @Override
@@ -1105,6 +1168,9 @@ public class ProductUpdate {
     sb.append("    hasGithubAccess: ").append(toIndentedString(hasGithubAccess)).append("\n");
     sb.append("    githubRepo: ").append(toIndentedString(githubRepo)).append("\n");
     sb.append("    githubPermission: ").append(toIndentedString(githubPermission)).append("\n");
+    sb.append("    hasDiscordAccess: ").append(toIndentedString(hasDiscordAccess)).append("\n");
+    sb.append("    discordGuildId: ").append(toIndentedString(discordGuildId)).append("\n");
+    sb.append("    discordRoleId: ").append(toIndentedString(discordRoleId)).append("\n");
     sb.append("    isTaxInclusive: ").append(toIndentedString(isTaxInclusive)).append("\n");
     sb.append("    activationLimit: ").append(toIndentedString(activationLimit)).append("\n");
     sb.append("    brandId: ").append(toIndentedString(brandId)).append("\n");
@@ -1153,6 +1219,9 @@ public class ProductUpdate {
     openapiFields.add("hasGithubAccess");
     openapiFields.add("githubRepo");
     openapiFields.add("githubPermission");
+    openapiFields.add("hasDiscordAccess");
+    openapiFields.add("discordGuildId");
+    openapiFields.add("discordRoleId");
     openapiFields.add("isTaxInclusive");
     openapiFields.add("activationLimit");
     openapiFields.add("brandId");
@@ -1225,6 +1294,12 @@ public class ProductUpdate {
       // validate the optional field `githubPermission`
       if (jsonObj.get("githubPermission") != null && !jsonObj.get("githubPermission").isJsonNull()) {
         GithubPermissionEnum.validateJsonElement(jsonObj.get("githubPermission"));
+      }
+      if ((jsonObj.get("discordGuildId") != null && !jsonObj.get("discordGuildId").isJsonNull()) && !jsonObj.get("discordGuildId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `discordGuildId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordGuildId").toString()));
+      }
+      if ((jsonObj.get("discordRoleId") != null && !jsonObj.get("discordRoleId").isJsonNull()) && !jsonObj.get("discordRoleId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `discordRoleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordRoleId").toString()));
       }
       if ((jsonObj.get("brandId") != null && !jsonObj.get("brandId").isJsonNull()) && !jsonObj.get("brandId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `brandId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("brandId").toString()));

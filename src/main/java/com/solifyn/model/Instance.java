@@ -48,7 +48,7 @@ import com.solifyn.JSON;
 /**
  * Represents an active device or software instance that has been activated against a license key.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T01:47:13.349412100+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class Instance {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -62,17 +62,17 @@ public class Instance {
 
   public static final String SERIALIZED_NAME_INSTANCE_ID = "instanceId";
   @SerializedName(SERIALIZED_NAME_INSTANCE_ID)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String instanceId;
 
   public static final String SERIALIZED_NAME_INSTANCE_NAME = "instanceName";
   @SerializedName(SERIALIZED_NAME_INSTANCE_NAME)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String instanceName;
 
   public static final String SERIALIZED_NAME_IP_ADDRESS = "ipAddress";
   @SerializedName(SERIALIZED_NAME_IP_ADDRESS)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String ipAddress;
 
   public static final String SERIALIZED_NAME_ACTIVATED_AT = "activatedAt";
@@ -82,7 +82,7 @@ public class Instance {
 
   public static final String SERIALIZED_NAME_LAST_SEEN_AT = "lastSeenAt";
   @SerializedName(SERIALIZED_NAME_LAST_SEEN_AT)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String lastSeenAt;
 
   public Instance() {
@@ -126,7 +126,7 @@ public class Instance {
   }
 
 
-  public Instance instanceId(@javax.annotation.Nullable String instanceId) {
+  public Instance instanceId(@javax.annotation.Nonnull String instanceId) {
     this.instanceId = instanceId;
     return this;
   }
@@ -135,17 +135,17 @@ public class Instance {
    * The unique hardware hash or client-generated identifier of the activated device/machine.
    * @return instanceId
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getInstanceId() {
     return instanceId;
   }
 
-  public void setInstanceId(@javax.annotation.Nullable String instanceId) {
+  public void setInstanceId(@javax.annotation.Nonnull String instanceId) {
     this.instanceId = instanceId;
   }
 
 
-  public Instance instanceName(@javax.annotation.Nullable String instanceName) {
+  public Instance instanceName(@javax.annotation.Nonnull String instanceName) {
     this.instanceName = instanceName;
     return this;
   }
@@ -154,17 +154,17 @@ public class Instance {
    * A human-readable display name for this instance, assigned by the client application.
    * @return instanceName
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getInstanceName() {
     return instanceName;
   }
 
-  public void setInstanceName(@javax.annotation.Nullable String instanceName) {
+  public void setInstanceName(@javax.annotation.Nonnull String instanceName) {
     this.instanceName = instanceName;
   }
 
 
-  public Instance ipAddress(@javax.annotation.Nullable String ipAddress) {
+  public Instance ipAddress(@javax.annotation.Nonnull String ipAddress) {
     this.ipAddress = ipAddress;
     return this;
   }
@@ -173,12 +173,12 @@ public class Instance {
    * The IP address recorded at the time of activation.
    * @return ipAddress
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getIpAddress() {
     return ipAddress;
   }
 
-  public void setIpAddress(@javax.annotation.Nullable String ipAddress) {
+  public void setIpAddress(@javax.annotation.Nonnull String ipAddress) {
     this.ipAddress = ipAddress;
   }
 
@@ -202,7 +202,7 @@ public class Instance {
   }
 
 
-  public Instance lastSeenAt(@javax.annotation.Nullable String lastSeenAt) {
+  public Instance lastSeenAt(@javax.annotation.Nonnull String lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
     return this;
   }
@@ -211,12 +211,12 @@ public class Instance {
    * Timestamp of the most recent activation heartbeat or re-activation check from this device.
    * @return lastSeenAt
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getLastSeenAt() {
     return lastSeenAt;
   }
 
-  public void setLastSeenAt(@javax.annotation.Nullable String lastSeenAt) {
+  public void setLastSeenAt(@javax.annotation.Nonnull String lastSeenAt) {
     this.lastSeenAt = lastSeenAt;
   }
 
@@ -331,19 +331,19 @@ public class Instance {
       if (!jsonObj.get("licenseId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `licenseId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("licenseId").toString()));
       }
-      if ((jsonObj.get("instanceId") != null && !jsonObj.get("instanceId").isJsonNull()) && !jsonObj.get("instanceId").isJsonPrimitive()) {
+      if (!jsonObj.get("instanceId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `instanceId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instanceId").toString()));
       }
-      if ((jsonObj.get("instanceName") != null && !jsonObj.get("instanceName").isJsonNull()) && !jsonObj.get("instanceName").isJsonPrimitive()) {
+      if (!jsonObj.get("instanceName").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `instanceName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("instanceName").toString()));
       }
-      if ((jsonObj.get("ipAddress") != null && !jsonObj.get("ipAddress").isJsonNull()) && !jsonObj.get("ipAddress").isJsonPrimitive()) {
+      if (!jsonObj.get("ipAddress").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `ipAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("ipAddress").toString()));
       }
       if (!jsonObj.get("activatedAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `activatedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("activatedAt").toString()));
       }
-      if ((jsonObj.get("lastSeenAt") != null && !jsonObj.get("lastSeenAt").isJsonNull()) && !jsonObj.get("lastSeenAt").isJsonPrimitive()) {
+      if (!jsonObj.get("lastSeenAt").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `lastSeenAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("lastSeenAt").toString()));
       }
   }

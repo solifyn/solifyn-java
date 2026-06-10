@@ -16,6 +16,10 @@
 |**githubRepo** | **String** | Target GitHub repository (owner/repo) if type is GITHUB. |  [optional] |
 |**githubPermission** | **String** | GitHub access permission level if type is GITHUB. |  [optional] |
 |**githubUsername** | **String** | The connected customer GitHub username. |  [optional] |
+|**discordGuildId** | **String** | Target Discord Guild ID if type is DISCORD. |  [optional] |
+|**discordRoleId** | **String** | Target Discord Role ID if type is DISCORD. |  [optional] |
+|**discordUsername** | **String** | The connected customer Discord username. |  [optional] |
+|**discordUserId** | **String** | The connected customer Discord user ID. |  [optional] |
 |**status** | **String** | Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED). |  |
 |**oauthUrl** | **String** | OAuth URL to redirect the customer to. |  [optional] |
 |**errorDetails** | **String** | Error message if invitation delivery failed. |  [optional] |

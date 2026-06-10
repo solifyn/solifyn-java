@@ -130,6 +130,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CustomerResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CustomerSharedInviteResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DashboardStatsDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DiscordRolesResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.Discount.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DiscountCreate.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DiscountUpdate.CustomTypeAdapterFactory());

@@ -22,6 +22,9 @@
 |**hasGithubAccess** | **Boolean** | Whether the product includes GitHub repository access. |  |
 |**githubRepo** | **String** | GitHub repository to grant access to (format: owner/repo). |  |
 |**githubPermission** | [**GithubPermissionEnum**](#GithubPermissionEnum) | GitHub collaborator permission level. |  |
+|**hasDiscordAccess** | **Boolean** | Whether the product includes Discord role access. |  |
+|**discordGuildId** | **String** | Discord Guild (Server) ID to grant access to. |  |
+|**discordRoleId** | **String** | Discord Role ID to assign to the user. |  |
 |**isTaxInclusive** | **Boolean** | Whether the product price already includes applicable sales taxes. |  |
 |**billingPeriod** | **Integer** | The subscription billing cycle interval in days (for subscription products). |  |
 |**trialPeriodDays** | **Integer** | Trial duration in days for subscription products. |  |

@@ -19,6 +19,9 @@
 |**hasGithubAccess** | **Boolean** | Whether the purchase includes GitHub repository access. |  [optional] |
 |**githubRepo** | **String** | GitHub repository to grant access to (format: owner/repo). |  [optional] |
 |**githubPermission** | [**GithubPermissionEnum**](#GithubPermissionEnum) | GitHub collaborator permission level. |  [optional] |
+|**hasDiscordAccess** | **Boolean** | Whether the purchase includes Discord server role access. |  [optional] |
+|**discordGuildId** | **String** | Discord Guild (Server) ID to grant access to. |  [optional] |
+|**discordRoleId** | **String** | Discord Role ID to assign to the user. |  [optional] |
 |**isTaxInclusive** | **Boolean** | Whether tax is included in the base price. |  [optional] |
 |**activationLimit** | **Integer** | Maximum concurrent activated instances allowed per license key. |  [optional] |
 |**brandId** | **String** | Brand id for the product, if not provided will default to primary brand. |  [optional] |

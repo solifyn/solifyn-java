@@ -49,7 +49,7 @@ import com.solifyn.JSON;
 /**
  * EntitlementGrantResponseDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T01:47:13.349412100+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class EntitlementGrantResponseDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -95,6 +95,26 @@ public class EntitlementGrantResponseDto {
   @SerializedName(SERIALIZED_NAME_GITHUB_USERNAME)
   @javax.annotation.Nullable
   private String githubUsername;
+
+  public static final String SERIALIZED_NAME_DISCORD_GUILD_ID = "discordGuildId";
+  @SerializedName(SERIALIZED_NAME_DISCORD_GUILD_ID)
+  @javax.annotation.Nullable
+  private String discordGuildId;
+
+  public static final String SERIALIZED_NAME_DISCORD_ROLE_ID = "discordRoleId";
+  @SerializedName(SERIALIZED_NAME_DISCORD_ROLE_ID)
+  @javax.annotation.Nullable
+  private String discordRoleId;
+
+  public static final String SERIALIZED_NAME_DISCORD_USERNAME = "discordUsername";
+  @SerializedName(SERIALIZED_NAME_DISCORD_USERNAME)
+  @javax.annotation.Nullable
+  private String discordUsername;
+
+  public static final String SERIALIZED_NAME_DISCORD_USER_ID = "discordUserId";
+  @SerializedName(SERIALIZED_NAME_DISCORD_USER_ID)
+  @javax.annotation.Nullable
+  private String discordUserId;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -300,6 +320,82 @@ public class EntitlementGrantResponseDto {
   }
 
 
+  public EntitlementGrantResponseDto discordGuildId(@javax.annotation.Nullable String discordGuildId) {
+    this.discordGuildId = discordGuildId;
+    return this;
+  }
+
+  /**
+   * Target Discord Guild ID if type is DISCORD.
+   * @return discordGuildId
+   */
+  @javax.annotation.Nullable
+  public String getDiscordGuildId() {
+    return discordGuildId;
+  }
+
+  public void setDiscordGuildId(@javax.annotation.Nullable String discordGuildId) {
+    this.discordGuildId = discordGuildId;
+  }
+
+
+  public EntitlementGrantResponseDto discordRoleId(@javax.annotation.Nullable String discordRoleId) {
+    this.discordRoleId = discordRoleId;
+    return this;
+  }
+
+  /**
+   * Target Discord Role ID if type is DISCORD.
+   * @return discordRoleId
+   */
+  @javax.annotation.Nullable
+  public String getDiscordRoleId() {
+    return discordRoleId;
+  }
+
+  public void setDiscordRoleId(@javax.annotation.Nullable String discordRoleId) {
+    this.discordRoleId = discordRoleId;
+  }
+
+
+  public EntitlementGrantResponseDto discordUsername(@javax.annotation.Nullable String discordUsername) {
+    this.discordUsername = discordUsername;
+    return this;
+  }
+
+  /**
+   * The connected customer Discord username.
+   * @return discordUsername
+   */
+  @javax.annotation.Nullable
+  public String getDiscordUsername() {
+    return discordUsername;
+  }
+
+  public void setDiscordUsername(@javax.annotation.Nullable String discordUsername) {
+    this.discordUsername = discordUsername;
+  }
+
+
+  public EntitlementGrantResponseDto discordUserId(@javax.annotation.Nullable String discordUserId) {
+    this.discordUserId = discordUserId;
+    return this;
+  }
+
+  /**
+   * The connected customer Discord user ID.
+   * @return discordUserId
+   */
+  @javax.annotation.Nullable
+  public String getDiscordUserId() {
+    return discordUserId;
+  }
+
+  public void setDiscordUserId(@javax.annotation.Nullable String discordUserId) {
+    this.discordUserId = discordUserId;
+  }
+
+
   public EntitlementGrantResponseDto status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
@@ -433,6 +529,10 @@ public class EntitlementGrantResponseDto {
         Objects.equals(this.githubRepo, entitlementGrantResponseDto.githubRepo) &&
         Objects.equals(this.githubPermission, entitlementGrantResponseDto.githubPermission) &&
         Objects.equals(this.githubUsername, entitlementGrantResponseDto.githubUsername) &&
+        Objects.equals(this.discordGuildId, entitlementGrantResponseDto.discordGuildId) &&
+        Objects.equals(this.discordRoleId, entitlementGrantResponseDto.discordRoleId) &&
+        Objects.equals(this.discordUsername, entitlementGrantResponseDto.discordUsername) &&
+        Objects.equals(this.discordUserId, entitlementGrantResponseDto.discordUserId) &&
         Objects.equals(this.status, entitlementGrantResponseDto.status) &&
         Objects.equals(this.oauthUrl, entitlementGrantResponseDto.oauthUrl) &&
         Objects.equals(this.errorDetails, entitlementGrantResponseDto.errorDetails) &&
@@ -443,7 +543,7 @@ public class EntitlementGrantResponseDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, businessId, customerId, paymentId, productId, type, githubRepo, githubPermission, githubUsername, status, oauthUrl, errorDetails, metadata, createdAt, updatedAt);
+    return Objects.hash(id, businessId, customerId, paymentId, productId, type, githubRepo, githubPermission, githubUsername, discordGuildId, discordRoleId, discordUsername, discordUserId, status, oauthUrl, errorDetails, metadata, createdAt, updatedAt);
   }
 
   @Override
@@ -459,6 +559,10 @@ public class EntitlementGrantResponseDto {
     sb.append("    githubRepo: ").append(toIndentedString(githubRepo)).append("\n");
     sb.append("    githubPermission: ").append(toIndentedString(githubPermission)).append("\n");
     sb.append("    githubUsername: ").append(toIndentedString(githubUsername)).append("\n");
+    sb.append("    discordGuildId: ").append(toIndentedString(discordGuildId)).append("\n");
+    sb.append("    discordRoleId: ").append(toIndentedString(discordRoleId)).append("\n");
+    sb.append("    discordUsername: ").append(toIndentedString(discordUsername)).append("\n");
+    sb.append("    discordUserId: ").append(toIndentedString(discordUserId)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    oauthUrl: ").append(toIndentedString(oauthUrl)).append("\n");
     sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
@@ -496,6 +600,10 @@ public class EntitlementGrantResponseDto {
     openapiFields.add("githubRepo");
     openapiFields.add("githubPermission");
     openapiFields.add("githubUsername");
+    openapiFields.add("discordGuildId");
+    openapiFields.add("discordRoleId");
+    openapiFields.add("discordUsername");
+    openapiFields.add("discordUserId");
     openapiFields.add("status");
     openapiFields.add("oauthUrl");
     openapiFields.add("errorDetails");
@@ -569,6 +677,18 @@ public class EntitlementGrantResponseDto {
       }
       if ((jsonObj.get("githubUsername") != null && !jsonObj.get("githubUsername").isJsonNull()) && !jsonObj.get("githubUsername").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `githubUsername` to be a primitive type in the JSON string but got `%s`", jsonObj.get("githubUsername").toString()));
+      }
+      if ((jsonObj.get("discordGuildId") != null && !jsonObj.get("discordGuildId").isJsonNull()) && !jsonObj.get("discordGuildId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `discordGuildId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordGuildId").toString()));
+      }
+      if ((jsonObj.get("discordRoleId") != null && !jsonObj.get("discordRoleId").isJsonNull()) && !jsonObj.get("discordRoleId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `discordRoleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordRoleId").toString()));
+      }
+      if ((jsonObj.get("discordUsername") != null && !jsonObj.get("discordUsername").isJsonNull()) && !jsonObj.get("discordUsername").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `discordUsername` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordUsername").toString()));
+      }
+      if ((jsonObj.get("discordUserId") != null && !jsonObj.get("discordUserId").isJsonNull()) && !jsonObj.get("discordUserId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `discordUserId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordUserId").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

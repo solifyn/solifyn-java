@@ -48,7 +48,7 @@ import com.solifyn.JSON;
 /**
  * ProductSubDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T01:47:13.349412100+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:19:15.464701900+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ProductSubDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -62,7 +62,7 @@ public class ProductSubDto {
 
   public static final String SERIALIZED_NAME_DIGITAL_LINK = "digitalLink";
   @SerializedName(SERIALIZED_NAME_DIGITAL_LINK)
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   private String digitalLink;
 
   public ProductSubDto() {
@@ -106,7 +106,7 @@ public class ProductSubDto {
   }
 
 
-  public ProductSubDto digitalLink(@javax.annotation.Nullable String digitalLink) {
+  public ProductSubDto digitalLink(@javax.annotation.Nonnull String digitalLink) {
     this.digitalLink = digitalLink;
     return this;
   }
@@ -115,12 +115,12 @@ public class ProductSubDto {
    * Get digitalLink
    * @return digitalLink
    */
-  @javax.annotation.Nullable
+  @javax.annotation.Nonnull
   public String getDigitalLink() {
     return digitalLink;
   }
 
-  public void setDigitalLink(@javax.annotation.Nullable String digitalLink) {
+  public void setDigitalLink(@javax.annotation.Nonnull String digitalLink) {
     this.digitalLink = digitalLink;
   }
 
@@ -219,7 +219,7 @@ public class ProductSubDto {
       if (!jsonObj.get("name").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `name` to be a primitive type in the JSON string but got `%s`", jsonObj.get("name").toString()));
       }
-      if ((jsonObj.get("digitalLink") != null && !jsonObj.get("digitalLink").isJsonNull()) && !jsonObj.get("digitalLink").isJsonPrimitive()) {
+      if (!jsonObj.get("digitalLink").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `digitalLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("digitalLink").toString()));
       }
   }
