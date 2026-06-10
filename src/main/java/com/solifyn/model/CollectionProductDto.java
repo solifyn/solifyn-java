@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * CollectionProductDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T09:19:16.497589300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T09:42:09.931715700+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class CollectionProductDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)

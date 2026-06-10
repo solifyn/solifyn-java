@@ -52,7 +52,7 @@ import com.solifyn.JSON;
 /**
  * Represents aggregated usage quantities and calculated product costs for a meter within a selected date range.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T09:19:16.497589300+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T09:42:09.931715700+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class MeterQuantitiesResponseDto {
   public static final String SERIALIZED_NAME_METER_ID = "meterId";
   @SerializedName(SERIALIZED_NAME_METER_ID)

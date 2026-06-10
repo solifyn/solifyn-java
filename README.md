@@ -2,7 +2,7 @@
 
 Solifyn API
 - API version: 1.0.0
-  - Build date: 2026-06-10T09:19:16.497589300+07:00[Asia/Saigon]
+  - Build date: 2026-06-10T09:42:09.931715700+07:00[Asia/Saigon]
   - Generator version: 7.10.0
 
 Welcome to the Solifyn API Reference. Leverage our secure endpoints to manage products and issue, validate, and manage software license keys programmatically.
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.solifyn</groupId>
   <artifactId>solifyn-java</artifactId>
-  <version>1.0.7</version>
+  <version>1.0.9</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "com.solifyn:solifyn-java:1.0.7"
+     implementation "com.solifyn:solifyn-java:1.0.9"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/solifyn-java-1.0.7.jar`
+* `target/solifyn-java-1.0.9.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -376,6 +376,7 @@ Class | Method | HTTP request | Description
  - [WebhookDeliveryResponseDto](docs/WebhookDeliveryResponseDto.md)
  - [WebhookDisputePayload](docs/WebhookDisputePayload.md)
  - [WebhookEndpointResponseDto](docs/WebhookEndpointResponseDto.md)
+ - [WebhookEntitlementGrantPayload](docs/WebhookEntitlementGrantPayload.md)
  - [WebhookLicensePayload](docs/WebhookLicensePayload.md)
  - [WebhookPaymentPayload](docs/WebhookPaymentPayload.md)
  - [WebhookPaymentPayloadBillingAddress](docs/WebhookPaymentPayloadBillingAddress.md)

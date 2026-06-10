@@ -4,7 +4,7 @@ apply plugin: 'java'
 apply plugin: 'com.diffplug.spotless'
 
 group = 'com.solifyn'
-version = '1.0.7'
+version = '1.0.9'
 
 buildscript {
     repositories {

@@ -7,6 +7,10 @@ All URIs are relative to *https://api.solifyn.com*
 | [**disputeCreatedPost**](DefaultApi.md#disputeCreatedPost) | **POST** /dispute.created | Dispute Created |
 | [**disputeLostPost**](DefaultApi.md#disputeLostPost) | **POST** /dispute.lost | Dispute Lost |
 | [**disputeWonPost**](DefaultApi.md#disputeWonPost) | **POST** /dispute.won | Dispute Won |
+| [**entitlementGrantCreatedPost**](DefaultApi.md#entitlementGrantCreatedPost) | **POST** /entitlement_grant.created | Entitlement Grant Created |
+| [**entitlementGrantDeliveredPost**](DefaultApi.md#entitlementGrantDeliveredPost) | **POST** /entitlement_grant.delivered | Entitlement Grant Delivered |
+| [**entitlementGrantFailedPost**](DefaultApi.md#entitlementGrantFailedPost) | **POST** /entitlement_grant.failed | Entitlement Grant Failed |
+| [**entitlementGrantRevokedPost**](DefaultApi.md#entitlementGrantRevokedPost) | **POST** /entitlement_grant.revoked | Entitlement Grant Revoked |
 | [**licenseCreatedPost**](DefaultApi.md#licenseCreatedPost) | **POST** /license.created | License Created |
 | [**licenseRevokedPost**](DefaultApi.md#licenseRevokedPost) | **POST** /license.revoked | License Revoked |
 | [**paymentCreatedPost**](DefaultApi.md#paymentCreatedPost) | **POST** /payment.created | Payment Created |
@@ -198,6 +202,270 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **webhookDisputePayload** | [**WebhookDisputePayload**](WebhookDisputePayload.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+<a id="entitlementGrantCreatedPost"></a>
+# **entitlementGrantCreatedPost**
+> entitlementGrantCreatedPost(webhookEntitlementGrantPayload)
+
+Entitlement Grant Created
+
+Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.auth.*;
+import com.solifyn.models.*;
+import com.solifyn.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload | 
+    try {
+      apiInstance.entitlementGrantCreatedPost(webhookEntitlementGrantPayload);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#entitlementGrantCreatedPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+<a id="entitlementGrantDeliveredPost"></a>
+# **entitlementGrantDeliveredPost**
+> entitlementGrantDeliveredPost(webhookEntitlementGrantPayload)
+
+Entitlement Grant Delivered
+
+Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.auth.*;
+import com.solifyn.models.*;
+import com.solifyn.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload | 
+    try {
+      apiInstance.entitlementGrantDeliveredPost(webhookEntitlementGrantPayload);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#entitlementGrantDeliveredPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+<a id="entitlementGrantFailedPost"></a>
+# **entitlementGrantFailedPost**
+> entitlementGrantFailedPost(webhookEntitlementGrantPayload)
+
+Entitlement Grant Failed
+
+Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.auth.*;
+import com.solifyn.models.*;
+import com.solifyn.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload | 
+    try {
+      apiInstance.entitlementGrantFailedPost(webhookEntitlementGrantPayload);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#entitlementGrantFailedPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md)|  | [optional] |
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[ApiKeyAuth](../README.md#ApiKeyAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: Not defined
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Webhook processed successfully. |  -  |
+
+<a id="entitlementGrantRevokedPost"></a>
+# **entitlementGrantRevokedPost**
+> entitlementGrantRevokedPost(webhookEntitlementGrantPayload)
+
+Entitlement Grant Revoked
+
+Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+
+### Example
+```java
+// Import classes:
+import com.solifyn.ApiClient;
+import com.solifyn.ApiException;
+import com.solifyn.Configuration;
+import com.solifyn.auth.*;
+import com.solifyn.models.*;
+import com.solifyn.api.DefaultApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://api.solifyn.com");
+    
+    // Configure HTTP bearer authorization: ApiKeyAuth
+    HttpBearerAuth ApiKeyAuth = (HttpBearerAuth) defaultClient.getAuthentication("ApiKeyAuth");
+    ApiKeyAuth.setBearerToken("BEARER TOKEN");
+
+    DefaultApi apiInstance = new DefaultApi(defaultClient);
+    WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = new WebhookEntitlementGrantPayload(); // WebhookEntitlementGrantPayload | 
+    try {
+      apiInstance.entitlementGrantRevokedPost(webhookEntitlementGrantPayload);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling DefaultApi#entitlementGrantRevokedPost");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **webhookEntitlementGrantPayload** | [**WebhookEntitlementGrantPayload**](WebhookEntitlementGrantPayload.md)|  | [optional] |
 
 ### Return type
 

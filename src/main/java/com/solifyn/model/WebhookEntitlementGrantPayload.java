@@ -20,6 +20,7 @@ import com.google.gson.annotations.SerializedName;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import java.io.IOException;
+import java.time.OffsetDateTime;
 import java.util.Arrays;
 import java.util.UUID;
 
@@ -47,23 +48,23 @@ import java.util.Set;
 import com.solifyn.JSON;
 
 /**
- * EntitlementGrantResponseDto
+ * WebhookEntitlementGrantPayload
  */
 @javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-10T09:42:09.931715700+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
-public class EntitlementGrantResponseDto {
+public class WebhookEntitlementGrantPayload {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private UUID id;
 
   public static final String SERIALIZED_NAME_BUSINESS_ID = "businessId";
   @SerializedName(SERIALIZED_NAME_BUSINESS_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private UUID businessId;
 
   public static final String SERIALIZED_NAME_CUSTOMER_ID = "customerId";
   @SerializedName(SERIALIZED_NAME_CUSTOMER_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private UUID customerId;
 
   public static final String SERIALIZED_NAME_PAYMENT_ID = "paymentId";
@@ -73,12 +74,12 @@ public class EntitlementGrantResponseDto {
 
   public static final String SERIALIZED_NAME_PRODUCT_ID = "productId";
   @SerializedName(SERIALIZED_NAME_PRODUCT_ID)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private UUID productId;
 
   public static final String SERIALIZED_NAME_TYPE = "type";
   @SerializedName(SERIALIZED_NAME_TYPE)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String type;
 
   public static final String SERIALIZED_NAME_GITHUB_REPO = "githubRepo";
@@ -98,7 +99,7 @@ public class EntitlementGrantResponseDto {
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   private String status;
 
   public static final String SERIALIZED_NAME_OAUTH_URL = "oauthUrl";
@@ -111,25 +112,20 @@ public class EntitlementGrantResponseDto {
   @javax.annotation.Nullable
   private String errorDetails;
 
-  public static final String SERIALIZED_NAME_METADATA = "metadata";
-  @SerializedName(SERIALIZED_NAME_METADATA)
-  @javax.annotation.Nullable
-  private Object metadata;
-
   public static final String SERIALIZED_NAME_CREATED_AT = "createdAt";
   @SerializedName(SERIALIZED_NAME_CREATED_AT)
-  @javax.annotation.Nonnull
-  private String createdAt;
+  @javax.annotation.Nullable
+  private OffsetDateTime createdAt;
 
   public static final String SERIALIZED_NAME_UPDATED_AT = "updatedAt";
   @SerializedName(SERIALIZED_NAME_UPDATED_AT)
-  @javax.annotation.Nonnull
-  private String updatedAt;
+  @javax.annotation.Nullable
+  private OffsetDateTime updatedAt;
 
-  public EntitlementGrantResponseDto() {
+  public WebhookEntitlementGrantPayload() {
   }
 
-  public EntitlementGrantResponseDto id(@javax.annotation.Nonnull UUID id) {
+  public WebhookEntitlementGrantPayload id(@javax.annotation.Nullable UUID id) {
     this.id = id;
     return this;
   }
@@ -138,17 +134,17 @@ public class EntitlementGrantResponseDto {
    * The unique entitlement grant ID.
    * @return id
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public UUID getId() {
     return id;
   }
 
-  public void setId(@javax.annotation.Nonnull UUID id) {
+  public void setId(@javax.annotation.Nullable UUID id) {
     this.id = id;
   }
 
 
-  public EntitlementGrantResponseDto businessId(@javax.annotation.Nonnull UUID businessId) {
+  public WebhookEntitlementGrantPayload businessId(@javax.annotation.Nullable UUID businessId) {
     this.businessId = businessId;
     return this;
   }
@@ -157,17 +153,17 @@ public class EntitlementGrantResponseDto {
    * The business ID context.
    * @return businessId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public UUID getBusinessId() {
     return businessId;
   }
 
-  public void setBusinessId(@javax.annotation.Nonnull UUID businessId) {
+  public void setBusinessId(@javax.annotation.Nullable UUID businessId) {
     this.businessId = businessId;
   }
 
 
-  public EntitlementGrantResponseDto customerId(@javax.annotation.Nonnull UUID customerId) {
+  public WebhookEntitlementGrantPayload customerId(@javax.annotation.Nullable UUID customerId) {
     this.customerId = customerId;
     return this;
   }
@@ -176,17 +172,17 @@ public class EntitlementGrantResponseDto {
    * The customer ID.
    * @return customerId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public UUID getCustomerId() {
     return customerId;
   }
 
-  public void setCustomerId(@javax.annotation.Nonnull UUID customerId) {
+  public void setCustomerId(@javax.annotation.Nullable UUID customerId) {
     this.customerId = customerId;
   }
 
 
-  public EntitlementGrantResponseDto paymentId(@javax.annotation.Nullable UUID paymentId) {
+  public WebhookEntitlementGrantPayload paymentId(@javax.annotation.Nullable UUID paymentId) {
     this.paymentId = paymentId;
     return this;
   }
@@ -205,7 +201,7 @@ public class EntitlementGrantResponseDto {
   }
 
 
-  public EntitlementGrantResponseDto productId(@javax.annotation.Nonnull UUID productId) {
+  public WebhookEntitlementGrantPayload productId(@javax.annotation.Nullable UUID productId) {
     this.productId = productId;
     return this;
   }
@@ -214,36 +210,36 @@ public class EntitlementGrantResponseDto {
    * The purchased product ID.
    * @return productId
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public UUID getProductId() {
     return productId;
   }
 
-  public void setProductId(@javax.annotation.Nonnull UUID productId) {
+  public void setProductId(@javax.annotation.Nullable UUID productId) {
     this.productId = productId;
   }
 
 
-  public EntitlementGrantResponseDto type(@javax.annotation.Nonnull String type) {
+  public WebhookEntitlementGrantPayload type(@javax.annotation.Nullable String type) {
     this.type = type;
     return this;
   }
 
   /**
-   * The type of entitlement (e.g. GITHUB, DISCORD, TELEGRAM).
+   * The type of entitlement (e.g. GITHUB).
    * @return type
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getType() {
     return type;
   }
 
-  public void setType(@javax.annotation.Nonnull String type) {
+  public void setType(@javax.annotation.Nullable String type) {
     this.type = type;
   }
 
 
-  public EntitlementGrantResponseDto githubRepo(@javax.annotation.Nullable String githubRepo) {
+  public WebhookEntitlementGrantPayload githubRepo(@javax.annotation.Nullable String githubRepo) {
     this.githubRepo = githubRepo;
     return this;
   }
@@ -262,7 +258,7 @@ public class EntitlementGrantResponseDto {
   }
 
 
-  public EntitlementGrantResponseDto githubPermission(@javax.annotation.Nullable String githubPermission) {
+  public WebhookEntitlementGrantPayload githubPermission(@javax.annotation.Nullable String githubPermission) {
     this.githubPermission = githubPermission;
     return this;
   }
@@ -281,7 +277,7 @@ public class EntitlementGrantResponseDto {
   }
 
 
-  public EntitlementGrantResponseDto githubUsername(@javax.annotation.Nullable String githubUsername) {
+  public WebhookEntitlementGrantPayload githubUsername(@javax.annotation.Nullable String githubUsername) {
     this.githubUsername = githubUsername;
     return this;
   }
@@ -300,7 +296,7 @@ public class EntitlementGrantResponseDto {
   }
 
 
-  public EntitlementGrantResponseDto status(@javax.annotation.Nonnull String status) {
+  public WebhookEntitlementGrantPayload status(@javax.annotation.Nullable String status) {
     this.status = status;
     return this;
   }
@@ -309,17 +305,17 @@ public class EntitlementGrantResponseDto {
    * Delivery status of the collaborator invite (PENDING, DELIVERED, FAILED, REVOKED).
    * @return status
    */
-  @javax.annotation.Nonnull
+  @javax.annotation.Nullable
   public String getStatus() {
     return status;
   }
 
-  public void setStatus(@javax.annotation.Nonnull String status) {
+  public void setStatus(@javax.annotation.Nullable String status) {
     this.status = status;
   }
 
 
-  public EntitlementGrantResponseDto oauthUrl(@javax.annotation.Nullable String oauthUrl) {
+  public WebhookEntitlementGrantPayload oauthUrl(@javax.annotation.Nullable String oauthUrl) {
     this.oauthUrl = oauthUrl;
     return this;
   }
@@ -338,7 +334,7 @@ public class EntitlementGrantResponseDto {
   }
 
 
-  public EntitlementGrantResponseDto errorDetails(@javax.annotation.Nullable String errorDetails) {
+  public WebhookEntitlementGrantPayload errorDetails(@javax.annotation.Nullable String errorDetails) {
     this.errorDetails = errorDetails;
     return this;
   }
@@ -357,59 +353,40 @@ public class EntitlementGrantResponseDto {
   }
 
 
-  public EntitlementGrantResponseDto metadata(@javax.annotation.Nullable Object metadata) {
-    this.metadata = metadata;
-    return this;
-  }
-
-  /**
-   * Platform-specific metadata.
-   * @return metadata
-   */
-  @javax.annotation.Nullable
-  public Object getMetadata() {
-    return metadata;
-  }
-
-  public void setMetadata(@javax.annotation.Nullable Object metadata) {
-    this.metadata = metadata;
-  }
-
-
-  public EntitlementGrantResponseDto createdAt(@javax.annotation.Nonnull String createdAt) {
+  public WebhookEntitlementGrantPayload createdAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
     return this;
   }
 
   /**
-   * Creation timestamp.
+   * Get createdAt
    * @return createdAt
    */
-  @javax.annotation.Nonnull
-  public String getCreatedAt() {
+  @javax.annotation.Nullable
+  public OffsetDateTime getCreatedAt() {
     return createdAt;
   }
 
-  public void setCreatedAt(@javax.annotation.Nonnull String createdAt) {
+  public void setCreatedAt(@javax.annotation.Nullable OffsetDateTime createdAt) {
     this.createdAt = createdAt;
   }
 
 
-  public EntitlementGrantResponseDto updatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public WebhookEntitlementGrantPayload updatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
     return this;
   }
 
   /**
-   * Modification timestamp.
+   * Get updatedAt
    * @return updatedAt
    */
-  @javax.annotation.Nonnull
-  public String getUpdatedAt() {
+  @javax.annotation.Nullable
+  public OffsetDateTime getUpdatedAt() {
     return updatedAt;
   }
 
-  public void setUpdatedAt(@javax.annotation.Nonnull String updatedAt) {
+  public void setUpdatedAt(@javax.annotation.Nullable OffsetDateTime updatedAt) {
     this.updatedAt = updatedAt;
   }
 
@@ -423,33 +400,32 @@ public class EntitlementGrantResponseDto {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    EntitlementGrantResponseDto entitlementGrantResponseDto = (EntitlementGrantResponseDto) o;
-    return Objects.equals(this.id, entitlementGrantResponseDto.id) &&
-        Objects.equals(this.businessId, entitlementGrantResponseDto.businessId) &&
-        Objects.equals(this.customerId, entitlementGrantResponseDto.customerId) &&
-        Objects.equals(this.paymentId, entitlementGrantResponseDto.paymentId) &&
-        Objects.equals(this.productId, entitlementGrantResponseDto.productId) &&
-        Objects.equals(this.type, entitlementGrantResponseDto.type) &&
-        Objects.equals(this.githubRepo, entitlementGrantResponseDto.githubRepo) &&
-        Objects.equals(this.githubPermission, entitlementGrantResponseDto.githubPermission) &&
-        Objects.equals(this.githubUsername, entitlementGrantResponseDto.githubUsername) &&
-        Objects.equals(this.status, entitlementGrantResponseDto.status) &&
-        Objects.equals(this.oauthUrl, entitlementGrantResponseDto.oauthUrl) &&
-        Objects.equals(this.errorDetails, entitlementGrantResponseDto.errorDetails) &&
-        Objects.equals(this.metadata, entitlementGrantResponseDto.metadata) &&
-        Objects.equals(this.createdAt, entitlementGrantResponseDto.createdAt) &&
-        Objects.equals(this.updatedAt, entitlementGrantResponseDto.updatedAt);
+    WebhookEntitlementGrantPayload webhookEntitlementGrantPayload = (WebhookEntitlementGrantPayload) o;
+    return Objects.equals(this.id, webhookEntitlementGrantPayload.id) &&
+        Objects.equals(this.businessId, webhookEntitlementGrantPayload.businessId) &&
+        Objects.equals(this.customerId, webhookEntitlementGrantPayload.customerId) &&
+        Objects.equals(this.paymentId, webhookEntitlementGrantPayload.paymentId) &&
+        Objects.equals(this.productId, webhookEntitlementGrantPayload.productId) &&
+        Objects.equals(this.type, webhookEntitlementGrantPayload.type) &&
+        Objects.equals(this.githubRepo, webhookEntitlementGrantPayload.githubRepo) &&
+        Objects.equals(this.githubPermission, webhookEntitlementGrantPayload.githubPermission) &&
+        Objects.equals(this.githubUsername, webhookEntitlementGrantPayload.githubUsername) &&
+        Objects.equals(this.status, webhookEntitlementGrantPayload.status) &&
+        Objects.equals(this.oauthUrl, webhookEntitlementGrantPayload.oauthUrl) &&
+        Objects.equals(this.errorDetails, webhookEntitlementGrantPayload.errorDetails) &&
+        Objects.equals(this.createdAt, webhookEntitlementGrantPayload.createdAt) &&
+        Objects.equals(this.updatedAt, webhookEntitlementGrantPayload.updatedAt);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, businessId, customerId, paymentId, productId, type, githubRepo, githubPermission, githubUsername, status, oauthUrl, errorDetails, metadata, createdAt, updatedAt);
+    return Objects.hash(id, businessId, customerId, paymentId, productId, type, githubRepo, githubPermission, githubUsername, status, oauthUrl, errorDetails, createdAt, updatedAt);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class EntitlementGrantResponseDto {\n");
+    sb.append("class WebhookEntitlementGrantPayload {\n");
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    businessId: ").append(toIndentedString(businessId)).append("\n");
     sb.append("    customerId: ").append(toIndentedString(customerId)).append("\n");
@@ -462,7 +438,6 @@ public class EntitlementGrantResponseDto {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    oauthUrl: ").append(toIndentedString(oauthUrl)).append("\n");
     sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
-    sb.append("    metadata: ").append(toIndentedString(metadata)).append("\n");
     sb.append("    createdAt: ").append(toIndentedString(createdAt)).append("\n");
     sb.append("    updatedAt: ").append(toIndentedString(updatedAt)).append("\n");
     sb.append("}");
@@ -499,66 +474,50 @@ public class EntitlementGrantResponseDto {
     openapiFields.add("status");
     openapiFields.add("oauthUrl");
     openapiFields.add("errorDetails");
-    openapiFields.add("metadata");
     openapiFields.add("createdAt");
     openapiFields.add("updatedAt");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
-    openapiRequiredFields.add("id");
-    openapiRequiredFields.add("businessId");
-    openapiRequiredFields.add("customerId");
-    openapiRequiredFields.add("productId");
-    openapiRequiredFields.add("type");
-    openapiRequiredFields.add("status");
-    openapiRequiredFields.add("createdAt");
-    openapiRequiredFields.add("updatedAt");
   }
 
   /**
    * Validates the JSON Element and throws an exception if issues found
    *
    * @param jsonElement JSON Element
-   * @throws IOException if the JSON Element is invalid with respect to EntitlementGrantResponseDto
+   * @throws IOException if the JSON Element is invalid with respect to WebhookEntitlementGrantPayload
    */
   public static void validateJsonElement(JsonElement jsonElement) throws IOException {
       if (jsonElement == null) {
-        if (!EntitlementGrantResponseDto.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
-          throw new IllegalArgumentException(String.format("The required field(s) %s in EntitlementGrantResponseDto is not found in the empty JSON string", EntitlementGrantResponseDto.openapiRequiredFields.toString()));
+        if (!WebhookEntitlementGrantPayload.openapiRequiredFields.isEmpty()) { // has required fields but JSON element is null
+          throw new IllegalArgumentException(String.format("The required field(s) %s in WebhookEntitlementGrantPayload is not found in the empty JSON string", WebhookEntitlementGrantPayload.openapiRequiredFields.toString()));
         }
       }
 
       Set<Map.Entry<String, JsonElement>> entries = jsonElement.getAsJsonObject().entrySet();
       // check to see if the JSON string contains additional fields
       for (Map.Entry<String, JsonElement> entry : entries) {
-        if (!EntitlementGrantResponseDto.openapiFields.contains(entry.getKey())) {
-          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `EntitlementGrantResponseDto` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
-        }
-      }
-
-      // check to make sure all required properties/fields are present in the JSON string
-      for (String requiredField : EntitlementGrantResponseDto.openapiRequiredFields) {
-        if (jsonElement.getAsJsonObject().get(requiredField) == null) {
-          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonElement.toString()));
+        if (!WebhookEntitlementGrantPayload.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `WebhookEntitlementGrantPayload` properties. JSON: %s", entry.getKey(), jsonElement.toString()));
         }
       }
         JsonObject jsonObj = jsonElement.getAsJsonObject();
-      if (!jsonObj.get("id").isJsonPrimitive()) {
+      if ((jsonObj.get("id") != null && !jsonObj.get("id").isJsonNull()) && !jsonObj.get("id").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `id` to be a primitive type in the JSON string but got `%s`", jsonObj.get("id").toString()));
       }
-      if (!jsonObj.get("businessId").isJsonPrimitive()) {
+      if ((jsonObj.get("businessId") != null && !jsonObj.get("businessId").isJsonNull()) && !jsonObj.get("businessId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `businessId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("businessId").toString()));
       }
-      if (!jsonObj.get("customerId").isJsonPrimitive()) {
+      if ((jsonObj.get("customerId") != null && !jsonObj.get("customerId").isJsonNull()) && !jsonObj.get("customerId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `customerId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("customerId").toString()));
       }
       if ((jsonObj.get("paymentId") != null && !jsonObj.get("paymentId").isJsonNull()) && !jsonObj.get("paymentId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `paymentId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("paymentId").toString()));
       }
-      if (!jsonObj.get("productId").isJsonPrimitive()) {
+      if ((jsonObj.get("productId") != null && !jsonObj.get("productId").isJsonNull()) && !jsonObj.get("productId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `productId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("productId").toString()));
       }
-      if (!jsonObj.get("type").isJsonPrimitive()) {
+      if ((jsonObj.get("type") != null && !jsonObj.get("type").isJsonNull()) && !jsonObj.get("type").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
       }
       if ((jsonObj.get("githubRepo") != null && !jsonObj.get("githubRepo").isJsonNull()) && !jsonObj.get("githubRepo").isJsonPrimitive()) {
@@ -570,7 +529,7 @@ public class EntitlementGrantResponseDto {
       if ((jsonObj.get("githubUsername") != null && !jsonObj.get("githubUsername").isJsonNull()) && !jsonObj.get("githubUsername").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `githubUsername` to be a primitive type in the JSON string but got `%s`", jsonObj.get("githubUsername").toString()));
       }
-      if (!jsonObj.get("status").isJsonPrimitive()) {
+      if ((jsonObj.get("status") != null && !jsonObj.get("status").isJsonNull()) && !jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
       }
       if ((jsonObj.get("oauthUrl") != null && !jsonObj.get("oauthUrl").isJsonNull()) && !jsonObj.get("oauthUrl").isJsonPrimitive()) {
@@ -579,34 +538,28 @@ public class EntitlementGrantResponseDto {
       if ((jsonObj.get("errorDetails") != null && !jsonObj.get("errorDetails").isJsonNull()) && !jsonObj.get("errorDetails").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `errorDetails` to be a primitive type in the JSON string but got `%s`", jsonObj.get("errorDetails").toString()));
       }
-      if (!jsonObj.get("createdAt").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `createdAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("createdAt").toString()));
-      }
-      if (!jsonObj.get("updatedAt").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `updatedAt` to be a primitive type in the JSON string but got `%s`", jsonObj.get("updatedAt").toString()));
-      }
   }
 
   public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
     @SuppressWarnings("unchecked")
     @Override
     public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
-       if (!EntitlementGrantResponseDto.class.isAssignableFrom(type.getRawType())) {
-         return null; // this class only serializes 'EntitlementGrantResponseDto' and its subtypes
+       if (!WebhookEntitlementGrantPayload.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'WebhookEntitlementGrantPayload' and its subtypes
        }
        final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
-       final TypeAdapter<EntitlementGrantResponseDto> thisAdapter
-                        = gson.getDelegateAdapter(this, TypeToken.get(EntitlementGrantResponseDto.class));
+       final TypeAdapter<WebhookEntitlementGrantPayload> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(WebhookEntitlementGrantPayload.class));
 
-       return (TypeAdapter<T>) new TypeAdapter<EntitlementGrantResponseDto>() {
+       return (TypeAdapter<T>) new TypeAdapter<WebhookEntitlementGrantPayload>() {
            @Override
-           public void write(JsonWriter out, EntitlementGrantResponseDto value) throws IOException {
+           public void write(JsonWriter out, WebhookEntitlementGrantPayload value) throws IOException {
              JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
              elementAdapter.write(out, obj);
            }
 
            @Override
-           public EntitlementGrantResponseDto read(JsonReader in) throws IOException {
+           public WebhookEntitlementGrantPayload read(JsonReader in) throws IOException {
              JsonElement jsonElement = elementAdapter.read(in);
              validateJsonElement(jsonElement);
              return thisAdapter.fromJsonTree(jsonElement);
@@ -617,18 +570,18 @@ public class EntitlementGrantResponseDto {
   }
 
   /**
-   * Create an instance of EntitlementGrantResponseDto given an JSON string
+   * Create an instance of WebhookEntitlementGrantPayload given an JSON string
    *
    * @param jsonString JSON string
-   * @return An instance of EntitlementGrantResponseDto
-   * @throws IOException if the JSON string is invalid with respect to EntitlementGrantResponseDto
+   * @return An instance of WebhookEntitlementGrantPayload
+   * @throws IOException if the JSON string is invalid with respect to WebhookEntitlementGrantPayload
    */
-  public static EntitlementGrantResponseDto fromJson(String jsonString) throws IOException {
-    return JSON.getGson().fromJson(jsonString, EntitlementGrantResponseDto.class);
+  public static WebhookEntitlementGrantPayload fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, WebhookEntitlementGrantPayload.class);
   }
 
   /**
-   * Convert an instance of EntitlementGrantResponseDto to an JSON string
+   * Convert an instance of WebhookEntitlementGrantPayload to an JSON string
    *
    * @return JSON string
    */

@@ -29,6 +29,7 @@ import java.io.IOException;
 
 import com.solifyn.model.Order;
 import com.solifyn.model.WebhookDisputePayload;
+import com.solifyn.model.WebhookEntitlementGrantPayload;
 import com.solifyn.model.WebhookLicensePayload;
 import com.solifyn.model.WebhookPaymentPayload;
 import com.solifyn.model.WebhookRefundPayload;
@@ -425,6 +426,474 @@ public class DefaultApi {
     public okhttp3.Call disputeWonPostAsync(WebhookDisputePayload webhookDisputePayload, final ApiCallback<Void> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = disputeWonPostValidateBeforeCall(webhookDisputePayload, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for entitlementGrantCreatedPost
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantCreatedPostCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = webhookEntitlementGrantPayload;
+
+        // create path and map variables
+        String localVarPath = "/entitlement_grant.created";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call entitlementGrantCreatedPostValidateBeforeCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        return entitlementGrantCreatedPostCall(webhookEntitlementGrantPayload, _callback);
+
+    }
+
+    /**
+     * Entitlement Grant Created
+     * Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void entitlementGrantCreatedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        entitlementGrantCreatedPostWithHttpInfo(webhookEntitlementGrantPayload);
+    }
+
+    /**
+     * Entitlement Grant Created
+     * Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> entitlementGrantCreatedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        okhttp3.Call localVarCall = entitlementGrantCreatedPostValidateBeforeCall(webhookEntitlementGrantPayload, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Entitlement Grant Created (asynchronously)
+     * Occurs when a new entitlement grant is created (e.g., at checkout completion if the product has GitHub access). The collaborator invitation is pending.
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantCreatedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = entitlementGrantCreatedPostValidateBeforeCall(webhookEntitlementGrantPayload, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for entitlementGrantDeliveredPost
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantDeliveredPostCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = webhookEntitlementGrantPayload;
+
+        // create path and map variables
+        String localVarPath = "/entitlement_grant.delivered";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call entitlementGrantDeliveredPostValidateBeforeCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        return entitlementGrantDeliveredPostCall(webhookEntitlementGrantPayload, _callback);
+
+    }
+
+    /**
+     * Entitlement Grant Delivered
+     * Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void entitlementGrantDeliveredPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        entitlementGrantDeliveredPostWithHttpInfo(webhookEntitlementGrantPayload);
+    }
+
+    /**
+     * Entitlement Grant Delivered
+     * Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> entitlementGrantDeliveredPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        okhttp3.Call localVarCall = entitlementGrantDeliveredPostValidateBeforeCall(webhookEntitlementGrantPayload, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Entitlement Grant Delivered (asynchronously)
+     * Occurs when the customer successfully connects their GitHub account and the collaborator invitation is successfully delivered.
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantDeliveredPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = entitlementGrantDeliveredPostValidateBeforeCall(webhookEntitlementGrantPayload, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for entitlementGrantFailedPost
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantFailedPostCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = webhookEntitlementGrantPayload;
+
+        // create path and map variables
+        String localVarPath = "/entitlement_grant.failed";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call entitlementGrantFailedPostValidateBeforeCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        return entitlementGrantFailedPostCall(webhookEntitlementGrantPayload, _callback);
+
+    }
+
+    /**
+     * Entitlement Grant Failed
+     * Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void entitlementGrantFailedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        entitlementGrantFailedPostWithHttpInfo(webhookEntitlementGrantPayload);
+    }
+
+    /**
+     * Entitlement Grant Failed
+     * Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> entitlementGrantFailedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        okhttp3.Call localVarCall = entitlementGrantFailedPostValidateBeforeCall(webhookEntitlementGrantPayload, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Entitlement Grant Failed (asynchronously)
+     * Occurs when invitation delivery fails (e.g., if the user GitHub account is flagged or invitation limit is reached).
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantFailedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = entitlementGrantFailedPostValidateBeforeCall(webhookEntitlementGrantPayload, _callback);
+        localVarApiClient.executeAsync(localVarCall, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for entitlementGrantRevokedPost
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantRevokedPostCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = webhookEntitlementGrantPayload;
+
+        // create path and map variables
+        String localVarPath = "/entitlement_grant.revoked";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKeyAuth" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call entitlementGrantRevokedPostValidateBeforeCall(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback _callback) throws ApiException {
+        return entitlementGrantRevokedPostCall(webhookEntitlementGrantPayload, _callback);
+
+    }
+
+    /**
+     * Entitlement Grant Revoked
+     * Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public void entitlementGrantRevokedPost(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        entitlementGrantRevokedPostWithHttpInfo(webhookEntitlementGrantPayload);
+    }
+
+    /**
+     * Entitlement Grant Revoked
+     * Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @return ApiResponse&lt;Void&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<Void> entitlementGrantRevokedPostWithHttpInfo(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload) throws ApiException {
+        okhttp3.Call localVarCall = entitlementGrantRevokedPostValidateBeforeCall(webhookEntitlementGrantPayload, null);
+        return localVarApiClient.execute(localVarCall);
+    }
+
+    /**
+     * Entitlement Grant Revoked (asynchronously)
+     * Occurs when the customer access is removed from the repository (manually or automatically via subscription cancel/refund).
+     * @param webhookEntitlementGrantPayload  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table border="1">
+       <caption>Response Details</caption>
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> Webhook processed successfully. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call entitlementGrantRevokedPostAsync(WebhookEntitlementGrantPayload webhookEntitlementGrantPayload, final ApiCallback<Void> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = entitlementGrantRevokedPostValidateBeforeCall(webhookEntitlementGrantPayload, _callback);
         localVarApiClient.executeAsync(localVarCall, _callback);
         return localVarCall;
     }

@@ -222,6 +222,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookDeliveryResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookDisputePayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookEndpointResponseDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookEntitlementGrantPayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookLicensePayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookPaymentPayload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.WebhookPaymentPayloadBillingAddress.CustomTypeAdapterFactory());

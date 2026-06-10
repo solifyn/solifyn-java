@@ -2,7 +2,7 @@ lazy val root = (project in file(".")).
   settings(
     organization := "com.solifyn",
     name := "solifyn-java",
-    version := "1.0.7",
+    version := "1.0.9",
     scalaVersion := "2.11.4",
     scalacOptions ++= Seq("-feature"),
     javacOptions in compile ++= Seq("-Xlint:deprecation"),

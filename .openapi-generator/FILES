@@ -158,6 +158,7 @@ docs/WebhookDeliveryResponseDto.md
 docs/WebhookDisputePayload.md
 docs/WebhookEndpointApi.md
 docs/WebhookEndpointResponseDto.md
+docs/WebhookEntitlementGrantPayload.md
 docs/WebhookLicensePayload.md
 docs/WebhookPaymentPayload.md
 docs/WebhookPaymentPayloadBillingAddress.md
@@ -343,6 +344,7 @@ src/main/java/com/solifyn/model/UpdateWebhookEndpointDto.java
 src/main/java/com/solifyn/model/WebhookDeliveryResponseDto.java
 src/main/java/com/solifyn/model/WebhookDisputePayload.java
 src/main/java/com/solifyn/model/WebhookEndpointResponseDto.java
+src/main/java/com/solifyn/model/WebhookEntitlementGrantPayload.java
 src/main/java/com/solifyn/model/WebhookLicensePayload.java
 src/main/java/com/solifyn/model/WebhookPaymentPayload.java
 src/main/java/com/solifyn/model/WebhookPaymentPayloadBillingAddress.java
