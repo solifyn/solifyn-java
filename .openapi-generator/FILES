@@ -38,6 +38,8 @@ docs/CreateCheckoutLinkDto.md
 docs/CreateCollectionCheckoutDto.md
 docs/CreateCollectionDto.md
 docs/CreateCustomerDto.md
+docs/CreateEntitlementDto.md
+docs/CreateFramerTemplateDto.md
 docs/CreateMeterDto.md
 docs/CreateSetupCheckoutDto.md
 docs/CreateWebhookEndpointDto.md
@@ -66,8 +68,12 @@ docs/DisputeFileUpload.md
 docs/DisputeList.md
 docs/DisputeListMetaDto.md
 docs/DisputesApi.md
+docs/EntitlementDetailResponseDto.md
 docs/EntitlementGrantResponseDto.md
 docs/EntitlementGrantsApi.md
+docs/EntitlementsApi.md
+docs/FramerIntegrationApi.md
+docs/FramerTemplateResponseDto.md
 docs/GitHubIntegrationApi.md
 docs/GithubReposResponseDto.md
 docs/Instance.md
@@ -85,6 +91,7 @@ docs/LicensesDeactivateRequest.md
 docs/LicensesUpdateInstancePostRequest.md
 docs/LicensesUpdateRequest.md
 docs/LicensesVerifyRequest.md
+docs/LinkedProductDto.md
 docs/MeterDetailResponseDto.md
 docs/MeterEventsResponseDto.md
 docs/MeterIngestEventDto.md
@@ -152,6 +159,8 @@ docs/UpdateCheckoutLinkDto.md
 docs/UpdateCollectionDto.md
 docs/UpdateCollectionProductDto.md
 docs/UpdateCustomerDto.md
+docs/UpdateEntitlementDto.md
+docs/UpdateFramerTemplateDto.md
 docs/UpdateInstanceDto.md
 docs/UpdateMeterDto.md
 docs/UpdateWebhookEndpointDto.md
@@ -200,6 +209,8 @@ src/main/java/com/solifyn/api/DiscordIntegrationApi.java
 src/main/java/com/solifyn/api/DiscountsApi.java
 src/main/java/com/solifyn/api/DisputesApi.java
 src/main/java/com/solifyn/api/EntitlementGrantsApi.java
+src/main/java/com/solifyn/api/EntitlementsApi.java
+src/main/java/com/solifyn/api/FramerIntegrationApi.java
 src/main/java/com/solifyn/api/GitHubIntegrationApi.java
 src/main/java/com/solifyn/api/LicenseApi.java
 src/main/java/com/solifyn/api/LicenseKeysApi.java
@@ -247,6 +258,8 @@ src/main/java/com/solifyn/model/CreateCheckoutLinkDto.java
 src/main/java/com/solifyn/model/CreateCollectionCheckoutDto.java
 src/main/java/com/solifyn/model/CreateCollectionDto.java
 src/main/java/com/solifyn/model/CreateCustomerDto.java
+src/main/java/com/solifyn/model/CreateEntitlementDto.java
+src/main/java/com/solifyn/model/CreateFramerTemplateDto.java
 src/main/java/com/solifyn/model/CreateMeterDto.java
 src/main/java/com/solifyn/model/CreateSetupCheckoutDto.java
 src/main/java/com/solifyn/model/CreateWebhookEndpointDto.java
@@ -268,7 +281,9 @@ src/main/java/com/solifyn/model/DisputeEvidenceUpdate.java
 src/main/java/com/solifyn/model/DisputeFileUpload.java
 src/main/java/com/solifyn/model/DisputeList.java
 src/main/java/com/solifyn/model/DisputeListMetaDto.java
+src/main/java/com/solifyn/model/EntitlementDetailResponseDto.java
 src/main/java/com/solifyn/model/EntitlementGrantResponseDto.java
+src/main/java/com/solifyn/model/FramerTemplateResponseDto.java
 src/main/java/com/solifyn/model/GithubReposResponseDto.java
 src/main/java/com/solifyn/model/Instance.java
 src/main/java/com/solifyn/model/Invoice.java
@@ -282,6 +297,7 @@ src/main/java/com/solifyn/model/LicensesDeactivateRequest.java
 src/main/java/com/solifyn/model/LicensesUpdateInstancePostRequest.java
 src/main/java/com/solifyn/model/LicensesUpdateRequest.java
 src/main/java/com/solifyn/model/LicensesVerifyRequest.java
+src/main/java/com/solifyn/model/LinkedProductDto.java
 src/main/java/com/solifyn/model/MeterDetailResponseDto.java
 src/main/java/com/solifyn/model/MeterEventsResponseDto.java
 src/main/java/com/solifyn/model/MeterIngestEventDto.java
@@ -342,6 +358,8 @@ src/main/java/com/solifyn/model/UpdateCheckoutLinkDto.java
 src/main/java/com/solifyn/model/UpdateCollectionDto.java
 src/main/java/com/solifyn/model/UpdateCollectionProductDto.java
 src/main/java/com/solifyn/model/UpdateCustomerDto.java
+src/main/java/com/solifyn/model/UpdateEntitlementDto.java
+src/main/java/com/solifyn/model/UpdateFramerTemplateDto.java
 src/main/java/com/solifyn/model/UpdateInstanceDto.java
 src/main/java/com/solifyn/model/UpdateMeterDto.java
 src/main/java/com/solifyn/model/UpdateWebhookEndpointDto.java

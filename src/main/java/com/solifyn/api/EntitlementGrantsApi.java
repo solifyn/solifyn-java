@@ -202,6 +202,8 @@ public class EntitlementGrantsApi {
     /**
      * Build call for entitlementGrantsList
      * @param status Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)
+     * @param entitlementId Filter by entitlement config ID (optional)
+     * @param productId Filter by product ID (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -212,7 +214,7 @@ public class EntitlementGrantsApi {
         <tr><td> 200 </td><td> Successfully retrieved list of grants. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entitlementGrantsListCall(String status, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call entitlementGrantsListCall(String status, String entitlementId, String productId, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -241,6 +243,14 @@ public class EntitlementGrantsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("status", status));
         }
 
+        if (entitlementId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("entitlementId", entitlementId));
+        }
+
+        if (productId != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("productId", productId));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -261,8 +271,8 @@ public class EntitlementGrantsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call entitlementGrantsListValidateBeforeCall(String status, final ApiCallback _callback) throws ApiException {
-        return entitlementGrantsListCall(status, _callback);
+    private okhttp3.Call entitlementGrantsListValidateBeforeCall(String status, String entitlementId, String productId, final ApiCallback _callback) throws ApiException {
+        return entitlementGrantsListCall(status, entitlementId, productId, _callback);
 
     }
 
@@ -270,6 +280,8 @@ public class EntitlementGrantsApi {
      * List Entitlement Grants
      * Retrieve all GitHub repository entitlement grants for the active business.
      * @param status Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)
+     * @param entitlementId Filter by entitlement config ID (optional)
+     * @param productId Filter by product ID (optional)
      * @return List&lt;EntitlementGrantResponseDto&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -279,8 +291,8 @@ public class EntitlementGrantsApi {
         <tr><td> 200 </td><td> Successfully retrieved list of grants. </td><td>  -  </td></tr>
      </table>
      */
-    public List<EntitlementGrantResponseDto> entitlementGrantsList(String status) throws ApiException {
-        ApiResponse<List<EntitlementGrantResponseDto>> localVarResp = entitlementGrantsListWithHttpInfo(status);
+    public List<EntitlementGrantResponseDto> entitlementGrantsList(String status, String entitlementId, String productId) throws ApiException {
+        ApiResponse<List<EntitlementGrantResponseDto>> localVarResp = entitlementGrantsListWithHttpInfo(status, entitlementId, productId);
         return localVarResp.getData();
     }
 
@@ -288,6 +300,8 @@ public class EntitlementGrantsApi {
      * List Entitlement Grants
      * Retrieve all GitHub repository entitlement grants for the active business.
      * @param status Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)
+     * @param entitlementId Filter by entitlement config ID (optional)
+     * @param productId Filter by product ID (optional)
      * @return ApiResponse&lt;List&lt;EntitlementGrantResponseDto&gt;&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -297,8 +311,8 @@ public class EntitlementGrantsApi {
         <tr><td> 200 </td><td> Successfully retrieved list of grants. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<List<EntitlementGrantResponseDto>> entitlementGrantsListWithHttpInfo(String status) throws ApiException {
-        okhttp3.Call localVarCall = entitlementGrantsListValidateBeforeCall(status, null);
+    public ApiResponse<List<EntitlementGrantResponseDto>> entitlementGrantsListWithHttpInfo(String status, String entitlementId, String productId) throws ApiException {
+        okhttp3.Call localVarCall = entitlementGrantsListValidateBeforeCall(status, entitlementId, productId, null);
         Type localVarReturnType = new TypeToken<List<EntitlementGrantResponseDto>>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -307,6 +321,8 @@ public class EntitlementGrantsApi {
      * List Entitlement Grants (asynchronously)
      * Retrieve all GitHub repository entitlement grants for the active business.
      * @param status Filter by status (PENDING, DELIVERED, FAILED, REVOKED) (optional)
+     * @param entitlementId Filter by entitlement config ID (optional)
+     * @param productId Filter by product ID (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -317,9 +333,9 @@ public class EntitlementGrantsApi {
         <tr><td> 200 </td><td> Successfully retrieved list of grants. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call entitlementGrantsListAsync(String status, final ApiCallback<List<EntitlementGrantResponseDto>> _callback) throws ApiException {
+    public okhttp3.Call entitlementGrantsListAsync(String status, String entitlementId, String productId, final ApiCallback<List<EntitlementGrantResponseDto>> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = entitlementGrantsListValidateBeforeCall(status, _callback);
+        okhttp3.Call localVarCall = entitlementGrantsListValidateBeforeCall(status, entitlementId, productId, _callback);
         Type localVarReturnType = new TypeToken<List<EntitlementGrantResponseDto>>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

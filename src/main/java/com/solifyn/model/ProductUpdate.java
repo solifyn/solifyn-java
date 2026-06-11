@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * ProductUpdate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:29:17.492837500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T08:01:04.687799800+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ProductUpdate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -527,6 +527,11 @@ public class ProductUpdate {
   @SerializedName(SERIALIZED_NAME_ADDONS)
   @javax.annotation.Nullable
   private List<ProductCreateAddonsInner> addons = new ArrayList<>();
+
+  public static final String SERIALIZED_NAME_ENTITLEMENT_IDS = "entitlementIds";
+  @SerializedName(SERIALIZED_NAME_ENTITLEMENT_IDS)
+  @javax.annotation.Nullable
+  private List<String> entitlementIds = new ArrayList<>();
 
   public ProductUpdate() {
   }
@@ -1106,6 +1111,33 @@ public class ProductUpdate {
   }
 
 
+  public ProductUpdate entitlementIds(@javax.annotation.Nullable List<String> entitlementIds) {
+    this.entitlementIds = entitlementIds;
+    return this;
+  }
+
+  public ProductUpdate addEntitlementIdsItem(String entitlementIdsItem) {
+    if (this.entitlementIds == null) {
+      this.entitlementIds = new ArrayList<>();
+    }
+    this.entitlementIds.add(entitlementIdsItem);
+    return this;
+  }
+
+  /**
+   * Array of independent entitlement IDs to link to this product.
+   * @return entitlementIds
+   */
+  @javax.annotation.Nullable
+  public List<String> getEntitlementIds() {
+    return entitlementIds;
+  }
+
+  public void setEntitlementIds(@javax.annotation.Nullable List<String> entitlementIds) {
+    this.entitlementIds = entitlementIds;
+  }
+
+
 
   @Override
   public boolean equals(Object o) {
@@ -1144,12 +1176,13 @@ public class ProductUpdate {
         Objects.equals(this.stock, productUpdate.stock) &&
         Objects.equals(this.isListed, productUpdate.isListed) &&
         Objects.equals(this.isFree, productUpdate.isFree) &&
-        Objects.equals(this.addons, productUpdate.addons);
+        Objects.equals(this.addons, productUpdate.addons) &&
+        Objects.equals(this.entitlementIds, productUpdate.entitlementIds);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, hasDiscordAccess, discordGuildId, discordRoleId, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons);
+    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, hasDiscordAccess, discordGuildId, discordRoleId, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons, entitlementIds);
   }
 
   @Override
@@ -1185,6 +1218,7 @@ public class ProductUpdate {
     sb.append("    isListed: ").append(toIndentedString(isListed)).append("\n");
     sb.append("    isFree: ").append(toIndentedString(isFree)).append("\n");
     sb.append("    addons: ").append(toIndentedString(addons)).append("\n");
+    sb.append("    entitlementIds: ").append(toIndentedString(entitlementIds)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -1236,6 +1270,7 @@ public class ProductUpdate {
     openapiFields.add("isListed");
     openapiFields.add("isFree");
     openapiFields.add("addons");
+    openapiFields.add("entitlementIds");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -1334,6 +1369,10 @@ public class ProductUpdate {
             ProductCreateAddonsInner.validateJsonElement(jsonArrayaddons.get(i));
           };
         }
+      }
+      // ensure the optional json data is an array if present
+      if (jsonObj.get("entitlementIds") != null && !jsonObj.get("entitlementIds").isJsonNull() && !jsonObj.get("entitlementIds").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `entitlementIds` to be an array in the JSON string but got `%s`", jsonObj.get("entitlementIds").toString()));
       }
   }
 

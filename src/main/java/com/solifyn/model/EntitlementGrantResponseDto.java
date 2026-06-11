@@ -49,7 +49,7 @@ import com.solifyn.JSON;
 /**
  * EntitlementGrantResponseDto
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T03:29:17.492837500+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T08:01:04.687799800+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class EntitlementGrantResponseDto {
   public static final String SERIALIZED_NAME_ID = "id";
   @SerializedName(SERIALIZED_NAME_ID)
@@ -115,6 +115,16 @@ public class EntitlementGrantResponseDto {
   @SerializedName(SERIALIZED_NAME_DISCORD_USER_ID)
   @javax.annotation.Nullable
   private String discordUserId;
+
+  public static final String SERIALIZED_NAME_FRAMER_TEMPLATE_ID = "framerTemplateId";
+  @SerializedName(SERIALIZED_NAME_FRAMER_TEMPLATE_ID)
+  @javax.annotation.Nullable
+  private UUID framerTemplateId;
+
+  public static final String SERIALIZED_NAME_FRAMER_REMIX_LINK = "framerRemixLink";
+  @SerializedName(SERIALIZED_NAME_FRAMER_REMIX_LINK)
+  @javax.annotation.Nullable
+  private String framerRemixLink;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -396,6 +406,44 @@ public class EntitlementGrantResponseDto {
   }
 
 
+  public EntitlementGrantResponseDto framerTemplateId(@javax.annotation.Nullable UUID framerTemplateId) {
+    this.framerTemplateId = framerTemplateId;
+    return this;
+  }
+
+  /**
+   * The Framer template ID if type is FRAMER.
+   * @return framerTemplateId
+   */
+  @javax.annotation.Nullable
+  public UUID getFramerTemplateId() {
+    return framerTemplateId;
+  }
+
+  public void setFramerTemplateId(@javax.annotation.Nullable UUID framerTemplateId) {
+    this.framerTemplateId = framerTemplateId;
+  }
+
+
+  public EntitlementGrantResponseDto framerRemixLink(@javax.annotation.Nullable String framerRemixLink) {
+    this.framerRemixLink = framerRemixLink;
+    return this;
+  }
+
+  /**
+   * The single-use remix link generated for the customer if type is FRAMER.
+   * @return framerRemixLink
+   */
+  @javax.annotation.Nullable
+  public String getFramerRemixLink() {
+    return framerRemixLink;
+  }
+
+  public void setFramerRemixLink(@javax.annotation.Nullable String framerRemixLink) {
+    this.framerRemixLink = framerRemixLink;
+  }
+
+
   public EntitlementGrantResponseDto status(@javax.annotation.Nonnull String status) {
     this.status = status;
     return this;
@@ -533,6 +581,8 @@ public class EntitlementGrantResponseDto {
         Objects.equals(this.discordRoleId, entitlementGrantResponseDto.discordRoleId) &&
         Objects.equals(this.discordUsername, entitlementGrantResponseDto.discordUsername) &&
         Objects.equals(this.discordUserId, entitlementGrantResponseDto.discordUserId) &&
+        Objects.equals(this.framerTemplateId, entitlementGrantResponseDto.framerTemplateId) &&
+        Objects.equals(this.framerRemixLink, entitlementGrantResponseDto.framerRemixLink) &&
         Objects.equals(this.status, entitlementGrantResponseDto.status) &&
         Objects.equals(this.oauthUrl, entitlementGrantResponseDto.oauthUrl) &&
         Objects.equals(this.errorDetails, entitlementGrantResponseDto.errorDetails) &&
@@ -543,7 +593,7 @@ public class EntitlementGrantResponseDto {
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, businessId, customerId, paymentId, productId, type, githubRepo, githubPermission, githubUsername, discordGuildId, discordRoleId, discordUsername, discordUserId, status, oauthUrl, errorDetails, metadata, createdAt, updatedAt);
+    return Objects.hash(id, businessId, customerId, paymentId, productId, type, githubRepo, githubPermission, githubUsername, discordGuildId, discordRoleId, discordUsername, discordUserId, framerTemplateId, framerRemixLink, status, oauthUrl, errorDetails, metadata, createdAt, updatedAt);
   }
 
   @Override
@@ -563,6 +613,8 @@ public class EntitlementGrantResponseDto {
     sb.append("    discordRoleId: ").append(toIndentedString(discordRoleId)).append("\n");
     sb.append("    discordUsername: ").append(toIndentedString(discordUsername)).append("\n");
     sb.append("    discordUserId: ").append(toIndentedString(discordUserId)).append("\n");
+    sb.append("    framerTemplateId: ").append(toIndentedString(framerTemplateId)).append("\n");
+    sb.append("    framerRemixLink: ").append(toIndentedString(framerRemixLink)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    oauthUrl: ").append(toIndentedString(oauthUrl)).append("\n");
     sb.append("    errorDetails: ").append(toIndentedString(errorDetails)).append("\n");
@@ -604,6 +656,8 @@ public class EntitlementGrantResponseDto {
     openapiFields.add("discordRoleId");
     openapiFields.add("discordUsername");
     openapiFields.add("discordUserId");
+    openapiFields.add("framerTemplateId");
+    openapiFields.add("framerRemixLink");
     openapiFields.add("status");
     openapiFields.add("oauthUrl");
     openapiFields.add("errorDetails");
@@ -689,6 +743,12 @@ public class EntitlementGrantResponseDto {
       }
       if ((jsonObj.get("discordUserId") != null && !jsonObj.get("discordUserId").isJsonNull()) && !jsonObj.get("discordUserId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `discordUserId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordUserId").toString()));
+      }
+      if ((jsonObj.get("framerTemplateId") != null && !jsonObj.get("framerTemplateId").isJsonNull()) && !jsonObj.get("framerTemplateId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `framerTemplateId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("framerTemplateId").toString()));
+      }
+      if ((jsonObj.get("framerRemixLink") != null && !jsonObj.get("framerRemixLink").isJsonNull()) && !jsonObj.get("framerRemixLink").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `framerRemixLink` to be a primitive type in the JSON string but got `%s`", jsonObj.get("framerRemixLink").toString()));
       }
       if (!jsonObj.get("status").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));

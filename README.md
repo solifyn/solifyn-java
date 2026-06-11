@@ -2,7 +2,7 @@
 
 Solifyn API
 - API version: 1.0.0
-  - Build date: 2026-06-11T03:29:17.492837500+07:00[Asia/Saigon]
+  - Build date: 2026-06-11T08:01:04.687799800+07:00[Asia/Saigon]
   - Generator version: 7.10.0
 
 Welcome to the Solifyn API Reference. Leverage our secure endpoints to manage products and issue, validate, and manage software license keys programmatically.
@@ -173,6 +173,16 @@ Class | Method | HTTP request | Description
 *EntitlementGrantsApi* | [**entitlementGrantsList**](docs/EntitlementGrantsApi.md#entitlementGrantsList) | **GET** /v1/entitlement-grants | List Entitlement Grants
 *EntitlementGrantsApi* | [**entitlementGrantsRetry**](docs/EntitlementGrantsApi.md#entitlementGrantsRetry) | **POST** /v1/entitlement-grants/{id}/retry | Retry Entitlement Grant Delivery
 *EntitlementGrantsApi* | [**entitlementGrantsRevoke**](docs/EntitlementGrantsApi.md#entitlementGrantsRevoke) | **POST** /v1/entitlement-grants/{id}/revoke | Manually Revoke Entitlement Grant
+*EntitlementsApi* | [**entitlementsCreate**](docs/EntitlementsApi.md#entitlementsCreate) | **POST** /v1/entitlements | Create Entitlement
+*EntitlementsApi* | [**entitlementsDelete**](docs/EntitlementsApi.md#entitlementsDelete) | **DELETE** /v1/entitlements/{id} | Delete Entitlement
+*EntitlementsApi* | [**entitlementsGet**](docs/EntitlementsApi.md#entitlementsGet) | **GET** /v1/entitlements/{id} | Retrieve Entitlement
+*EntitlementsApi* | [**entitlementsList**](docs/EntitlementsApi.md#entitlementsList) | **GET** /v1/entitlements | List Entitlements
+*EntitlementsApi* | [**entitlementsUpdate**](docs/EntitlementsApi.md#entitlementsUpdate) | **PATCH** /v1/entitlements/{id} | Update Entitlement
+*FramerIntegrationApi* | [**framerCreateTemplate**](docs/FramerIntegrationApi.md#framerCreateTemplate) | **POST** /v1/framer/templates | Create Framer Template
+*FramerIntegrationApi* | [**framerDeleteTemplate**](docs/FramerIntegrationApi.md#framerDeleteTemplate) | **DELETE** /v1/framer/templates/{id} | Delete Framer Template
+*FramerIntegrationApi* | [**framerGetTemplate**](docs/FramerIntegrationApi.md#framerGetTemplate) | **GET** /v1/framer/templates/{id} | Retrieve Framer Template
+*FramerIntegrationApi* | [**framerListTemplates**](docs/FramerIntegrationApi.md#framerListTemplates) | **GET** /v1/framer/templates | List Framer Templates
+*FramerIntegrationApi* | [**framerUpdateTemplate**](docs/FramerIntegrationApi.md#framerUpdateTemplate) | **PUT** /v1/framer/templates/{id} | Update Framer Template
 *GitHubIntegrationApi* | [**githubGetInstallUrl**](docs/GitHubIntegrationApi.md#githubGetInstallUrl) | **GET** /v1/github/install | Get GitHub App Installation URL
 *GitHubIntegrationApi* | [**githubListRepos**](docs/GitHubIntegrationApi.md#githubListRepos) | **GET** /v1/github/repos | List Available GitHub Repositories
 *LicenseApi* | [**licensesCreate**](docs/LicenseApi.md#licensesCreate) | **POST** /v1/licenses | Create License Key
@@ -278,6 +288,8 @@ Class | Method | HTTP request | Description
  - [CreateCollectionCheckoutDto](docs/CreateCollectionCheckoutDto.md)
  - [CreateCollectionDto](docs/CreateCollectionDto.md)
  - [CreateCustomerDto](docs/CreateCustomerDto.md)
+ - [CreateEntitlementDto](docs/CreateEntitlementDto.md)
+ - [CreateFramerTemplateDto](docs/CreateFramerTemplateDto.md)
  - [CreateMeterDto](docs/CreateMeterDto.md)
  - [CreateSetupCheckoutDto](docs/CreateSetupCheckoutDto.md)
  - [CreateWebhookEndpointDto](docs/CreateWebhookEndpointDto.md)
@@ -299,7 +311,9 @@ Class | Method | HTTP request | Description
  - [DisputeFileUpload](docs/DisputeFileUpload.md)
  - [DisputeList](docs/DisputeList.md)
  - [DisputeListMetaDto](docs/DisputeListMetaDto.md)
+ - [EntitlementDetailResponseDto](docs/EntitlementDetailResponseDto.md)
  - [EntitlementGrantResponseDto](docs/EntitlementGrantResponseDto.md)
+ - [FramerTemplateResponseDto](docs/FramerTemplateResponseDto.md)
  - [GithubReposResponseDto](docs/GithubReposResponseDto.md)
  - [Instance](docs/Instance.md)
  - [Invoice](docs/Invoice.md)
@@ -313,6 +327,7 @@ Class | Method | HTTP request | Description
  - [LicensesUpdateInstancePostRequest](docs/LicensesUpdateInstancePostRequest.md)
  - [LicensesUpdateRequest](docs/LicensesUpdateRequest.md)
  - [LicensesVerifyRequest](docs/LicensesVerifyRequest.md)
+ - [LinkedProductDto](docs/LinkedProductDto.md)
  - [MeterDetailResponseDto](docs/MeterDetailResponseDto.md)
  - [MeterEventsResponseDto](docs/MeterEventsResponseDto.md)
  - [MeterIngestEventDto](docs/MeterIngestEventDto.md)
@@ -373,6 +388,8 @@ Class | Method | HTTP request | Description
  - [UpdateCollectionDto](docs/UpdateCollectionDto.md)
  - [UpdateCollectionProductDto](docs/UpdateCollectionProductDto.md)
  - [UpdateCustomerDto](docs/UpdateCustomerDto.md)
+ - [UpdateEntitlementDto](docs/UpdateEntitlementDto.md)
+ - [UpdateFramerTemplateDto](docs/UpdateFramerTemplateDto.md)
  - [UpdateInstanceDto](docs/UpdateInstanceDto.md)
  - [UpdateMeterDto](docs/UpdateMeterDto.md)
  - [UpdateWebhookEndpointDto](docs/UpdateWebhookEndpointDto.md)

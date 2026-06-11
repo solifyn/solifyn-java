@@ -79,7 +79,7 @@ public class Example {
 
 <a id="entitlementGrantsList"></a>
 # **entitlementGrantsList**
-> List&lt;EntitlementGrantResponseDto&gt; entitlementGrantsList(status)
+> List&lt;EntitlementGrantResponseDto&gt; entitlementGrantsList(status, entitlementId, productId)
 
 List Entitlement Grants
 
@@ -106,8 +106,10 @@ public class Example {
 
     EntitlementGrantsApi apiInstance = new EntitlementGrantsApi(defaultClient);
     String status = "status_example"; // String | Filter by status (PENDING, DELIVERED, FAILED, REVOKED)
+    String entitlementId = "entitlementId_example"; // String | Filter by entitlement config ID
+    String productId = "productId_example"; // String | Filter by product ID
     try {
-      List<EntitlementGrantResponseDto> result = apiInstance.entitlementGrantsList(status);
+      List<EntitlementGrantResponseDto> result = apiInstance.entitlementGrantsList(status, entitlementId, productId);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling EntitlementGrantsApi#entitlementGrantsList");
@@ -125,6 +127,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **status** | **String**| Filter by status (PENDING, DELIVERED, FAILED, REVOKED) | [optional] |
+| **entitlementId** | **String**| Filter by entitlement config ID | [optional] |
+| **productId** | **String**| Filter by product ID | [optional] |
 
 ### Return type
 

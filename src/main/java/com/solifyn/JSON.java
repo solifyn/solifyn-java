@@ -122,6 +122,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateCollectionCheckoutDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateCollectionDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateCustomerDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateEntitlementDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateFramerTemplateDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateMeterDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateSetupCheckoutDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.CreateWebhookEndpointDto.CustomTypeAdapterFactory());
@@ -143,7 +145,9 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DisputeFileUpload.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DisputeList.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.DisputeListMetaDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.EntitlementDetailResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.EntitlementGrantResponseDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.FramerTemplateResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.GithubReposResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.Instance.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.Invoice.CustomTypeAdapterFactory());
@@ -157,6 +161,7 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.LicensesUpdateInstancePostRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.LicensesUpdateRequest.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.LicensesVerifyRequest.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.LinkedProductDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.MeterDetailResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.MeterEventsResponseDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.MeterIngestEventDto.CustomTypeAdapterFactory());
@@ -217,6 +222,8 @@ public class JSON {
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateCollectionDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateCollectionProductDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateCustomerDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateEntitlementDto.CustomTypeAdapterFactory());
+        gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateFramerTemplateDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateInstanceDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateMeterDto.CustomTypeAdapterFactory());
         gsonBuilder.registerTypeAdapterFactory(new com.solifyn.model.UpdateWebhookEndpointDto.CustomTypeAdapterFactory());
