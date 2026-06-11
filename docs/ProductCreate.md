@@ -22,6 +22,8 @@
 |**hasDiscordAccess** | **Boolean** | Whether the purchase includes Discord server role access. |  [optional] |
 |**discordGuildId** | **String** | Discord Guild (Server) ID to grant access to. |  [optional] |
 |**discordRoleId** | **String** | Discord Role ID to assign to the user. |  [optional] |
+|**hasFramerAccess** | **Boolean** | Whether the purchase includes Framer Template access. |  [optional] |
+|**framerTemplateId** | **String** | Framer Template ID to grant access to. |  [optional] |
 |**isTaxInclusive** | **Boolean** | Whether tax is included in the base price. |  [optional] |
 |**activationLimit** | **Integer** | Maximum concurrent activated instances allowed per license key. |  [optional] |
 |**brandId** | **String** | Brand id for the product, if not provided will default to primary brand. |  [optional] |

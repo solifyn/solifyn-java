@@ -52,7 +52,7 @@ import com.solifyn.JSON;
 /**
  * DiscountsList200Response
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T08:01:04.687799800+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T08:41:07.343307200+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class DiscountsList200Response {
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)

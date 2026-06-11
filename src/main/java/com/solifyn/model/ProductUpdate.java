@@ -55,7 +55,7 @@ import com.solifyn.JSON;
 /**
  * ProductUpdate
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T08:01:04.687799800+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2026-06-11T08:41:07.343307200+07:00[Asia/Saigon]", comments = "Generator version: 7.10.0")
 public class ProductUpdate {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -458,6 +458,16 @@ public class ProductUpdate {
   @javax.annotation.Nullable
   private String discordRoleId;
 
+  public static final String SERIALIZED_NAME_HAS_FRAMER_ACCESS = "hasFramerAccess";
+  @SerializedName(SERIALIZED_NAME_HAS_FRAMER_ACCESS)
+  @javax.annotation.Nullable
+  private Boolean hasFramerAccess = false;
+
+  public static final String SERIALIZED_NAME_FRAMER_TEMPLATE_ID = "framerTemplateId";
+  @SerializedName(SERIALIZED_NAME_FRAMER_TEMPLATE_ID)
+  @javax.annotation.Nullable
+  private String framerTemplateId;
+
   public static final String SERIALIZED_NAME_IS_TAX_INCLUSIVE = "isTaxInclusive";
   @SerializedName(SERIALIZED_NAME_IS_TAX_INCLUSIVE)
   @javax.annotation.Nullable
@@ -821,6 +831,44 @@ public class ProductUpdate {
   }
 
 
+  public ProductUpdate hasFramerAccess(@javax.annotation.Nullable Boolean hasFramerAccess) {
+    this.hasFramerAccess = hasFramerAccess;
+    return this;
+  }
+
+  /**
+   * Whether the purchase includes Framer Template access.
+   * @return hasFramerAccess
+   */
+  @javax.annotation.Nullable
+  public Boolean getHasFramerAccess() {
+    return hasFramerAccess;
+  }
+
+  public void setHasFramerAccess(@javax.annotation.Nullable Boolean hasFramerAccess) {
+    this.hasFramerAccess = hasFramerAccess;
+  }
+
+
+  public ProductUpdate framerTemplateId(@javax.annotation.Nullable String framerTemplateId) {
+    this.framerTemplateId = framerTemplateId;
+    return this;
+  }
+
+  /**
+   * Framer Template ID to grant access to.
+   * @return framerTemplateId
+   */
+  @javax.annotation.Nullable
+  public String getFramerTemplateId() {
+    return framerTemplateId;
+  }
+
+  public void setFramerTemplateId(@javax.annotation.Nullable String framerTemplateId) {
+    this.framerTemplateId = framerTemplateId;
+  }
+
+
   public ProductUpdate isTaxInclusive(@javax.annotation.Nullable Boolean isTaxInclusive) {
     this.isTaxInclusive = isTaxInclusive;
     return this;
@@ -1163,6 +1211,8 @@ public class ProductUpdate {
         Objects.equals(this.hasDiscordAccess, productUpdate.hasDiscordAccess) &&
         Objects.equals(this.discordGuildId, productUpdate.discordGuildId) &&
         Objects.equals(this.discordRoleId, productUpdate.discordRoleId) &&
+        Objects.equals(this.hasFramerAccess, productUpdate.hasFramerAccess) &&
+        Objects.equals(this.framerTemplateId, productUpdate.framerTemplateId) &&
         Objects.equals(this.isTaxInclusive, productUpdate.isTaxInclusive) &&
         Objects.equals(this.activationLimit, productUpdate.activationLimit) &&
         Objects.equals(this.brandId, productUpdate.brandId) &&
@@ -1182,7 +1232,7 @@ public class ProductUpdate {
 
   @Override
   public int hashCode() {
-    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, hasDiscordAccess, discordGuildId, discordRoleId, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons, entitlementIds);
+    return Objects.hash(name, description, price, currency, imageUrl, taxCategory, discount, hasLicenseKey, hasDigitalDelivery, hasGithubAccess, githubRepo, githubPermission, hasDiscordAccess, discordGuildId, discordRoleId, hasFramerAccess, framerTemplateId, isTaxInclusive, activationLimit, brandId, billingPeriod, trialPeriodDays, expirationDays, statementDescriptor, payWhatYouWant, metadata, customFields, stock, isListed, isFree, addons, entitlementIds);
   }
 
   @Override
@@ -1204,6 +1254,8 @@ public class ProductUpdate {
     sb.append("    hasDiscordAccess: ").append(toIndentedString(hasDiscordAccess)).append("\n");
     sb.append("    discordGuildId: ").append(toIndentedString(discordGuildId)).append("\n");
     sb.append("    discordRoleId: ").append(toIndentedString(discordRoleId)).append("\n");
+    sb.append("    hasFramerAccess: ").append(toIndentedString(hasFramerAccess)).append("\n");
+    sb.append("    framerTemplateId: ").append(toIndentedString(framerTemplateId)).append("\n");
     sb.append("    isTaxInclusive: ").append(toIndentedString(isTaxInclusive)).append("\n");
     sb.append("    activationLimit: ").append(toIndentedString(activationLimit)).append("\n");
     sb.append("    brandId: ").append(toIndentedString(brandId)).append("\n");
@@ -1256,6 +1308,8 @@ public class ProductUpdate {
     openapiFields.add("hasDiscordAccess");
     openapiFields.add("discordGuildId");
     openapiFields.add("discordRoleId");
+    openapiFields.add("hasFramerAccess");
+    openapiFields.add("framerTemplateId");
     openapiFields.add("isTaxInclusive");
     openapiFields.add("activationLimit");
     openapiFields.add("brandId");
@@ -1335,6 +1389,9 @@ public class ProductUpdate {
       }
       if ((jsonObj.get("discordRoleId") != null && !jsonObj.get("discordRoleId").isJsonNull()) && !jsonObj.get("discordRoleId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `discordRoleId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("discordRoleId").toString()));
+      }
+      if ((jsonObj.get("framerTemplateId") != null && !jsonObj.get("framerTemplateId").isJsonNull()) && !jsonObj.get("framerTemplateId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `framerTemplateId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("framerTemplateId").toString()));
       }
       if ((jsonObj.get("brandId") != null && !jsonObj.get("brandId").isJsonNull()) && !jsonObj.get("brandId").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `brandId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("brandId").toString()));
